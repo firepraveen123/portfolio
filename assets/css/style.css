@@ -17,17 +17,26 @@ body {
   background: transparent;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/bg.jpg") top right no-repeat;
-  background-size: fit;
+  background: #040404 url("../img/bg.jpg") no-repeat center 80%; /* Adjust vertical positioning */
+  background-size: cover;
   left: 0;
   right: 0;
   top: 0;
-  height: 100vh;
+  bottom: 0;
   z-index: -1;
 }
+
+
+
 
 @media (min-width: 1024px) {
   body::before {
