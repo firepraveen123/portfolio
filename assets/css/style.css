@@ -35,6 +35,15 @@ body::before {
   z-index: -1;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body::before {
+    background-position: center center; /* Adjust for mobile */
+    /* Optionally adjust background-size if needed, e.g., to 'contain' or specific values */
+  }
+}
+
+
 
 
 
