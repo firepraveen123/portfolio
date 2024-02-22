@@ -1206,3 +1206,48 @@ section .container {
 .credits a:hover {
   color: #fff;
 }
+
+/* Typography adjustments for smaller screens */
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    font-size: 75%; /* Adjust based on your design */
+  }
+  p, .navbar a, .section-title p, .resume .resume-item h4, .services .icon-box h4 {
+    font-size: 85%; /* Adjust based on your design */
+  }
+}
+
+/* Stack navbar items vertically and adjust layout for mobile */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar li+li {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+/* Convert the desktop navigation to a hamburger menu */
+@media (max-width: 991px) {
+  .navbar {
+    display: none; /* Hide desktop menu */
+  }
+  .mobile-nav-toggle {
+    display: block; /* Show mobile menu toggle */
+  }
+}
+
+/* Adjusting section padding and alignment for smaller screens */
+@media (max-width: 768px) {
+  section .container {
+    padding: 15px; /* Smaller padding */
+  }
+}
+
+/* Ensure images within sections are not wider than the screen */
+section img {
+  max-width: 100%;
+  height: auto;
+}
