@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio Details | Praveen Kumar S - Software Engineer</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Info</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Portfolio Details</h1>
+              <p class="mb-0">Explore the intricate details of this project, showcasing my expertise in Android and web development. From concept to execution, each element is crafted with precision, focusing on performance, scalability, and user experience. Let’s dive into the journey of turning an idea into a working solution.</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Portfolio Details</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+        
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+        
+              <div class="swiper-wrapper align-items-center">
+        
+                <!-- Each slide has a data attribute for the app id -->
+                <div class="swiper-slide" data-app-id="1">
+                  <img src="assets/img/portfolio/app-1.jpg" alt="AtMed Healthcare">
+                </div>
+        
+                <div class="swiper-slide" data-app-id="2">
+                  <img src="assets/img/portfolio/app-2.jpg" alt="Iotcoldchain">
+                </div>
+        
+                <div class="swiper-slide" data-app-id="3">
+                  <img src="assets/img/portfolio/app-3.jpg" alt="Naagali">
+                </div>
+        
+                <div class="swiper-slide" data-app-id="4">
+                  <img src="assets/img/portfolio/app-4.jpg" alt="HealthTrack">
+                </div>
+        
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200" id="portfolio-info">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category</strong>: <span id="app-category">Mobile App</span></li>
+                <li><strong>Client</strong>: <span id="app-client">Chennai</span></li>
+                <li><strong>Project Date</strong>: <span id="app-date">01 March, 2022</span></li>
+                <li><strong>Project URL</strong>: <a href="#" id="app-url" target="_blank">www.atmed.com</a></li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300" id="portfolio-description">
+              <h2 id="app-title">ATMED Healthcare Application</h2>
+              <p id="app-description">
+                ATMED is a trusted healthcare application that provides users with a familiar and convenient platform for all their medical needs. 
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200" id="portfolio-info">
+              <h3>Project Information</h3>
+              <ul>
+                <li><strong>Category</strong>: <span id="app-category">Mobile App</span></li>
+                <li><strong>Client</strong>: <span id="app-client">Chennai</span></li>
+                <li><strong>Project Date</strong>: <span id="app-date">01 March, 2022</span></li>
+                <li><strong>Project URL</strong>: <a href="#" id="app-url" target="_blank">www.atmed.com</a></li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300" id="portfolio-description">
+              <h2 id="app-title">ATMED Healthcare Application</h2>
+              <p id="app-description">
+                ATMED is a trusted healthcare application that provides users with a familiar and convenient platform for all their medical needs. 
+              </p>
+            </div>
+          </div>
+        
+        </div>
+        
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container">
+      <h3 class="sitename">Personal</h3>
+      <p>Beyond the lines of code, I believe in creating solutions that make a difference. Whether you're looking for a tech partner or just exploring my work, let's connect and innovate together. Follow me on social media to stay updated on my latest projects and insights in Android, web development, and more.</p>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://twitter.com/i/flow/login" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://www.facebook.com/login/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/m.r._.unique_/" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/praveen-kumar-selvan-086384220/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="container">
+        <div class="copyright">
+          <span>&copy;</span> <strong class="px-1 sitename">Praveen Kumar S</strong> <span>| All Rights Reserved</span>
+        </div>
+        <div class="credits">
+          Let's build something amazing together.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Data for each app
+    const appDetails = {
+      1: {
+        title: "ATMED Healthcare Application",
+        category: "Mobile App",
+        client: "Chennai",
+        date: "01 March, 2022",
+        url: "http://www.atmed.com",
+        description: "ATMED is a trusted healthcare application that provides users with a familiar and convenient platform for all their medical needs."
+      },
+      2: {
+        title: "Iotcoldchain",
+        category: "IOT Monitoring App",
+        client: "Hyderabad",
+        date: "15 April, 2022",
+        url: "http://www.iotcoldchain.com",
+        description: "Iotcoldchain is an IOT-based temperature monitoring software designed for the safe storage of medicines."
+      },
+      3: {
+        title: "Naagali",
+        category: "Smart Farming App",
+        client: "Andhra Pradesh",
+        date: "05 June, 2022",
+        url: "http://www.naagali.com",
+        description: "Naagali is a smart app that connects farmers to buyers in Andhra Pradesh for easy trade of agricultural products."
+      },
+      4: {
+        title: "HealthTrack",
+        category: "Fitness & Wellness App",
+        client: "Bangalore",
+        date: "20 July, 2022",
+        url: "http://www.healthtrack.com",
+        description: "HealthTrack is a fitness and wellness app designed to help users track workouts, monitor health, and maintain a balanced lifestyle."
+      }
+    };
+  
+    // Function to update the portfolio information
+    function updateAppDetails(appId) {
+      const app = appDetails[appId];
+      
+      // Update the DOM elements with app details
+      document.getElementById('app-title').innerText = app.title;
+      document.getElementById('app-category').innerText = app.category;
+      document.getElementById('app-client').innerText = app.client;
+      document.getElementById('app-date').innerText = app.date;
+      document.getElementById('app-url').href = app.url;
+      document.getElementById('app-url').innerText = app.url;
+      document.getElementById('app-description').innerText = app.description;
+    }
+  
+    // Listen for swiper changes to update details
+    const swiperSlides = document.querySelectorAll('.swiper-slide');
+  
+    swiperSlides.forEach(slide => {
+      slide.addEventListener('click', function() {
+        const appId = this.getAttribute('data-app-id');
+        updateAppDetails(appId);
+      });
+    });
+  
+    // On page load, set the first app details by default
+    document.addEventListener('DOMContentLoaded', function() {
+      updateAppDetails(1);
+    });
+  </script>
+  
+
+</body>
+
+</html>
