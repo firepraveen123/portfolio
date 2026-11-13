@@ -446,15 +446,15 @@ export default function SelectedWorksSection() {
               return (
                 <article
                   key={slide.num}
-                  className={`slide shrink-0 !p-8 md:!p-12 lg:!p-14 ${slide.themeClass} ${
+                  className={`slide shrink-0 !p-5 sm:!p-8 md:!p-12 lg:!p-14 ${slide.themeClass} ${
                     isAct ? 'act' : ''
                   }`}
                   style={{
                     width: 'min(1480px, 92vw)',
-                    minHeight: '520px',
+                    minHeight: '480px',
                   }}
                 >
-                  <span className="bignum !text-[14rem] md:!text-[18rem] -top-8 right-6">
+                  <span className="bignum !text-[8rem] sm:!text-[12rem] md:!text-[18rem] -top-6 right-4 select-none pointer-events-none opacity-10">
                     {slide.num}
                   </span>
 

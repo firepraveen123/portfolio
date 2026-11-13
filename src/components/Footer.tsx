@@ -12,7 +12,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex gap-6 mono text-graphite">
+        <div className="flex flex-wrap gap-4 sm:gap-6 mono text-sm text-graphite">
           <a className="hover:text-verm transition-colors" href="#impact">
             Impact
           </a>

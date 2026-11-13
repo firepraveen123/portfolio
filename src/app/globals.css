@@ -299,9 +299,16 @@ body {
   border: 1px solid rgb(var(--line));
   border-radius: 0.9rem;
   overflow: hidden;
-  box-shadow: 0 20px 50px -20px rgb(0 0 0 / 0.35);
-  transform: rotate(1.5deg);
+  box-shadow: 0 10px 30px -15px rgb(0 0 0 / 0.25);
+  transform: none;
   transition: transform 0.5s;
+}
+
+@media (min-width: 768px) {
+  .mock {
+    box-shadow: 0 20px 50px -20px rgb(0 0 0 / 0.35);
+    transform: rotate(1.5deg);
+  }
 }
 
 .slide:hover .mock {
