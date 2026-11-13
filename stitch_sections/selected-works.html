@@ -1,0 +1,159 @@
+<section id="selected-works" class="py-24">
+  <div class="wrap">
+    <div class="kicker"><span class="mono text-verm font-semibold">02 // Selected Cases</span><span class="mono text-graphite">6 production dispatches + mobile bonus</span></div>
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-10">
+      <h2 class="fd font-medium tracking-tight text-4xl md:text-6xl max-w-3xl leading-tight rv">Systems engineered for precision, speed &amp; human scale.</h2>
+      <div class="flex items-center gap-3 rv">
+        <span class="mono text-graphite"><b id="cnt" class="text-ink text-base">01</b> / 07</span>
+        <button id="prev" class="w-12 h-12 rounded-full border border-ink flex items-center justify-center hover:bg-ink hover:text-paper transition" aria-label="Previous"><span class="ms">arrow_back</span></button>
+        <button id="next" class="w-12 h-12 rounded-full border border-ink flex items-center justify-center hover:bg-ink hover:text-paper transition" aria-label="Next"><span class="ms">arrow_forward</span></button>
+      </div>
+    </div>
+    <div id="track" class="cursor-grab select-none">
+      <!-- 01 -->
+      <article class="slide s1 band-dark act"><span class="bignum">01</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Case 01</span> · <span class="text-graphite">Enterprise Fleet Operations</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">Silicon Drive — Corporate Fleet Orchestration Platform</h3>
+          <p class="text-graphite leading-relaxed">Architected the mission-control dispatch interface servicing thousands of daily B2B corporate rides across metro hubs. Optimized rendering for simultaneous multi-point GIS streams and rapid driver allocation.</p>
+          <ul class="text-sm space-y-2">
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Real-time telemetry:</b> Dual WebSocket pipelines with zero UI jitter.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Dispatch optimization:</b> Spatial quadrant indexing cut wait time by 34%.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Strict validation:</b> State machine preventing dual driver assignments.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">React 18</span><span class="pill pill-t">Next.js</span><span class="pill pill-t">WebSockets</span><span class="pill pill-t">Tailwind</span><span class="pill pill-t">Mapbox GL</span></div>
+        </div>
+        <div class="mock">
+          <div class="px-3 py-2 border-b border-line flex justify-between mono text-graphite"><span>fleet.silicondrive.io</span><span class="text-ok">● stream live</span></div>
+          <div class="p-4 space-y-3 bg-paper">
+            <div class="h-32 rounded border border-line bg-sand/50 relative overflow-hidden">
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 80" preserveAspectRatio="none"><path d="M10,70 Q90,5 190,40" stroke="rgb(228,71,43)" stroke-width="2" stroke-dasharray="5 3" fill="none"><animate attributeName="stroke-dashoffset" from="16" to="0" dur="1s" repeatCount="indefinite"/></path></svg>
+              <span class="absolute top-4 left-6 mono bg-cream border border-line px-2 py-0.5 rounded">CAB-409 en-route</span>
+              <span class="absolute bottom-4 right-6 mono bg-cream border border-line px-2 py-0.5 rounded">CAB-112 standby</span>
+            </div>
+            <div class="grid grid-cols-3 gap-2 text-center"><div class="border border-line rounded p-2"><div class="mono text-graphite !text-[9px]">Dispatches</div><b class="fd">1,492</b></div><div class="border border-line rounded p-2"><div class="mono text-graphite !text-[9px]">SLA met</div><b class="fd text-ok">99.4%</b></div><div class="border border-line rounded p-2"><div class="mono text-graphite !text-[9px]">Allocation</div><b class="fd text-verm">1.8s</b></div></div>
+          </div>
+        </div>
+      </article>
+      <!-- 02 -->
+      <article class="slide s2"><span class="bignum">02</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Case 02</span> · <span class="text-graphite">Hyperlocal Discovery · Mysuru</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">DigiPod — Community Directory &amp; Educational Knowledge Engine</h3>
+          <p class="text-graphite leading-relaxed">A community marketplace indexing 480+ local vendors and academies across Mysuru, with instant sub-second search, proximity weighting, geo-fenced filters and dynamic SSR previews.</p>
+          <ul class="text-sm space-y-2">
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>18ms search pipeline:</b> Algolia client caching with debounced normalization.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Instant filters:</b> Zero server round-trips for faceted breakdowns.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Lightweight GIS:</b> Leaflet tiles lazy-loaded without blocking FCP.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">TypeScript</span><span class="pill pill-t">Next.js SSR</span><span class="pill pill-t">Algolia</span><span class="pill pill-t">Leaflet</span></div>
+        </div>
+        <div class="mock">
+          <div class="px-3 py-2 border-b border-line mono text-graphite">digipod.mysuru.hub/catalogue</div>
+          <div class="p-4 bg-paper space-y-2">
+            <div class="border border-line rounded px-3 py-2 text-sm bg-cream">Micro-roasteries in Gokulam</div>
+            <div class="flex justify-between mono text-graphite"><span>Radius &lt; 3km</span><span class="text-teal">Index hit: 18ms</span></div>
+            <div class="border border-line rounded p-2 bg-cream flex justify-between items-center"><div><b class="fd text-sm block">Heritage Roast Lab</b><span class="mono text-graphite !text-[10px]">4.9 ★ · 420m</span></div><span class="pill">Open</span></div>
+            <div class="border border-line rounded p-2 bg-cream flex justify-between items-center"><div><b class="fd text-sm block">Kaveri Bean Artisans</b><span class="mono text-graphite !text-[10px]">4.8 ★ · 1.2km</span></div><span class="pill">Open</span></div>
+          </div>
+        </div>
+      </article>
+      <!-- 03 -->
+      <article class="slide s3"><span class="bignum">03</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Case 03</span> · <span class="text-graphite">Mission Critical Ops · Infrastructure</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">Machfox — Indian Railway Contractor Ops &amp; Compliance Hub</h3>
+          <p class="text-graphite leading-relaxed">Web execution suite for railway contractors handling track rehabilitation, tender SLA verification and hardware auditing — built for low-bandwidth rail yards and high tabular density.</p>
+          <ul class="text-sm space-y-2">
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>92% faster SLA audits:</b> Automated verification matrices in real time.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Offline logging:</b> Local indexed transactions sync when 4G resumes.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Grid virtualization:</b> 10,000+ muster roll entries at 60 FPS.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">React 18</span><span class="pill pill-t">TanStack Table</span><span class="pill pill-t">Zustand</span><span class="pill pill-t">Vite</span></div>
+        </div>
+        <div class="mock mono">
+          <div class="px-3 py-2 border-b border-line flex justify-between text-graphite"><span>Machfox // Rail-zone-SW-4</span><span class="text-ok">Grid OK</span></div>
+          <div class="p-3 bg-paper text-[10px]">
+            <div class="grid grid-cols-4 gap-1 text-graphite border-b border-line pb-1"><span>Section</span><span>Status</span><span>Ballast</span><span>Audit</span></div>
+            <div class="grid grid-cols-4 gap-1 py-1.5 border-b border-line"><span>KM 142/8</span><span class="text-ok">Passed</span><span>98.2%</span><span class="text-teal">Verified</span></div>
+            <div class="grid grid-cols-4 gap-1 py-1.5 border-b border-line"><span>KM 143/2</span><span class="text-verm">Flagged</span><span>84.0%</span><span class="text-verm">Re-check</span></div>
+            <div class="grid grid-cols-4 gap-1 py-1.5"><span>KM 144/9</span><span class="text-ok">Passed</span><span>99.1%</span><span class="text-teal">Verified</span></div>
+          </div>
+        </div>
+      </article>
+      <!-- 04 -->
+      <article class="slide s4 band-dark"><span class="bignum">04</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Case 04</span> · <span class="text-graphite">Enterprise Internal Platform</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">Intra 3.0 — Internal Workflow &amp; Organization Scorecard</h3>
+          <p class="text-graphite leading-relaxed">Replaced fragmented legacy spreadsheets with a unified operational system: multi-department milestones, real-time KPI tracking and engineering resource allocation.</p>
+          <ul class="text-sm space-y-2">
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>−82% scorecard delay:</b> Continuous computation replaced manual Friday reviews.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Automated rollups:</b> Server Actions generating burndowns with near-zero overhead.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Executive stream:</b> Dense dashboard with role-based views.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">Next.js 14</span><span class="pill pill-t">Server Actions</span><span class="pill pill-t">PostgreSQL</span><span class="pill pill-t">TanStack Table</span></div>
+        </div>
+        <div class="mock p-4 space-y-4 bg-paper">
+          <div class="mono flex justify-between"><span class="font-semibold">Intra 3.0 // Sprint orchestration</span><span class="text-teal">Q1</span></div>
+          <div><div class="flex justify-between text-xs mb-1"><span>Sprint velocity</span><b>94% target</b></div><div class="bar"><i style="--w:94%;background:rgb(var(--teal))"></i></div></div>
+          <div><div class="flex justify-between text-xs mb-1"><span>Scorecard latency</span><b class="text-verm">−82% delay</b></div><div class="bar"><i style="--w:18%"></i></div></div>
+          <p class="text-xs text-graphite border border-line rounded p-2">Automated rollups compile 14 team feeds into an executive digest in under 1.2 seconds.</p>
+        </div>
+      </article>
+      <!-- 05 -->
+      <article class="slide s5"><span class="bignum">05</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Case 05</span> · <span class="text-graphite">Edge Computer Vision · Safety</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">Shell Oman — Real-Time AI CCTV Hazard Telemetry Dashboard</h3>
+          <p class="text-graphite leading-relaxed">Edge-monitoring frontend deployed across fuel depots in Oman, rendering live computer-vision bounding boxes, PPE infractions and perimeter breaches over low-latency feeds.</p>
+          <ul class="text-sm space-y-2">
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>16.2ms render loop:</b> WebGL canvas overlay avoiding UI thread starvation.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>60 FPS streaming:</b> Multi-camera bounding boxes with zero DOM leakage.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Instant alerts:</b> Sub-100ms audible and visual breach triggers.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">WebGL</span><span class="pill pill-t">Canvas API</span><span class="pill pill-t">WebSockets</span><span class="pill pill-t">React</span></div>
+        </div>
+        <div class="mock mono">
+          <div class="px-3 py-2 border-b border-line flex justify-between"><span>Shell CCTV HUD // CAM_04</span><span class="text-verm">● AI detection</span></div>
+          <div class="relative h-48 bg-sand overflow-hidden">
+            <div class="absolute top-5 left-6 border-2 border-ok bg-ok/10 text-ok px-1 text-[9px] font-bold">[PERSON_01] PPE: verified</div>
+            <div class="absolute bottom-8 right-6 border-2 border-verm bg-verm/10 text-verm px-1 text-[9px] font-bold animate-pulse">[ALERT] No helmet detected</div>
+            <div class="absolute left-0 right-0 h-px bg-verm/70" style="animation:scan 3s linear infinite"></div>
+            <div class="absolute bottom-2 left-2 bg-ink text-paper text-[9px] px-1.5 py-0.5 rounded">Frame 16.2ms // 60 FPS</div>
+          </div>
+        </div>
+      </article>
+      <!-- 06 -->
+      <article class="slide s6"><span class="bignum">06</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Case 06</span> · <span class="text-graphite">Distributed EdTech Platform</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">Edubotix — Digital Campus &amp; High-Stakes Examination Engine</h3>
+          <p class="text-graphite leading-relaxed">Secure browser test-taking interface handling university exams for 40,000 simultaneous candidates — with zero data loss even during complete network cutoffs.</p>
+          <ul class="text-sm space-y-2">
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Offline autosave:</b> Service Worker storage with IndexedDB writes.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>40,000 concurrent sessions:</b> Edge delivery with deterministic state sync.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Checkpointing:</b> Tamper-resistant response signatures submitted asynchronously.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">Service Workers</span><span class="pill pill-t">IndexedDB</span><span class="pill pill-t">Next.js</span><span class="pill pill-t">TypeScript</span></div>
+        </div>
+        <div class="mock p-4 bg-paper space-y-3 mono">
+          <div class="flex justify-between"><span class="font-semibold">Edubotix // secure session</span><span class="text-ok">Sync armed</span></div>
+          <div class="space-y-2 text-[11px]"><div class="flex justify-between"><span>Concurrent candidates</span><b>40,000</b></div><div class="flex justify-between"><span>IndexedDB buffer</span><b class="text-ok">0 drop</b></div><div class="flex justify-between"><span>Digest</span><span class="text-graphite">SHA-256</span></div></div>
+          <p class="normal-case tracking-normal text-[11px] text-graphite border border-line rounded p-2">When the internet disconnects mid-exam, answers are stored locally and auto-submitted on reconnect.</p>
+        </div>
+      </article>
+      <!-- 07 bonus -->
+      <article class="slide s7"><span class="bignum">07</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Mobile bonus</span> · <span class="text-graphite">Native Telehealth App</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">AtMed Healthcare — Native Patient-Clinician Consultation App</h3>
+          <p class="text-graphite leading-relaxed">Native Android engineering using Jetpack Compose, WebRTC video synchronization and end-to-end encrypted medical record caching with SQLite.</p>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">Kotlin</span><span class="pill pill-t">Compose</span><span class="pill pill-t">WebRTC</span><span class="pill pill-t">SQLite</span></div>
+        </div>
+        <div class="flex justify-center"><div class="mock w-52 !rounded-[2rem] p-3 bg-paper"><div class="rounded-[1.5rem] bg-sand h-72 flex flex-col items-center justify-center gap-3"><span class="ms !text-5xl text-teal floaty">videocam</span><span class="mono text-graphite">Consultation live</span><span class="pill">WebRTC · E2E</span></div></div></div>
+      </article>
+    </div>
+    <div class="mt-6 flex items-center gap-4"><div class="flex-1 h-0.5 bg-line relative overflow-hidden rounded"><div id="sp" class="absolute inset-y-0 left-0 bg-verm transition-all duration-300" style="width:14%"></div></div><div id="dots" class="flex gap-2"></div></div>
+  </div>
+</section>
