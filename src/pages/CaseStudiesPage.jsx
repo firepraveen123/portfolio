@@ -1,4 +1,5 @@
 import React from 'react';
+import SplitText from '../components/SplitText';
 
 export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
   const scrollToCase = (caseId) => {
@@ -9,37 +10,37 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
   };
 
   return (
-    <main className="w-full pt-24 bg-surface min-h-screen px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20">
+    <main className="w-full pt-20 sm:pt-24 bg-surface min-h-screen px-3.5 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 overflow-x-hidden">
       <div className="flex flex-col w-full">
 
         {/* Editorial Header & Archival Masthead */}
-        <section className="relative pt-space-md pb-space-xl">
+        <section className="relative pt-4 sm:pt-space-md pb-8 sm:pb-space-xl">
           <div className="flex flex-col gap-space-sm">
-            <div className="flex flex-wrap items-center gap-space-xs">
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-space-xs">
               <button
                 onClick={() => onNavigate('home', 'hero')}
-                className="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-sm text-label-sm uppercase tracking-wider transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high hover:bg-primary hover:text-on-primary text-primary font-label-sm text-xs sm:text-label-sm uppercase tracking-wider transition-colors cursor-pointer"
               >
                 <span>← Back to Overview</span>
               </button>
-              <span className="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+              <span className="px-2.5 sm:px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-[10px] sm:text-label-sm uppercase tracking-wider">
                 Archive 01 • In-Depth Architectural Dispatches
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
-              <span className="font-label-sm text-label-sm text-on-surface-variant">Bengaluru Engineering Desk</span>
+              <span className="font-label-sm text-[11px] sm:text-label-sm text-on-surface-variant">Bengaluru Engineering Desk</span>
             </div>
 
-            <h1 className="font-headline-lg text-headline-lg lg:font-display-xl lg:text-display-xl text-on-surface max-w-4xl tracking-tight mt-space-xs">
-              Engineering case studies &amp; real-world products.
+            <h1 className="font-headline-lg text-2xl sm:text-3xl md:text-4xl lg:text-display-xl text-on-surface max-w-4xl tracking-tight mt-space-xs font-normal aovix-reveal-text aovix-delay-1">
+              <SplitText text="Engineering case studies & real-world products." delay={0.05} />
             </h1>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start pt-space-xs">
-              <p className="lg:col-span-7 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-space-lg items-start pt-space-xs">
+              <p className="lg:col-span-7 font-body-lg text-sm sm:text-body-lg text-on-surface-variant leading-relaxed aovix-reveal-text aovix-delay-2">
                 A systematic breakdown of six flagship production architectures tackling high-throughput real-time telemetry, complex enterprise state machines, low-latency transit dispatch, hyperlocal discovery, and resilient offline-first systems. Every case details the actual engineering friction, technical trade-offs, and measurable browser metrics.
               </p>
 
               {/* Ledger Index Box */}
-              <div className="lg:col-span-5 p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs border border-outline-variant/30 shadow-sm">
+              <div className="lg:col-span-5 p-3.5 sm:p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs border border-outline-variant/30 shadow-sm aovix-reveal-image aovix-delay-2">
                 <div className="flex items-center justify-between pb-1 border-b border-outline-variant/20">
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Ledger Index</span>
                   <span className="font-label-sm text-xs font-mono text-primary font-semibold">6 Primary Case Studies</span>
@@ -129,7 +130,7 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
         <article id="case-silicon" className="relative mb-space-xl pt-space-lg border-t border-outline-variant/30 scroll-mt-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
             {/* Left Column: Metadata, Context & Field Stamp */}
-            <aside className="lg:col-span-4 flex flex-col gap-space-md">
+            <aside className="lg:col-span-4 flex flex-col gap-space-md aovix-reveal-text aovix-delay-1">
               <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm border border-outline-variant/20">
                 <div className="flex items-center justify-between">
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Case 01 / Transit Logistics</span>
@@ -139,7 +140,9 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
                   </span>
                 </div>
                 <div>
-                  <h2 className="font-headline-md text-headline-md text-on-surface leading-tight font-bold">Silicon Drive</h2>
+                  <h2 className="font-headline-md text-headline-md text-on-surface leading-tight font-bold">
+                    <SplitText text="Silicon Drive" />
+                  </h2>
                   <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Corporate Cab Booking &amp; Fleet Transportation Management</p>
                 </div>
                 <div className="flex flex-col gap-1 pt-space-xs font-label-sm text-label-sm text-on-surface-variant border-t border-outline-variant/20">
@@ -180,7 +183,7 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
             {/* Right Reading Column: The Problem, The Breakthrough & Architectural Console */}
             <div className="lg:col-span-8 flex flex-col gap-space-lg">
               {/* Architectural Visual Console */}
-              <div className="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-md border border-outline-variant/20 shadow-sm">
+              <div className="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-md border border-outline-variant/20 shadow-sm aovix-reveal-image aovix-delay-2">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-xs">
                   <div className="flex items-center gap-space-xs">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse"></span>
@@ -192,17 +195,17 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
                 </div>
 
                 {/* Fleet Hero Image Display */}
-                <div className="rounded-lg overflow-hidden relative shadow-sm border border-outline-variant/30 bg-[#0a1120]">
+                <div data-cursor-label="EXPLORE" className="rounded-lg overflow-hidden relative shadow-sm border border-outline-variant/30 bg-[#0a1120] group/img">
                   <img
-                    className="w-full h-72 lg:h-80 object-cover object-top"
+                    className="w-full h-52 xs:h-64 sm:h-72 lg:h-80 object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/img:scale-105"
                     alt="Silicon Drive Corporate Fleet - Moving People Moving Business"
                     src="/images/silicon-drive-fleet.jpg"
                   />
-                  <div className="absolute top-3 left-3 bg-inverse-surface/85 backdrop-blur-md px-space-sm py-1 rounded text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-space-xs font-mono">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Silicon Drive • Active Fleet Operations
+                  <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-inverse-surface/85 backdrop-blur-md px-2 sm:px-space-sm py-1 rounded text-inverse-on-surface font-label-sm text-[10px] sm:text-label-sm flex items-center gap-1.5 font-mono max-w-[calc(100%-20px)] truncate">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                    <span className="truncate">Silicon Drive • Active Fleet Operations</span>
                   </div>
-                  <div className="absolute bottom-2 right-2 bg-slate-900/90 border border-slate-700/80 rounded px-2.5 py-1 text-[11px] text-slate-300 font-mono shadow-md flex items-center gap-2">
+                  <div className="absolute bottom-2 right-2 bg-slate-900/90 border border-slate-700/80 rounded px-2 sm:px-2.5 py-1 text-[10px] sm:text-[11px] text-slate-300 font-mono shadow-md flex items-center gap-1.5 sm:gap-2 max-w-[calc(100%-20px)] truncate">
                     <span className="text-emerald-400 font-bold">128 CABS LIVE</span>
                     <span className="text-slate-500">|</span>
                     <span className="text-cyan-400">0 WAIT QUEUE</span>
@@ -211,7 +214,7 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
               </div>
 
               {/* Problem & Solution Dispatches */}
-              <div className="flex flex-col gap-space-md">
+              <div className="flex flex-col gap-space-md aovix-reveal-text aovix-delay-2">
                 <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs border border-outline-variant/20">
                   <div className="flex items-center gap-space-xs">
                     <span className="font-label-sm text-label-sm uppercase tracking-wider text-error font-bold">The Engineering Friction</span>
@@ -255,14 +258,16 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
         <article id="case-digipod" className="relative mb-space-xl pt-space-lg border-t border-outline-variant/30 scroll-mt-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
             {/* Left Column: Metadata & Context */}
-            <aside className="lg:col-span-4 flex flex-col gap-space-md">
+            <aside className="lg:col-span-4 flex flex-col gap-space-md aovix-reveal-text aovix-delay-1">
               <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm border border-outline-variant/20">
                 <div className="flex items-center justify-between">
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-amber-700 font-bold">Case 02 / Hyperlocal Discovery</span>
                   <span className="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono">MYSURU REGION</span>
                 </div>
                 <div>
-                  <h2 className="font-headline-md text-headline-md text-on-surface leading-tight font-bold">DigiPod</h2>
+                  <h2 className="font-headline-md text-headline-md text-on-surface leading-tight font-bold">
+                    <SplitText text="DigiPod" />
+                  </h2>
                   <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Local Discovery &amp; Learning Platform</p>
                 </div>
                 <div className="flex flex-col gap-1 pt-space-xs font-label-sm text-label-sm text-on-surface-variant border-t border-outline-variant/20">
@@ -307,7 +312,7 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
             {/* Right Reading Column */}
             <div className="lg:col-span-8 flex flex-col gap-space-lg">
               {/* Directory Visualization Mockup / Screen Capture */}
-              <div className="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-md border border-outline-variant/20 shadow-sm">
+              <div className="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-md border border-outline-variant/20 shadow-sm aovix-reveal-image aovix-delay-2">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-xs">
                   <div className="flex items-center gap-space-xs">
                     <span className="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
@@ -319,21 +324,21 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
                 </div>
 
                 {/* Dashboard Screen UI Capture */}
-                <div className="rounded-lg overflow-hidden relative shadow-sm border border-outline-variant/30">
+                <div data-cursor-label="DIGIPOD" className="rounded-lg overflow-hidden relative shadow-sm border border-outline-variant/30 group/img">
                   <img
-                    className="w-full h-80 lg:h-96 object-cover object-top"
+                    className="w-full h-52 xs:h-64 sm:h-80 lg:h-96 object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/img:scale-105"
                     alt="DigiPod Local Discovery and Learning Platform Dashboard Overview"
                     src="/images/digipod-dashboard.png"
                   />
-                  <div className="absolute bottom-2 left-2 px-space-sm py-1 rounded bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-space-xs font-mono">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
-                    Dashboard Overview • User Insights, Vendor Metrics &amp; Content Management
+                  <div className="absolute bottom-2 left-2 px-2 sm:px-space-sm py-1 rounded bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface font-label-sm text-[10px] sm:text-label-sm flex items-center gap-1.5 font-mono max-w-[calc(100%-20px)] truncate">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shrink-0"></span>
+                    <span className="truncate">Dashboard Overview • User Insights, Vendor Metrics &amp; Content Management</span>
                   </div>
                 </div>
               </div>
 
               {/* Friction & Solution */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md aovix-reveal-text aovix-delay-2">
                 <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs border border-outline-variant/20">
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-error font-bold">Friction Point</span>
                   <h3 className="font-headline-sm text-headline-sm text-on-surface">Fragmented Local Markets &amp; Lost Reach</h3>
@@ -359,14 +364,16 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
         <article id="case-machfox" className="relative mb-space-xl pt-space-lg border-t border-outline-variant/30 scroll-mt-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
             {/* Left Column: Metadata & Context */}
-            <aside className="lg:col-span-4 flex flex-col gap-space-md">
+            <aside className="lg:col-span-4 flex flex-col gap-space-md aovix-reveal-text aovix-delay-1">
               <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm border border-outline-variant/20">
                 <div className="flex items-center justify-between">
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Case 03 / Railway Compliance</span>
                   <span className="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono">RAILWAY CONTRACTS</span>
                 </div>
                 <div>
-                  <h2 className="font-headline-md text-headline-md text-on-surface leading-tight font-bold">Machfox</h2>
+                  <h2 className="font-headline-md text-headline-md text-on-surface leading-tight font-bold">
+                    <SplitText text="Machfox" />
+                  </h2>
                   <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Service Management System for Railway Contracts</p>
                 </div>
                 <div className="flex flex-col gap-1 pt-space-xs font-label-sm text-label-sm text-on-surface-variant border-t border-outline-variant/20">
@@ -407,7 +414,7 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
             {/* Right Reading Column */}
             <div className="lg:col-span-8 flex flex-col gap-space-lg">
               {/* MachFox Interface Display */}
-              <div className="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-md border border-outline-variant/20 shadow-sm">
+              <div className="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-md border border-outline-variant/20 shadow-sm aovix-reveal-image aovix-delay-2">
                 <div className="flex items-center justify-between">
                   <span className="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-semibold font-mono">
                     MachFox Service Management System • Web &amp; Mobile Interfaces
@@ -415,21 +422,21 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
                   <span className="font-label-sm text-label-sm text-on-surface-variant font-mono">Railway Contract Operations</span>
                 </div>
 
-                <div className="rounded-lg overflow-hidden relative shadow-sm border border-outline-variant/30">
+                <div data-cursor-label="MACHFOX" className="rounded-lg overflow-hidden relative shadow-sm border border-outline-variant/30 group/img">
                   <img
-                    className="w-full h-80 lg:h-96 object-cover object-top"
+                    className="w-full h-52 xs:h-64 sm:h-80 lg:h-96 object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/img:scale-105"
                     alt="MachFox Railway Service Contracts Management Dashboard and Mobile Field App"
                     src="/images/machfox-dashboard.jpg"
                   />
-                  <div className="absolute bottom-2 left-2 px-space-sm py-1 rounded bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-space-xs font-mono">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
-                    Centralized Operations: Divisions, Routes, Machines &amp; Field Staff
+                  <div className="absolute bottom-2 left-2 px-2 sm:px-space-sm py-1 rounded bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface font-label-sm text-[10px] sm:text-label-sm flex items-center gap-1.5 font-mono max-w-[calc(100%-20px)] truncate">
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shrink-0"></span>
+                    <span className="truncate">Centralized Operations: Divisions, Routes, Machines &amp; Field Staff</span>
                   </div>
                 </div>
               </div>
 
               {/* Friction & Solution */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md aovix-reveal-text aovix-delay-2">
                 <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs border border-outline-variant/20">
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-error font-bold">Friction Point</span>
                   <h3 className="font-headline-sm text-headline-sm text-on-surface">The Clipboard &amp; Disputed Audit Logjam</h3>
@@ -455,14 +462,16 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
         <article id="case-intra" className="relative mb-space-xl pt-space-lg border-t border-outline-variant/30 scroll-mt-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
             {/* Left Column: Metadata & Notes */}
-            <aside className="lg:col-span-4 flex flex-col gap-space-md">
+            <aside className="lg:col-span-4 flex flex-col gap-space-md aovix-reveal-text aovix-delay-1">
               <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm border border-outline-variant/20">
                 <div className="flex items-center justify-between">
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Case 04 / Operations &amp; HR</span>
                   <span className="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono">ENTERPRISE HROS</span>
                 </div>
                 <div>
-                  <h2 className="font-headline-md text-headline-md text-on-surface leading-tight font-bold">Intra 3.0</h2>
+                  <h2 className="font-headline-md text-headline-md text-on-surface leading-tight font-bold">
+                    <SplitText text="Intra 3.0" />
+                  </h2>
                   <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Internal Workflow &amp; Performance Management System</p>
                 </div>
                 <div className="flex flex-col gap-1 pt-space-xs font-label-sm text-label-sm text-on-surface-variant border-t border-outline-variant/20">
@@ -501,7 +510,7 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
             {/* Right Reading Column */}
             <div className="lg:col-span-8 flex flex-col gap-space-lg">
               {/* Interactive Preview Mockup Box / Screen Capture */}
-              <div className="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-md border border-outline-variant/20 shadow-sm">
+              <div className="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-md border border-outline-variant/20 shadow-sm aovix-reveal-image aovix-delay-2">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-xs">
                   <div className="flex items-center gap-space-xs">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -511,15 +520,15 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
                   </div>
                   <span className="font-label-sm text-label-sm text-on-surface-variant font-mono">Enterprise Workflow HROS</span>
                 </div>
-                <div className="rounded-lg overflow-hidden relative shadow-sm border border-outline-variant/30">
+                <div data-cursor-label="INTRA 3.0" className="rounded-lg overflow-hidden relative shadow-sm border border-outline-variant/30 group/img">
                   <img
-                    className="w-full h-80 lg:h-96 object-cover object-top"
+                    className="w-full h-52 xs:h-64 sm:h-80 lg:h-96 object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/img:scale-105"
                     alt="INTRA Enterprise Workflow & KPI Performance Management Dashboard"
                     src="/images/intra-dashboard.jpg"
                   />
-                  <div className="absolute bottom-2 left-2 px-space-sm py-1 rounded bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-space-xs font-mono">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    SE Dashboard • KPI 2.0 (110% Score), Opportunities &amp; Monthly Utilization
+                  <div className="absolute bottom-2 left-2 px-2 sm:px-space-sm py-1 rounded bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface font-label-sm text-[10px] sm:text-label-sm flex items-center gap-1.5 font-mono max-w-[calc(100%-20px)] truncate">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                    <span className="truncate">SE Dashboard • KPI 2.0 (110% Score), Opportunities &amp; Monthly Utilization</span>
                   </div>
                 </div>
 
@@ -544,7 +553,7 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
               </div>
 
               {/* Problem & Solution */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-space-md aovix-reveal-text aovix-delay-2">
                 <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs border border-outline-variant/20">
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-error font-bold">Friction Point</span>
                   <h3 className="font-headline-sm text-headline-sm text-on-surface">The 21-Day Appraisal Logjam</h3>
@@ -570,14 +579,16 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
         <article id="case-shell" className="relative mb-space-xl pt-space-lg border-t border-outline-variant/30 scroll-mt-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
             {/* Left Column: Metadata, Context & Field Stamp */}
-            <aside className="lg:col-span-4 flex flex-col gap-space-md">
+            <aside className="lg:col-span-4 flex flex-col gap-space-md aovix-reveal-text aovix-delay-1">
               <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm border border-outline-variant/20">
                 <div className="flex items-center justify-between">
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Case 05 / CCTV Telemetry</span>
                   <span className="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono">AI CCTV TELEMETRY</span>
                 </div>
                 <div>
-                  <h2 className="font-headline-md text-headline-md text-on-surface leading-tight font-bold">Shell Oman</h2>
+                  <h2 className="font-headline-md text-headline-md text-on-surface leading-tight font-bold">
+                    <SplitText text="Shell Oman" />
+                  </h2>
                   <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Real-Time AI CCTV Video Analytics Platform</p>
                 </div>
                 <div className="flex flex-col gap-1 pt-space-xs font-label-sm text-label-sm text-on-surface-variant border-t border-outline-variant/20">
@@ -618,7 +629,7 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
             {/* Right Reading Column */}
             <div className="lg:col-span-8 flex flex-col gap-space-lg">
               {/* Architectural Visual Artifact & Pipeline Chart */}
-              <div className="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-md border border-outline-variant/20 shadow-sm">
+              <div className="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-md border border-outline-variant/20 shadow-sm aovix-reveal-image aovix-delay-2">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-xs">
                   <div className="flex items-center gap-space-xs">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
@@ -661,21 +672,21 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
                 </div>
 
                 {/* Screen UI Capture */}
-                <div className="rounded-lg overflow-hidden relative shadow-sm border border-outline-variant/30">
+                <div data-cursor-label="SHELL" className="rounded-lg overflow-hidden relative shadow-sm border border-outline-variant/30 group/img">
                   <img
-                    className="w-full h-80 object-cover object-top"
+                    className="w-full h-52 xs:h-64 sm:h-80 lg:h-96 object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/img:scale-105"
                     alt="Shell Oman AI CCTV Event Severity Intelligence and Incident Summary Dashboard"
                     src="/images/shell-oman-dashboard.png"
                   />
-                  <div className="absolute bottom-2 left-2 px-space-sm py-1 rounded bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-space-xs font-mono">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Shell Oman • Event Severity Intelligence • 957 Real-Time CCTV Incidents
+                  <div className="absolute bottom-2 left-2 px-2 sm:px-space-sm py-1 rounded bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface font-label-sm text-[10px] sm:text-label-sm flex items-center gap-1.5 font-mono max-w-[calc(100%-20px)] truncate">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                    <span className="truncate">Shell Oman • Event Severity Intelligence • 957 Real-Time CCTV Incidents</span>
                   </div>
                 </div>
               </div>
 
               {/* Problem & Solution Dispatches */}
-              <div className="flex flex-col gap-space-md">
+              <div className="flex flex-col gap-space-md aovix-reveal-text aovix-delay-2">
                 <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs border border-outline-variant/20">
                   <div className="flex items-center gap-space-xs">
                     <span className="font-label-sm text-label-sm uppercase tracking-wider text-error font-bold">The Engineering Friction</span>
@@ -719,14 +730,16 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
         <article id="case-edubotix" className="relative mb-space-xl pt-space-lg border-t border-outline-variant/30 scroll-mt-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
             {/* Left Column: Metadata & Notes */}
-            <aside className="lg:col-span-4 flex flex-col gap-space-md">
+            <aside className="lg:col-span-4 flex flex-col gap-space-md aovix-reveal-text aovix-delay-1">
               <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm border border-outline-variant/20">
                 <div className="flex items-center justify-between">
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-bold">Case 06 / Distributed State</span>
                   <span className="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface-variant font-mono">ACTIVE STACK</span>
                 </div>
                 <div>
-                  <h2 className="font-headline-md text-headline-md text-on-surface leading-tight font-bold">Edubotix</h2>
+                  <h2 className="font-headline-md text-headline-md text-on-surface leading-tight font-bold">
+                    <SplitText text="Edubotix" />
+                  </h2>
                   <p className="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Digitized School &amp; College Data Portal • Exam Question Bank &amp; Mock Tests</p>
                 </div>
                 <div className="flex flex-col gap-1 pt-space-xs font-label-sm text-label-sm text-on-surface-variant border-t border-outline-variant/20">
@@ -764,22 +777,22 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
             {/* Right Reading Column */}
             <div className="lg:col-span-8 flex flex-col gap-space-lg">
               {/* Offline State Machine Visualizer */}
-              <div className="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-md border border-outline-variant/20 shadow-sm">
+              <div className="rounded-xl overflow-hidden bg-surface-container-low p-space-md flex flex-col gap-space-md border border-outline-variant/20 shadow-sm aovix-reveal-image aovix-delay-2">
                 <div className="flex items-center justify-between">
                   <span className="font-label-sm text-label-sm text-on-surface uppercase tracking-wider font-semibold font-mono">
                     Offline Sync Architecture • Cryptographic Store
                   </span>
                   <span className="font-label-sm text-label-sm text-on-surface-variant font-mono">Local-First Persistence</span>
                 </div>
-                <div className="rounded-lg overflow-hidden relative shadow-sm border border-outline-variant/30">
+                <div data-cursor-label="EDUBOTIX" className="rounded-lg overflow-hidden relative shadow-sm border border-outline-variant/30 group/img">
                   <img
-                    className="w-full h-80 lg:h-96 object-cover object-top"
+                    className="w-full h-52 xs:h-64 sm:h-80 lg:h-96 object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover/img:scale-105"
                     alt="Edubotix Comprehensive School &amp; College Data Portal, Real-time Attendance &amp; Bus Tracking"
                     src="/images/edubotix-platform.jpg"
                   />
-                  <div className="absolute bottom-2 left-2 px-space-sm py-1 rounded bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm flex items-center gap-space-xs font-mono">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Edubotix • 1,24,000+ Students, Attendance &amp; Live Transit
+                  <div className="absolute bottom-2 left-2 px-2 sm:px-space-sm py-1 rounded bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface font-label-sm text-[10px] sm:text-label-sm flex items-center gap-1.5 font-mono max-w-[calc(100%-20px)] truncate">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+                    <span className="truncate">Edubotix • 1,24,000+ Students, Attendance &amp; Live Transit</span>
                   </div>
                 </div>
 
@@ -799,7 +812,7 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
               </div>
 
               {/* Problem & Impact Breakdown */}
-              <div className="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-xs border border-outline-variant/20">
+              <div className="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-xs border border-outline-variant/20 aovix-reveal-text aovix-delay-2">
                 <span className="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-bold">The Field Reality</span>
                 <h3 className="font-headline-sm text-headline-sm text-on-surface">Handling Network Turbulence at 40,000 Concurrent Sessions</h3>
                 <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -813,7 +826,7 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
         {/* ======================================================== */}
         {/* SECTION 02: PRODUCTION ENGAGEMENTS & AUXILIARY LEDGER    */}
         {/* ======================================================== */}
-        <div className="w-full my-space-lg flex items-center justify-between border-t border-outline-variant/40 pt-space-md">
+        <div className="w-full my-space-lg flex items-center justify-between border-t border-outline-variant/40 pt-space-md aovix-reveal-text aovix-delay-1">
           <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-mono">
             Section 02 • Production Engagements &amp; Notable Systems
           </span>
@@ -824,13 +837,15 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
         <section className="mb-space-xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-space-md">
             {/* AtMed Healthcare Card */}
-            <div id="case-atmed" className="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md hover:bg-surface-container transition-all duration-300 card-lift border border-outline-variant/20 scroll-mt-24">
+            <div id="case-atmed" className="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md hover:bg-surface-container transition-all duration-300 card-lift border border-outline-variant/20 scroll-mt-24 aovix-reveal-image aovix-delay-1">
               <div className="flex flex-col gap-space-xs">
                 <div className="flex items-center justify-between">
                   <span className="font-label-sm text-label-sm text-tertiary uppercase tracking-wider font-bold">Healthcare Mobile Platform</span>
                   <span className="font-label-sm text-xs text-on-surface-variant font-mono font-medium">Native Android</span>
                 </div>
-                <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold">AtMed Healthcare</h3>
+                <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold">
+                  <SplitText text="AtMed Healthcare" />
+                </h3>
                 <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
                   AtMed Healthcare is an Android application offering a comprehensive platform for patients to manage their healthcare needs, including connecting with doctors, booking diagnostic tests, accessing medical equipment, maintaining health records, and exploring wellness resources. As part of the maintenance project, I actively work on enhancing existing features, resolving bugs, and ensuring the application functions seamlessly.
                 </p>
@@ -850,13 +865,15 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
             </div>
 
             {/* Strapi CMS & Data Pipeline Card */}
-            <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md hover:bg-surface-container transition-all duration-300 card-lift border border-outline-variant/20">
+            <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md hover:bg-surface-container transition-all duration-300 card-lift border border-outline-variant/20 aovix-reveal-image aovix-delay-2">
               <div className="flex flex-col gap-space-xs">
                 <div className="flex items-center justify-between">
                   <span className="font-label-sm text-label-sm text-primary uppercase tracking-wider font-bold">Content Architecture</span>
                   <span className="font-label-sm text-xs text-on-surface-variant font-mono">Next.js Headless</span>
                 </div>
-                <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold">Data Cache Tuning &amp; Strapi CMS</h3>
+                <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold">
+                  <SplitText text="Data Cache Tuning & Strapi CMS" />
+                </h3>
                 <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
                   Engineered Next.js App Router multi-layer caching with headless Strapi CMS webhook revalidation, crushing TTFB and boosting payload throughput by 30%.
                 </p>
@@ -875,13 +892,15 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
             </div>
 
             {/* Cloud Architecture Card */}
-            <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md hover:bg-surface-container transition-all duration-300 card-lift border border-outline-variant/20">
+            <div className="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between gap-space-md hover:bg-surface-container transition-all duration-300 card-lift border border-outline-variant/20 aovix-reveal-image aovix-delay-3">
               <div className="flex flex-col gap-space-xs">
                 <div className="flex items-center justify-between">
                   <span className="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-bold">Cloud Infrastructure</span>
                   <span className="font-label-sm text-xs text-on-surface-variant font-mono">Sep 2024</span>
                 </div>
-                <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold">AWS Verified Cloud Practitioner</h3>
+                <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold">
+                  <SplitText text="AWS Verified Cloud Practitioner" />
+                </h3>
                 <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
                   Certified AWS Cloud Practitioner architecting high-availability web assets on CloudFront CDN distributions, S3 asset buckets, and Dockerized microservice containers.
                 </p>
@@ -902,7 +921,7 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
         </section>
 
         {/* Editorial Philosophy Callout Box */}
-        <section className="mb-space-xl p-space-lg rounded-xl bg-surface-container-high relative overflow-hidden border border-outline-variant/30">
+        <section className="mb-space-xl p-space-lg rounded-xl bg-surface-container-high relative overflow-hidden border border-outline-variant/30 aovix-reveal-text aovix-delay-1">
           <div className="flex flex-col lg:flex-row gap-space-lg items-start lg:items-center justify-between">
             <div className="flex flex-col gap-space-xs max-w-2xl">
               <span className="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Architectural Principles</span>
@@ -930,13 +949,15 @@ export default function CaseStudiesPage({ onNavigate, onCopyEmail }) {
         </section>
 
         {/* Call to Action & Navigation */}
-        <section className="p-space-lg rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-lg mb-space-lg shadow-sm border border-outline-variant/20">
+        <section className="p-space-lg rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-lg mb-space-lg shadow-sm border border-outline-variant/20 aovix-reveal-image aovix-delay-2">
           <div className="flex flex-col gap-space-xs max-w-2xl">
             <div className="flex items-center gap-space-xs">
               <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
               <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface font-semibold font-mono">Deep Dives &amp; Repository Walkthroughs</span>
             </div>
-            <h3 className="font-headline-md text-headline-md text-on-surface font-bold">Inspect the codebase or walk through the architecture.</h3>
+            <h3 className="font-headline-md text-headline-md text-on-surface font-bold">
+              <SplitText text="Inspect the codebase or walk through the architecture." />
+            </h3>
             <p className="font-body-md text-body-md text-on-surface-variant">
               Want to review architectural diagrams, inspect code repositories, or talk through a problem? Reach out directly to Praveen for an unfiltered design &amp; code walkthrough.
             </p>

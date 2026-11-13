@@ -4,6 +4,8 @@ import 'lenis/dist/lenis.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppChatBot from './components/WhatsAppChatBot';
+import AwwwardsCursor from './components/AwwwardsCursor';
+import FilmGrain from './components/FilmGrain';
 import HomePage from './pages/HomePage';
 import CaseStudiesPage from './pages/CaseStudiesPage';
 
@@ -16,10 +18,13 @@ const SNAP_SECTIONS = [
   { id: 'project-intra', title: '05 // Intra 3.0' },
   { id: 'project-shell', title: '06 // Shell Oman' },
   { id: 'project-edubotix', title: '07 // Edubotix' },
-  { id: 'craft-and-philosophy', title: '08 // Craft Ethos' },
+  { id: 'craft-and-philosophy', title: '08 // How I Work' },
   { id: 'tech-and-stack', title: '09 // Toolkit & Stack' },
-  { id: 'letters-and-contact', title: '10 // Contact Station' },
-  { id: 'site-footer', title: '11 // Colophon & Footer' },
+  { id: 'engineering-journey', title: '10 // Work Experience' },
+  { id: 'skills-matrix', title: '11 // Skills Matrix' },
+  { id: 'faq', title: '12 // FAQ' },
+  { id: 'letters-and-contact', title: '13 // Contact Station' },
+  { id: 'site-footer', title: '14 // Colophon & Footer' },
 ];
 
 export default function App() {
@@ -32,14 +37,16 @@ export default function App() {
 
   useEffect(() => {
     // Initialize Lenis smooth inertia scrolling
+    const isMobileDevice = typeof window !== 'undefined' && (window.innerWidth < 768 || 'ontouchstart' in window);
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: isMobileDevice ? 0.9 : 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth exponential deceleration curve
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 1,
-      touchMultiplier: 1.8,
+      touchMultiplier: 1,
+      syncTouch: true,
     });
     lenisRef.current = lenis;
 
@@ -73,6 +80,40 @@ export default function App() {
       lenis.destroy();
     };
   }, []);
+
+  // Framer Aovix signature scroll appear animation observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    const observeElements = () => {
+      const elements = document.querySelectorAll(
+        '.aovix-reveal-text:not(.is-visible), .aovix-reveal-image:not(.is-visible)'
+      );
+      elements.forEach((el) => observer.observe(el));
+    };
+
+    // Run on initial mount and whenever page switches
+    observeElements();
+    const timer = setTimeout(observeElements, 120);
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
+  }, [currentPage]);
 
   // One-scroll = One section glide navigation
   useEffect(() => {
@@ -148,8 +189,8 @@ export default function App() {
     };
 
     const handleWheel = (e) => {
-      // Don't intercept zoom
-      if (e.ctrlKey) return;
+      // Don't intercept zoom or mobile/small tablet screens to allow fluid natural reading
+      if (e.ctrlKey || window.innerWidth < 768) return;
 
       // Don't intercept inside interactive scrollable elements (e.g. WhatsApp chat bot, modal dropdowns)
       if (e.target.closest('#whatsapp-chat-container') || e.target.closest('.overflow-y-auto') || e.target.closest('textarea')) {
@@ -239,6 +280,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-surface font-body-md text-on-surface flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed antialiased relative">
+      {/* Awwwards Motion & Texture Suite */}
+      <FilmGrain />
+      <AwwwardsCursor />
+
       <Header
         currentPage={currentPage}
         onNavigate={handleNavigate}
@@ -257,12 +302,14 @@ export default function App() {
 
       {/* Floating Interactive Toast for HR / Recruiters */}
       {toast && (
-        <div className="fixed bottom-24 right-6 z-50 animate-fade-in-up bg-inverse-surface/95 text-inverse-on-surface px-4 py-3 rounded-xl shadow-2xl border border-white/10 flex items-center gap-3 backdrop-blur-md">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-          </span>
-          <span className="font-mono text-xs font-medium tracking-wide">{toast}</span>
+        <div className="fixed bottom-20 sm:bottom-24 inset-x-4 sm:inset-x-auto sm:right-6 z-50 animate-fade-in-up bg-inverse-surface/95 text-inverse-on-surface px-4 py-3 rounded-xl shadow-2xl border border-white/10 flex items-center justify-between sm:justify-start gap-3 backdrop-blur-md max-w-md mx-auto sm:mx-0">
+          <div className="flex items-center gap-2.5 truncate">
+            <span className="relative flex h-2.5 w-2.5 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span className="font-mono text-xs font-medium tracking-wide truncate">{toast}</span>
+          </div>
         </div>
       )}
 

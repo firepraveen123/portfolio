@@ -22,22 +22,22 @@ export default function Header({ currentPage, onNavigate, onCopyEmail }) {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high/60 shadow-[0_2px_12px_rgba(0,0,0,0.02)] transition-all">
-      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 h-20 flex items-center justify-between gap-4 relative">
+      <div className="w-full px-3.5 sm:px-8 lg:px-12 xl:px-16 2xl:px-20 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4 relative">
         {/* Brand / Logo */}
-        <div className="flex items-center gap-4 xl:gap-6 flex-shrink-0">
+        <div className="flex items-center gap-2 sm:gap-4 xl:gap-6 flex-shrink min-w-0">
           <button
             onClick={() => handleLinkClick('home', 'hero')}
-            className="group flex items-center gap-3 text-left focus:outline-none transition-transform hover:scale-[1.02] active:scale-95"
+            className="group flex items-center gap-2 sm:gap-3 text-left focus:outline-none transition-transform hover:scale-[1.02] active:scale-95 min-w-0"
             aria-label="Praveen Kumar S Home"
           >
-            <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-surface-container-high text-primary font-headline-md font-bold text-sm tracking-tight border border-outline-variant/30 shadow-xs transition-all duration-300 group-hover:bg-primary group-hover:text-on-primary group-hover:shadow-md group-hover:rotate-[-3deg]">
+            <span className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-surface-container-high text-primary font-headline-md font-bold text-xs sm:text-sm tracking-tight border border-outline-variant/30 shadow-xs transition-all duration-300 group-hover:bg-primary group-hover:text-on-primary group-hover:shadow-md shrink-0">
               PK.
             </span>
-            <div className="flex flex-col">
-              <span className="font-headline-sm text-sm font-bold text-on-surface leading-tight tracking-tight group-hover:text-primary transition-colors">
+            <div className="flex flex-col min-w-0">
+              <span className="font-headline-sm text-xs sm:text-sm font-bold text-on-surface leading-tight tracking-tight group-hover:text-primary transition-colors truncate">
                 Praveen Kumar S
               </span>
-              <span className="font-label-sm text-[11px] font-mono text-on-surface-variant uppercase tracking-wider">
+              <span className="hidden xs:inline-block font-label-sm text-[10px] sm:text-[11px] font-mono text-on-surface-variant uppercase tracking-wider truncate">
                 Staff Frontend Architect
               </span>
             </div>
@@ -48,7 +48,7 @@ export default function Header({ currentPage, onNavigate, onCopyEmail }) {
         <nav className="hidden lg:flex items-center gap-1 p-1.5 rounded-full bg-surface-container/70 border border-surface-container-high/80 backdrop-blur-md shadow-xs flex-shrink-0">
           <button
             onClick={() => handleLinkClick('case-studies')}
-            className={`whitespace-nowrap px-4 py-2 rounded-full font-body-sm text-[13px] font-medium tracking-wide transition-all duration-200 active:scale-95 ${
+            className={`whitespace-nowrap px-3.5 py-1.5 rounded-full font-body-sm text-[13px] font-medium tracking-wide transition-all duration-200 active:scale-95 ${
               currentPage === 'case-studies'
                 ? 'bg-surface text-primary shadow-xs font-semibold scale-[1.02]'
                 : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60'
@@ -58,52 +58,64 @@ export default function Header({ currentPage, onNavigate, onCopyEmail }) {
           </button>
           <button
             onClick={() => handleLinkClick('home', 'craft-and-philosophy')}
-            className="whitespace-nowrap px-4 py-2 rounded-full font-body-sm text-[13px] font-medium tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all duration-200 active:scale-95"
+            className="whitespace-nowrap px-3.5 py-1.5 rounded-full font-body-sm text-[13px] font-medium tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all duration-200 active:scale-95"
           >
-            Craft &amp; Philosophy
+            How I Work
+          </button>
+          <button
+            onClick={() => handleLinkClick('home', 'engineering-journey')}
+            className="whitespace-nowrap px-3.5 py-1.5 rounded-full font-body-sm text-[13px] font-medium tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all duration-200 active:scale-95"
+          >
+            Experience
+          </button>
+          <button
+            onClick={() => handleLinkClick('home', 'skills-matrix')}
+            className="whitespace-nowrap px-3.5 py-1.5 rounded-full font-body-sm text-[13px] font-medium tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all duration-200 active:scale-95"
+          >
+            Skills
           </button>
           <button
             onClick={() => handleLinkClick('home', 'tech-and-stack')}
-            className="whitespace-nowrap px-4 py-2 rounded-full font-body-sm text-[13px] font-medium tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all duration-200 active:scale-95"
+            className="whitespace-nowrap px-3.5 py-1.5 rounded-full font-body-sm text-[13px] font-medium tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all duration-200 active:scale-95"
           >
-            Engineering Journey
+            Stack
           </button>
           <button
-            onClick={() => handleLinkClick('home', 'tech-and-stack')}
-            className="whitespace-nowrap px-4 py-2 rounded-full font-body-sm text-[13px] font-medium tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all duration-200 active:scale-95"
+            onClick={() => handleLinkClick('home', 'faq')}
+            className="whitespace-nowrap px-3.5 py-1.5 rounded-full font-body-sm text-[13px] font-medium tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all duration-200 active:scale-95"
           >
-            Tech &amp; Stack
+            FAQ
           </button>
           <button
             onClick={() => handleLinkClick('home', 'letters-and-contact')}
-            className="whitespace-nowrap px-4 py-2 rounded-full font-body-sm text-[13px] font-medium tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all duration-200 active:scale-95"
+            className="whitespace-nowrap px-3.5 py-1.5 rounded-full font-body-sm text-[13px] font-medium tracking-wide text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/60 transition-all duration-200 active:scale-95"
           >
-            Letters &amp; Inquiries
+            Contact
           </button>
         </nav>
 
         {/* Right CTA and Profile */}
-        <div className="flex items-center gap-2.5 sm:gap-3 flex-shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
           {/* Resume Download Action */}
           <a
             href="/Praveenkumar.pdf"
             download="Praveen_Kumar_S_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/30 font-label-md text-xs font-semibold tracking-wide transition-all duration-200 hover:-translate-y-0.5 shadow-xs active:scale-95 group"
+            className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface border border-outline-variant/30 font-label-md text-xs font-semibold tracking-wide transition-all duration-200 hover:-translate-y-0.5 shadow-xs active:scale-95 group shrink-0"
             title="Download Praveen Kumar's Resume (PDF)"
           >
-            <span className="material-symbols-outlined text-[17px] text-primary group-hover:text-on-primary group-hover:translate-y-0.5 transition-all">
+            <span className="material-symbols-outlined text-[15px] sm:text-[17px] text-primary group-hover:text-on-primary group-hover:translate-y-0.5 transition-all">
               download
             </span>
-            <span className="font-mono text-[11px] sm:text-xs font-bold">RESUME</span>
+            <span className="font-mono text-[10px] sm:text-xs font-bold">RESUME</span>
           </a>
 
           <a
             href="https://github.com/firepraveen123/praveen"
             target="_blank"
             rel="noreferrer"
-            className="w-9 h-9 rounded-full bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface-variant flex items-center justify-center border border-outline-variant/30 transition-all duration-200 hover:scale-105 active:scale-95"
+            className="hidden sm:flex w-9 h-9 rounded-full bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface-variant items-center justify-center border border-outline-variant/30 transition-all duration-200 hover:scale-105 active:scale-95 shrink-0"
             title="GitHub: firepraveen123/praveen"
             aria-label="GitHub Repository"
           >
@@ -114,7 +126,7 @@ export default function Header({ currentPage, onNavigate, onCopyEmail }) {
 
           <button
             onClick={onCopyEmail}
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-xs tracking-wider uppercase font-semibold transition-all duration-200 hover:bg-primary-container shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-95"
+            className="hidden md:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-label-md text-xs tracking-wider uppercase font-semibold transition-all duration-200 hover:bg-primary-container shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 active:scale-95 shrink-0"
             title="Copy email to clipboard"
           >
             <span>LET'S TALK</span>
@@ -124,7 +136,7 @@ export default function Header({ currentPage, onNavigate, onCopyEmail }) {
           {/* Mobile hamburger button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-on-surface hover:bg-surface-container transition-colors active:scale-95"
+            className="lg:hidden p-1.5 sm:p-2 rounded-lg text-on-surface hover:bg-surface-container transition-colors active:scale-95 shrink-0"
             aria-label="Toggle Navigation Menu"
           >
             <span className="material-symbols-outlined text-[24px]">
@@ -142,7 +154,7 @@ export default function Header({ currentPage, onNavigate, onCopyEmail }) {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-surface-container-high/60 bg-surface/98 backdrop-blur-2xl px-6 py-4 shadow-lg animate-fade-in-up">
+        <div className="lg:hidden border-t border-surface-container-high/60 bg-surface/98 backdrop-blur-2xl px-4 sm:px-6 py-4 shadow-xl animate-fade-in-up max-h-[calc(100vh-64px)] sm:max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="flex flex-col gap-1.5">
             <button
               onClick={() => handleLinkClick('home', 'hero')}
@@ -164,13 +176,31 @@ export default function Header({ currentPage, onNavigate, onCopyEmail }) {
               onClick={() => handleLinkClick('home', 'craft-and-philosophy')}
               className="text-left px-4 py-2.5 rounded-lg font-body-md text-sm text-on-surface hover:bg-surface-container transition-colors"
             >
-              Craft &amp; Philosophy
+              How I Work
+            </button>
+            <button
+              onClick={() => handleLinkClick('home', 'engineering-journey')}
+              className="text-left px-4 py-2.5 rounded-lg font-body-md text-sm text-on-surface hover:bg-surface-container transition-colors"
+            >
+              Work Experience (Nextbrain)
+            </button>
+            <button
+              onClick={() => handleLinkClick('home', 'skills-matrix')}
+              className="text-left px-4 py-2.5 rounded-lg font-body-md text-sm text-on-surface hover:bg-surface-container transition-colors"
+            >
+              Skills &amp; Competencies
             </button>
             <button
               onClick={() => handleLinkClick('home', 'tech-and-stack')}
               className="text-left px-4 py-2.5 rounded-lg font-body-md text-sm text-on-surface hover:bg-surface-container transition-colors"
             >
-              Engineering Journey &amp; Stack
+              Toolkit &amp; Stack
+            </button>
+            <button
+              onClick={() => handleLinkClick('home', 'faq')}
+              className="text-left px-4 py-2.5 rounded-lg font-body-md text-sm text-on-surface hover:bg-surface-container transition-colors"
+            >
+              Frequently Asked Questions (FAQ)
             </button>
             <button
               onClick={() => handleLinkClick('home', 'letters-and-contact')}
