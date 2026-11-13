@@ -166,7 +166,7 @@ export default function TechStackSection() {
             <span className="mono opacity-60 mx-auto">~/toolkit — zsh</span>
           </div>
 
-          <div className="p-6 md:p-10">
+          <div className="p-4 sm:p-6 md:p-10">
             <div className="flex flex-wrap gap-2 mb-8" id="tt">
               {TABS.map((tab) => {
                 const isOn = selectedTab === tab.id;

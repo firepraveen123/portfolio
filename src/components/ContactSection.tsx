@@ -56,7 +56,7 @@ export default function ContactSection({ onShowToast }: ContactSectionProps) {
           </span>
         </div>
 
-        <h2 className="fd font-medium tracking-tighter leading-[0.95] text-5xl md:text-8xl mb-8 rv in">
+        <h2 className="fd font-medium tracking-tighter leading-[0.98] text-4xl sm:text-6xl md:text-8xl mb-8 rv in">
           Let’s build
           <br />
           <em className="text-verm font-normal">something exceptional</em> together.
@@ -118,7 +118,7 @@ export default function ContactSection({ onShowToast }: ContactSectionProps) {
               id="mag"
               ref={magBtnRef}
               href="mailto:praveenkumarselvan02@gmail.com?subject=Engineering%20Engagement%20Inquiry"
-              className="mag btn !bg-verm !text-white !px-8 !py-5 shadow-xl transition-transform duration-150 inline-flex items-center gap-2"
+              className="mag btn !bg-verm !text-white w-full sm:w-auto text-center justify-center !px-5 sm:!px-8 !py-4 sm:!py-5 text-sm sm:text-base shadow-xl transition-transform duration-150 inline-flex items-center gap-2"
               style={{
                 transform: `translate(${magOffset.x}px, ${magOffset.y}px)`,
               }}

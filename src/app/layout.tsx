@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Fraunces, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -20,9 +20,27 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FAF8F5' },
+    { media: '(prefers-color-scheme: dark)', color: '#14130F' },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: 'Praveen Kumar S. — Senior Frontend Engineer',
-  description: 'Senior Frontend Engineer & Web Architect portfolio. Systems engineered for precision, speed, and human scale.',
+  title: 'Praveen Kumar S. — Senior Frontend Engineer & Web Architect',
+  description:
+    'Senior Frontend Engineer & Web Architect portfolio. Systems engineered for precision, speed, and human scale.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+  },
 };
 
 export default function RootLayout({

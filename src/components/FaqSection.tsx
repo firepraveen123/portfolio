@@ -82,7 +82,7 @@ export default function FaqSection() {
                     }}
                   >
                     <div>
-                      <p className="text-graphite pl-[76px] pt-4 leading-relaxed">
+                      <p className="text-graphite pl-0 sm:pl-[76px] pt-4 leading-relaxed text-sm sm:text-base">
                         {faq.answer}
                       </p>
                     </div>

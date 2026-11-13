@@ -90,7 +90,7 @@ export default function HeroSection() {
 
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-8 flex flex-col gap-7">
-            <h1 className="fd font-medium leading-[1.1] tracking-[-0.03em] text-[clamp(1.65rem,3.7vw,4rem)] rv in">
+            <h1 className="fd font-medium leading-[1.1] tracking-[-0.03em] text-[clamp(1.15rem,4.5vw,3.8rem)] rv in">
               <span className="block whitespace-nowrap">Hey, I’m Praveen Kumar S.</span>
               <span className="block min-h-[1.2em]">
                 <em className="italic font-normal text-verm" id="type">

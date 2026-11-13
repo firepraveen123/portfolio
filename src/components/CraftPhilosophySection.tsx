@@ -100,9 +100,9 @@ export default function CraftPhilosophySection() {
               style={{ '--i': card.i } as React.CSSProperties}
             >
               <div
-                className={`rounded-3xl p-8 md:p-12 grid md:grid-cols-12 gap-6 items-center shadow-2xl ${card.bg}`}
+                className={`rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 grid md:grid-cols-12 gap-6 items-center shadow-2xl ${card.bg}`}
               >
-                <span className="fd md:col-span-2 text-8xl font-bold opacity-40">
+                <span className="fd md:col-span-2 text-6xl sm:text-7xl md:text-8xl font-bold opacity-40">
                   {card.num}
                 </span>
                 <div className="md:col-span-7">

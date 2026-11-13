@@ -72,12 +72,12 @@ export default function ImpactSection() {
           Real engineering impact, measured in the browser.
         </h2>
 
-        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-4">
+        <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 divide-line">
           <div className="py-8 lg:px-6 lg:first:pl-0 lg:border-r border-line rv in">
             <span className="mono text-graphite">Production tenure</span>
-            <div className="fd text-verm font-medium leading-none tracking-tighter text-[88px] md:text-[104px] my-3">
+            <div className="fd text-verm font-medium leading-none tracking-tighter text-[68px] sm:text-[84px] md:text-[104px] my-3">
               <span>{yearsCount}</span>+
-              <span className="text-2xl text-ink font-light">YRS</span>
+              <span className="text-xl sm:text-2xl text-ink font-light">YRS</span>
             </div>
             <h3 className="fd text-xl mb-2">Deep Web Crafting</h3>
             <p className="text-sm text-graphite">
@@ -87,9 +87,9 @@ export default function ImpactSection() {
 
           <div className="py-8 lg:px-6 lg:border-r border-line rv in">
             <span className="mono text-graphite">State optimization</span>
-            <div className="fd text-verm font-medium leading-none tracking-tighter text-[88px] md:text-[104px] my-3">
+            <div className="fd text-verm font-medium leading-none tracking-tighter text-[68px] sm:text-[84px] md:text-[104px] my-3">
               +<span>{stateOptCount}</span>
-              <span className="text-2xl text-ink font-light">%</span>
+              <span className="text-xl sm:text-2xl text-ink font-light">%</span>
             </div>
             <h3 className="fd text-xl mb-2">Data Cache Tuning</h3>
             <p className="text-sm text-graphite">
@@ -99,9 +99,9 @@ export default function ImpactSection() {
 
           <div className="py-8 lg:px-6 lg:border-r border-line rv in">
             <span className="mono text-graphite">Payload reduction</span>
-            <div className="fd text-verm font-medium leading-none tracking-tighter text-[88px] md:text-[104px] my-3">
+            <div className="fd text-verm font-medium leading-none tracking-tighter text-[68px] sm:text-[84px] md:text-[104px] my-3">
               −<span>{bundleRedCount}</span>
-              <span className="text-2xl text-ink font-light">%</span>
+              <span className="text-xl sm:text-2xl text-ink font-light">%</span>
             </div>
             <h3 className="fd text-xl mb-2">Bundle Budgeting</h3>
             <p className="text-sm text-graphite">
@@ -111,7 +111,7 @@ export default function ImpactSection() {
 
           <div className="py-8 lg:px-6 lg:last:pr-0 rv in">
             <span className="mono text-graphite">Distributed systems</span>
-            <div className="fd font-medium leading-none tracking-tighter text-[88px] md:text-[104px] my-3">
+            <div className="fd text-ink font-medium leading-none tracking-tighter text-[68px] sm:text-[84px] md:text-[104px] my-3">
               AWS
             </div>
             <h3 className="fd text-xl mb-2">Certified Practitioner</h3>

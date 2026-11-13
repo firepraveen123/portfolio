@@ -616,10 +616,12 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <div className="h-16 wrap flex items-center justify-between">
           <Link
             href="/#selected-works"
-            className="inline-flex items-center gap-2 mono text-xs sm:text-sm text-graphite hover:text-verm transition-colors font-medium group"
+            className="inline-flex items-center gap-1.5 sm:gap-2 mono text-xs sm:text-sm text-graphite hover:text-verm transition-colors font-medium group"
           >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Overview
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform shrink-0" />
+            <span>
+              <span className="hidden sm:inline">Back to </span>Overview
+            </span>
           </Link>
 
           <Link
@@ -629,13 +631,14 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             PKS
           </Link>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <ThemeToggle />
             <a
               href="mailto:praveenkumarselvan02@gmail.com?subject=Inquiry%20about%20Architecture"
-              className="btn btn-solid !py-2 !px-3 sm:!px-4 text-xs font-mono tracking-wider"
+              className="btn btn-solid !py-2 !px-2.5 sm:!px-4 text-[11px] sm:text-xs font-mono tracking-wider"
             >
-              Discuss Architecture
+              <span className="hidden sm:inline">Discuss Architecture</span>
+              <span className="sm:hidden">Contact</span>
             </a>
           </div>
         </div>
@@ -685,7 +688,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     LEDGER INDEX
                   </span>
                   <span className="mono text-[11px] text-verm font-medium">
-                    6 primary case studies
+                    {LEDGER_ITEMS.length} primary case studies
                   </span>
                 </div>
 

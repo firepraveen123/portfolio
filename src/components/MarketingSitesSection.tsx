@@ -218,7 +218,7 @@ export default function MarketingSitesSection() {
                         href={site.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="ml-auto btn btn-ghost !py-2 inline-flex items-center gap-1.5"
+                        className="w-full sm:w-auto sm:ml-auto btn btn-ghost !py-2 inline-flex items-center justify-center gap-1.5 mt-2 sm:mt-0"
                       >
                         Visit live site <ArrowUpRight className="w-4 h-4" />
                       </a>
