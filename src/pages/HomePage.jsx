@@ -86,7 +86,7 @@ export default function HomePage({ onNavigate, onCopyEmail }) {
 
             {/* Headline with Editorial Weight */}
             <h1 className="font-display-xl text-display-xl text-on-surface tracking-tight leading-[1.08] font-normal">
-              Hey, I'm Praveen. <br className="hidden sm:inline" />
+              Hey, I'm Praveen Kumar S. <br className="hidden sm:inline" />
               <span className="italic font-quote-editorial text-primary font-normal">
                 I craft high-fidelity interfaces
               </span>{' '}
