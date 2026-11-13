@@ -433,11 +433,11 @@ export default function SelectedWorksSection() {
         </div>
 
         {/* Carousel Viewport: 1 step per project with smooth CSS transform */}
-        <div className="w-full max-w-[1600px] mx-auto overflow-hidden my-auto py-3">
+        <div className="w-full max-w-[1720px] mx-auto overflow-hidden my-auto py-3">
           <div
             className="flex gap-8 select-none items-stretch will-change-transform"
             style={{
-              transform: `translateX(calc(-${currentIndex} * (min(1480px, 92vw) + 2rem)))`,
+              transform: `translateX(calc(-${currentIndex} * (min(1560px, 92vw) + 2rem)))`,
               transition: 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)',
             }}
           >
@@ -450,7 +450,7 @@ export default function SelectedWorksSection() {
                     isAct ? 'act' : ''
                   }`}
                   style={{
-                    width: 'min(1480px, 92vw)',
+                    width: 'min(1560px, 92vw)',
                     minHeight: '480px',
                   }}
                 >
@@ -530,7 +530,7 @@ export default function SelectedWorksSection() {
         </div>
 
         {/* Bottom Bar: Progress line and dot indicators */}
-        <div className="w-full max-w-[1600px] mx-auto shrink-0 mt-3 flex items-center gap-4">
+        <div className="w-full max-w-[1720px] mx-auto shrink-0 mt-3 flex items-center gap-4">
           <div className="flex-1 h-1.5 bg-line relative overflow-hidden rounded-full">
             <div
               id="sp"

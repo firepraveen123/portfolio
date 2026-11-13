@@ -127,12 +127,6 @@ export default function ContactSection({ onShowToast }: ContactSectionProps) {
             </a>
           </div>
         </div>
-
-        <div className="grid sm:grid-cols-3 gap-4 mt-10 mono text-graphite">
-          <span>Response window: &lt; 12 hours</span>
-          <span>Timezone sync: US / EU / APAC</span>
-          <span className="text-ok">Status: ready to deploy</span>
-        </div>
       </div>
     </section>
   );
