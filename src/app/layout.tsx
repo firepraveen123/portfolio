@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Fraunces, JetBrains_Mono } from 'next/font/google';
+import WhatsAppChatBot from '@/components/WhatsAppChatBot';
 import './globals.css';
 
 const inter = Inter({
@@ -52,6 +53,7 @@ export default function RootLayout({
     <html lang="en" className={`scroll-smooth ${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}>
       <body className="antialiased selection:bg-verm selection:text-paper">
         {children}
+        <WhatsAppChatBot />
       </body>
     </html>
   );
