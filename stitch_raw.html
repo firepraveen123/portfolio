@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praveen Kumar S. — Senior Frontend Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: { extend: { colors: {
+    paper: 'rgb(var(--paper) / <alpha-value>)',
+    ink: 'rgb(var(--ink) / <alpha-value>)',
+    graphite: 'rgb(var(--graphite) / <alpha-value>)',
+    cream: 'rgb(var(--cream) / <alpha-value>)',
+    sand: 'rgb(var(--sand) / <alpha-value>)',
+    line: 'rgb(var(--line) / <alpha-value>)',
+    verm: 'rgb(var(--verm) / <alpha-value>)',
+    teal: 'rgb(var(--teal) / <alpha-value>)',
+    ok: 'rgb(var(--ok) / <alpha-value>)'
+  } } }
+};
+</script>
+<style>
+:root{--paper:244 239 230;--ink:20 19 15;--graphite:90 86 77;--cream:251 248 242;--sand:234 227 214;--line:214 206 190;--verm:228 71 43;--teal:15 92 87;--ok:46 158 91}
+html.dark{--paper:15 14 11;--ink:244 239 230;--graphite:168 162 150;--cream:26 24 20;--sand:34 31 26;--line:46 43 36;--verm:255 100 69;--teal:63 184 175;--ok:70 200 120}
+.band-dark{--paper:15 14 11;--ink:244 239 230;--graphite:168 162 150;--cream:26 24 20;--sand:34 31 26;--line:52 48 40;--verm:255 100 69;--teal:63 184 175;--ok:70 200 120;background:rgb(var(--paper));color:rgb(var(--ink))}
+html.dark .band-dark{--paper:8 8 6}
+body{font-family:'Inter',sans-serif;background:rgb(var(--paper));color:rgb(var(--ink));overscroll-behavior:none;transition:background .4s,color .4s}
+::-webkit-scrollbar{display:none}
+.fd{font-family:'Fraunces',serif}
+.mono{font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.08em;font-size:11px;line-height:1.3}
+.wrap{max-width:1240px;margin:0 auto;padding-left:1.25rem;padding-right:1.25rem}
+@media(min-width:768px){.wrap{padding-left:2.5rem;padding-right:2.5rem}}
+.kicker{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding-bottom:.9rem;margin-bottom:2.5rem;border-bottom:1px solid rgb(var(--line))}
+.pill{display:inline-block;padding:.3rem .7rem;border-radius:999px;border:1px solid rgb(var(--line));background:rgb(var(--cream));font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.07em}
+.pill-t{border-color:rgb(var(--teal)/.35);background:rgb(var(--teal)/.07);color:rgb(var(--teal))}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.4rem;border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.08em;transition:all .25s}
+.btn-solid{background:rgb(var(--ink));color:rgb(var(--paper))}.btn-solid:hover{background:rgb(var(--verm));transform:translateY(-2px)}
+.btn-ghost{border:1px solid rgb(var(--ink))}.btn-ghost:hover{background:rgb(var(--sand))}
+.ms{font-family:'Material Symbols Outlined';font-weight:400;font-style:normal;line-height:1;display:inline-block;font-size:18px;letter-spacing:normal;text-transform:none;white-space:nowrap}
+/* scroll progress */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:rgb(var(--verm));z-index:60}
+/* reveal animations */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.rv-l{transform:translateX(-60px)}.rv-r{transform:translateX(60px)}.rv-s{transform:scale(.92)}
+.rv.in{opacity:1;transform:none}
+/* marquee */
+.marq{display:flex;width:max-content;animation:marq var(--t,32s) linear infinite}
+.marq.rev{animation-direction:reverse}
+.marq-wrap:hover .marq{animation-play-state:paused}
+@keyframes marq{to{transform:translateX(-50%)}}
+/* typewriter caret */
+.caret{display:inline-block;width:3px;height:.85em;background:rgb(var(--verm));margin-left:4px;vertical-align:-.05em;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+/* hero floating */
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.floaty{animation:floaty 5s ease-in-out infinite}
+/* slider */
+#track{display:flex;gap:1.25rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:4px}
+#track.drag{scroll-snap-type:none;scroll-behavior:auto;cursor:grabbing}
+.slide{flex:0 0 100%;scroll-snap-align:center;border-radius:1.5rem;padding:1.5rem;display:grid;gap:2rem;align-items:center;overflow:hidden;position:relative;transition:transform .6s,opacity .6s}
+@media(min-width:1024px){.slide{grid-template-columns:1.1fr .9fr;padding:3rem}}
+.slide .bignum{position:absolute;right:1.5rem;top:-.5rem;font-family:'Fraunces',serif;font-size:9rem;font-weight:700;opacity:.06;line-height:1;pointer-events:none}
+.s1{background:rgb(var(--paper))}.s2{background:rgb(var(--verm)/.10)}.s3{background:rgb(var(--cream))}.s4{background:rgb(var(--paper))}.s5{background:rgb(var(--teal)/.12)}.s6{background:rgb(var(--sand))}.s7{background:rgb(var(--cream))}
+.mock{background:rgb(var(--cream));border:1px solid rgb(var(--line));border-radius:.9rem;overflow:hidden;box-shadow:0 20px 50px -20px rgb(0 0 0/.35);transform:rotate(1.5deg);transition:transform .5s}
+.slide:hover .mock{transform:rotate(0) scale(1.02)}
+.bar{height:6px;border-radius:99px;background:rgb(var(--line));overflow:hidden}.bar i{display:block;height:100%;width:0;background:rgb(var(--verm));transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+.slide.act .bar i{width:var(--w)}
+/* tabs showcase */
+.site-tab{display:flex;align-items:center;gap:1rem;width:100%;text-align:left;padding:1.1rem 1rem;border-bottom:1px solid rgb(var(--line));position:relative;transition:padding .3s,color .3s;color:rgb(var(--graphite))}
+.site-tab:hover{padding-left:1.6rem}
+.site-tab.on{color:rgb(var(--ink));padding-left:1.6rem}
+.site-tab .tl{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:rgb(var(--verm))}
+.site-tab.on .tl{animation:tl 7s linear forwards}
+@keyframes tl{to{width:100%}}
+.site-panel{display:none}
+.site-panel.on{display:block;animation:panelIn .7s cubic-bezier(.2,.7,.2,1)}
+@keyframes panelIn{from{opacity:0;transform:translateX(40px) scale(.98)}to{opacity:1;transform:none}}
+/* stacking cards */
+.stack{position:sticky;top:calc(6rem + var(--i)*1.4rem);transition:transform .3s}
+/* tool tabs */
+.tt{padding:.55rem 1.1rem;border-radius:999px;border:1px solid rgb(var(--line));font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.07em;transition:all .25s}
+.tt.on{background:rgb(var(--verm));border-color:rgb(var(--verm));color:#fff}
+.tp{display:none}.tp.on{display:block}
+.tp.on li{opacity:0;animation:liIn .6s forwards;animation-delay:calc(var(--k)*.12s)}
+@keyframes liIn{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:none}}
+/* flip */
+.flip{perspective:1200px;height:340px;cursor:pointer}
+.flip>div{position:relative;width:100%;height:100%;transition:transform .8s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.flip:hover>div,.flip.on>div{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;border-radius:1.25rem;padding:1.75rem;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;justify-content:space-between}
+.flip .b{transform:rotateY(180deg)}
+/* faq */
+.fq{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.2,.7,.2,1)}
+.fq>div{overflow:hidden}
+.fi.on .fq{grid-template-rows:1fr}
+.fi .pl{transition:transform .4s}.fi.on .pl{transform:rotate(45deg)}
+.fi{transition:padding .3s}.fi:hover{padding-left:.75rem}
+/* timeline */
+#tl-fill{transform-origin:top;transform:scaleY(0)}
+/* nav active */
+.nv{position:relative;padding:.25rem 0;color:rgb(var(--graphite));transition:color .2s}
+.nv:hover,.nv.on{color:rgb(var(--ink))}
+.nv::after{content:'';position:absolute;left:0;bottom:-2px;height:2px;width:100%;background:rgb(var(--verm));transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.nv.on::after,.nv:hover::after{transform:scaleX(1)}
+.word{opacity:.15;transition:opacity .25s}.word.lit{opacity:1}
+.mag{transition:transform .2s}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body class="antialiased selection:bg-verm selection:text-paper">
+<div id="progress"></div>
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full z-50 bg-paper/90 backdrop-blur border-b border-line">
+  <div class="h-16 wrap flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <a href="#hero" class="fd text-2xl font-semibold hover:text-verm transition-colors">PKS</a>
+      <div class="hidden sm:flex items-center gap-2 pl-4 border-l border-line"><span class="w-1.5 h-1.5 rounded-full bg-ok animate-pulse"></span><span class="mono text-graphite">Open to work</span></div>
+    </div>
+    <nav class="hidden xl:flex items-center gap-6 mono" id="nav">
+      <a class="nv" href="#impact">Impact</a><a class="nv" href="#selected-works">Works</a><a class="nv" href="#marketing-sites">Sites</a><a class="nv" href="#craft-and-philosophy">Craft</a><a class="nv" href="#tech-and-stack">Toolkit</a><a class="nv" href="#engineering-journey">Journey</a><a class="nv" href="#skills-matrix">Skills</a><a class="nv" href="#faq">FAQ</a><a class="nv" href="#contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <button id="theme" aria-label="Toggle dark mode" class="w-14 h-7 p-1 rounded-full border border-line bg-sand flex items-center transition-all"><span id="knob" class="w-5 h-5 rounded-full bg-ink flex items-center justify-center transition-transform duration-300"><span class="ms !text-[12px] text-paper" id="knobi">light_mode</span></span></button>
+      <a href="#" class="hidden sm:inline-flex btn btn-ghost !py-2"><span class="ms !text-base">download</span>Resume</a>
+    </div>
+  </div>
+</header>
+<main class="pt-16">
+<!-- 1. HERO — typewriter + marquee -->
+<section id="hero" class="relative overflow-hidden">
+  <div id="wm" aria-hidden="true" class="absolute -top-6 -left-6 select-none pointer-events-none opacity-[0.04] fd font-bold text-[200px] md:text-[300px] leading-none tracking-tighter whitespace-nowrap">PRAVEEN</div>
+  <div class="wrap relative pt-12 pb-20">
+    <div class="flex flex-wrap items-center justify-between gap-2 pb-4 mb-12 border-b border-line rv">
+      <div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-verm animate-ping"></span><span class="mono font-semibold">Craft Dispatch — Handcrafted Web Software &amp; Interfaces</span></div>
+      <span class="mono text-graphite">Bengaluru, IN · 12.9716° N, 77.5946° E</span>
+    </div>
+    <div class="grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-8 flex flex-col gap-7">
+        <h1 class="fd font-medium leading-[1.05] tracking-[-0.03em] text-[44px] md:text-[76px] rv">Hey, I’m Praveen Kumar S.<br><em class="italic font-normal text-verm" id="type"></em><span class="caret"></span></h1>
+        <p class="text-lg text-graphite max-w-2xl leading-relaxed rv" style="--d:.15s">Senior Frontend Engineer with 4+ years of obsessive focus on browser performance, design engineering, and modern React/Next.js systems. Based in Bengaluru, turning complex distributed data flows into fluid, human-feeling web applications.</p>
+        <div class="flex flex-wrap gap-2 rv" style="--d:.25s">
+          <span class="pill floaty">React 19</span><span class="pill floaty" style="animation-delay:.4s">Next.js SSR</span><span class="pill floaty" style="animation-delay:.8s">TypeScript</span><span class="pill floaty" style="animation-delay:1.2s">AWS Certified</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-4 rv" style="--d:.35s">
+          <a href="#selected-works" class="btn btn-solid">Explore Projects <span class="ms !text-base">arrow_forward</span></a>
+          <a href="#contact" class="btn btn-ghost">Say Hello <span class="ms !text-base">mail</span></a>
+        </div>
+      </div>
+      <aside class="lg:col-span-4 lg:border-l border-line lg:pl-10 flex flex-col rv rv-r" style="--d:.2s">
+        <div class="py-4 border-b border-line"><span class="mono text-graphite block mb-1">Location</span><div class="flex justify-between"><b class="font-medium">Bengaluru, Karnataka</b><span class="mono text-teal">UTC+5:30</span></div></div>
+        <div class="py-4 border-b border-line"><span class="mono text-graphite block mb-1">Current post</span><div class="flex justify-between"><b class="font-medium">Nextbrain Technologies</b><span class="mono text-ok font-semibold">Active</span></div></div>
+        <div class="py-4 border-b border-line"><span class="mono text-graphite block mb-1">Credential</span><div class="flex items-center gap-2"><span class="ms text-verm">verified</span><b class="font-medium">AWS Certified Cloud Practitioner</b></div><span class="mono text-graphite">Validated Sep 2024</span></div>
+        <blockquote class="fd italic text-lg leading-snug pt-6 text-ink">“Great interfaces aren’t just designed; they’re engineered to make every interaction feel effortless, predictable, and physically instantaneous.”</blockquote>
+      </aside>
+    </div>
+  </div>
+  <div class="border-y border-line py-4 bg-sand/60 marq-wrap overflow-hidden">
+    <div class="marq mono text-graphite" style="--t:40s">
+      <div class="flex gap-10 pr-10 shrink-0"><span>React</span><span>●</span><span>Next.js</span><span>●</span><span>TypeScript</span><span>●</span><span>Tailwind</span><span>●</span><span>WebSockets</span><span>●</span><span>WebGL</span><span>●</span><span>TanStack Query</span><span>●</span><span>Kotlin</span><span>●</span><span>AWS</span><span>●</span></div>
+      <div class="flex gap-10 pr-10 shrink-0"><span>React</span><span>●</span><span>Next.js</span><span>●</span><span>TypeScript</span><span>●</span><span>Tailwind</span><span>●</span><span>WebSockets</span><span>●</span><span>WebGL</span><span>●</span><span>TanStack Query</span><span>●</span><span>Kotlin</span><span>●</span><span>AWS</span><span>●</span></div>
+    </div>
+  </div>
+</section>
+<!-- 2. IMPACT — dark band, giant counters -->
+<section id="impact" class="band-dark py-24">
+  <div class="wrap">
+    <div class="kicker"><span class="mono text-verm font-semibold">01 // Production Ledger</span><span class="mono text-graphite">Measured · Verified</span></div>
+    <h2 class="fd font-medium tracking-tight text-4xl md:text-6xl max-w-3xl mb-16 rv">Real engineering impact, measured in the browser.</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4">
+      <div class="py-8 lg:px-6 lg:first:pl-0 lg:border-r border-line rv" style="--d:0s">
+        <span class="mono text-graphite">Production tenure</span>
+        <div class="fd text-verm font-medium leading-none tracking-tighter text-[88px] md:text-[104px] my-3"><span data-count="4">0</span>+<span class="text-2xl text-ink font-light">YRS</span></div>
+        <h3 class="fd text-xl mb-2">Deep Web Crafting</h3><p class="text-sm text-graphite">Obsessive focus on DOM performance, custom WebGL frames, and high-fidelity UI systems.</p>
+      </div>
+      <div class="py-8 lg:px-6 lg:border-r border-line rv" style="--d:.12s">
+        <span class="mono text-graphite">State optimization</span>
+        <div class="fd text-verm font-medium leading-none tracking-tighter text-[88px] md:text-[104px] my-3">+<span data-count="30">0</span><span class="text-2xl text-ink font-light">%</span></div>
+        <h3 class="fd text-xl mb-2">Data Cache Tuning</h3><p class="text-sm text-graphite">Throughput boost via optimistic reconciliation, TanStack cache warming and normalized entities.</p>
+      </div>
+      <div class="py-8 lg:px-6 lg:border-r border-line rv" style="--d:.24s">
+        <span class="mono text-graphite">Payload reduction</span>
+        <div class="fd text-verm font-medium leading-none tracking-tighter text-[88px] md:text-[104px] my-3">−<span data-count="20">0</span><span class="text-2xl text-ink font-light">%</span></div>
+        <h3 class="fd text-xl mb-2">Bundle Budgeting</h3><p class="text-sm text-graphite">Tree-shaking and dynamic imports shrinking time-to-interactive across core flows.</p>
+      </div>
+      <div class="py-8 lg:px-6 lg:last:pr-0 rv" style="--d:.36s">
+        <span class="mono text-graphite">Distributed systems</span>
+        <div class="fd font-medium leading-none tracking-tighter text-[88px] md:text-[104px] my-3">AWS</div>
+        <h3 class="fd text-xl mb-2">Certified Practitioner</h3><p class="text-sm text-graphite">Deployment across S3, CloudFront edge caching, API Gateways and zero-trust auth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 3. SELECTED WORKS — horizontal slider -->
+<section id="selected-works" class="py-24">
+  <div class="wrap">
+    <div class="kicker"><span class="mono text-verm font-semibold">02 // Selected Cases</span><span class="mono text-graphite">6 production dispatches + mobile bonus</span></div>
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-10">
+      <h2 class="fd font-medium tracking-tight text-4xl md:text-6xl max-w-3xl leading-tight rv">Systems engineered for precision, speed &amp; human scale.</h2>
+      <div class="flex items-center gap-3 rv">
+        <span class="mono text-graphite"><b id="cnt" class="text-ink text-base">01</b> / 07</span>
+        <button id="prev" class="w-12 h-12 rounded-full border border-ink flex items-center justify-center hover:bg-ink hover:text-paper transition" aria-label="Previous"><span class="ms">arrow_back</span></button>
+        <button id="next" class="w-12 h-12 rounded-full border border-ink flex items-center justify-center hover:bg-ink hover:text-paper transition" aria-label="Next"><span class="ms">arrow_forward</span></button>
+      </div>
+    </div>
+    <div id="track" class="cursor-grab select-none">
+      <!-- 01 -->
+      <article class="slide s1 band-dark act"><span class="bignum">01</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Case 01</span> · <span class="text-graphite">Enterprise Fleet Operations</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">Silicon Drive — Corporate Fleet Orchestration Platform</h3>
+          <p class="text-graphite leading-relaxed">Architected the mission-control dispatch interface servicing thousands of daily B2B corporate rides across metro hubs. Optimized rendering for simultaneous multi-point GIS streams and rapid driver allocation.</p>
+          <ul class="text-sm space-y-2">
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Real-time telemetry:</b> Dual WebSocket pipelines with zero UI jitter.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Dispatch optimization:</b> Spatial quadrant indexing cut wait time by 34%.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Strict validation:</b> State machine preventing dual driver assignments.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">React 18</span><span class="pill pill-t">Next.js</span><span class="pill pill-t">WebSockets</span><span class="pill pill-t">Tailwind</span><span class="pill pill-t">Mapbox GL</span></div>
+        </div>
+        <div class="mock">
+          <div class="px-3 py-2 border-b border-line flex justify-between mono text-graphite"><span>fleet.silicondrive.io</span><span class="text-ok">● stream live</span></div>
+          <div class="p-4 space-y-3 bg-paper">
+            <div class="h-32 rounded border border-line bg-sand/50 relative overflow-hidden">
+              <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 80" preserveAspectRatio="none"><path d="M10,70 Q90,5 190,40" stroke="rgb(228,71,43)" stroke-width="2" stroke-dasharray="5 3" fill="none"><animate attributeName="stroke-dashoffset" from="16" to="0" dur="1s" repeatCount="indefinite"/></path></svg>
+              <span class="absolute top-4 left-6 mono bg-cream border border-line px-2 py-0.5 rounded">CAB-409 en-route</span>
+              <span class="absolute bottom-4 right-6 mono bg-cream border border-line px-2 py-0.5 rounded">CAB-112 standby</span>
+            </div>
+            <div class="grid grid-cols-3 gap-2 text-center"><div class="border border-line rounded p-2"><div class="mono text-graphite !text-[9px]">Dispatches</div><b class="fd">1,492</b></div><div class="border border-line rounded p-2"><div class="mono text-graphite !text-[9px]">SLA met</div><b class="fd text-ok">99.4%</b></div><div class="border border-line rounded p-2"><div class="mono text-graphite !text-[9px]">Allocation</div><b class="fd text-verm">1.8s</b></div></div>
+          </div>
+        </div>
+      </article>
+      <!-- 02 -->
+      <article class="slide s2"><span class="bignum">02</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Case 02</span> · <span class="text-graphite">Hyperlocal Discovery · Mysuru</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">DigiPod — Community Directory &amp; Educational Knowledge Engine</h3>
+          <p class="text-graphite leading-relaxed">A community marketplace indexing 480+ local vendors and academies across Mysuru, with instant sub-second search, proximity weighting, geo-fenced filters and dynamic SSR previews.</p>
+          <ul class="text-sm space-y-2">
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>18ms search pipeline:</b> Algolia client caching with debounced normalization.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Instant filters:</b> Zero server round-trips for faceted breakdowns.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Lightweight GIS:</b> Leaflet tiles lazy-loaded without blocking FCP.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">TypeScript</span><span class="pill pill-t">Next.js SSR</span><span class="pill pill-t">Algolia</span><span class="pill pill-t">Leaflet</span></div>
+        </div>
+        <div class="mock">
+          <div class="px-3 py-2 border-b border-line mono text-graphite">digipod.mysuru.hub/catalogue</div>
+          <div class="p-4 bg-paper space-y-2">
+            <div class="border border-line rounded px-3 py-2 text-sm bg-cream">Micro-roasteries in Gokulam</div>
+            <div class="flex justify-between mono text-graphite"><span>Radius &lt; 3km</span><span class="text-teal">Index hit: 18ms</span></div>
+            <div class="border border-line rounded p-2 bg-cream flex justify-between items-center"><div><b class="fd text-sm block">Heritage Roast Lab</b><span class="mono text-graphite !text-[10px]">4.9 ★ · 420m</span></div><span class="pill">Open</span></div>
+            <div class="border border-line rounded p-2 bg-cream flex justify-between items-center"><div><b class="fd text-sm block">Kaveri Bean Artisans</b><span class="mono text-graphite !text-[10px]">4.8 ★ · 1.2km</span></div><span class="pill">Open</span></div>
+          </div>
+        </div>
+      </article>
+      <!-- 03 -->
+      <article class="slide s3"><span class="bignum">03</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Case 03</span> · <span class="text-graphite">Mission Critical Ops · Infrastructure</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">Machfox — Indian Railway Contractor Ops &amp; Compliance Hub</h3>
+          <p class="text-graphite leading-relaxed">Web execution suite for railway contractors handling track rehabilitation, tender SLA verification and hardware auditing — built for low-bandwidth rail yards and high tabular density.</p>
+          <ul class="text-sm space-y-2">
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>92% faster SLA audits:</b> Automated verification matrices in real time.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Offline logging:</b> Local indexed transactions sync when 4G resumes.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Grid virtualization:</b> 10,000+ muster roll entries at 60 FPS.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">React 18</span><span class="pill pill-t">TanStack Table</span><span class="pill pill-t">Zustand</span><span class="pill pill-t">Vite</span></div>
+        </div>
+        <div class="mock mono">
+          <div class="px-3 py-2 border-b border-line flex justify-between text-graphite"><span>Machfox // Rail-zone-SW-4</span><span class="text-ok">Grid OK</span></div>
+          <div class="p-3 bg-paper text-[10px]">
+            <div class="grid grid-cols-4 gap-1 text-graphite border-b border-line pb-1"><span>Section</span><span>Status</span><span>Ballast</span><span>Audit</span></div>
+            <div class="grid grid-cols-4 gap-1 py-1.5 border-b border-line"><span>KM 142/8</span><span class="text-ok">Passed</span><span>98.2%</span><span class="text-teal">Verified</span></div>
+            <div class="grid grid-cols-4 gap-1 py-1.5 border-b border-line"><span>KM 143/2</span><span class="text-verm">Flagged</span><span>84.0%</span><span class="text-verm">Re-check</span></div>
+            <div class="grid grid-cols-4 gap-1 py-1.5"><span>KM 144/9</span><span class="text-ok">Passed</span><span>99.1%</span><span class="text-teal">Verified</span></div>
+          </div>
+        </div>
+      </article>
+      <!-- 04 -->
+      <article class="slide s4 band-dark"><span class="bignum">04</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Case 04</span> · <span class="text-graphite">Enterprise Internal Platform</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">Intra 3.0 — Internal Workflow &amp; Organization Scorecard</h3>
+          <p class="text-graphite leading-relaxed">Replaced fragmented legacy spreadsheets with a unified operational system: multi-department milestones, real-time KPI tracking and engineering resource allocation.</p>
+          <ul class="text-sm space-y-2">
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>−82% scorecard delay:</b> Continuous computation replaced manual Friday reviews.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Automated rollups:</b> Server Actions generating burndowns with near-zero overhead.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Executive stream:</b> Dense dashboard with role-based views.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">Next.js 14</span><span class="pill pill-t">Server Actions</span><span class="pill pill-t">PostgreSQL</span><span class="pill pill-t">TanStack Table</span></div>
+        </div>
+        <div class="mock p-4 space-y-4 bg-paper">
+          <div class="mono flex justify-between"><span class="font-semibold">Intra 3.0 // Sprint orchestration</span><span class="text-teal">Q1</span></div>
+          <div><div class="flex justify-between text-xs mb-1"><span>Sprint velocity</span><b>94% target</b></div><div class="bar"><i style="--w:94%;background:rgb(var(--teal))"></i></div></div>
+          <div><div class="flex justify-between text-xs mb-1"><span>Scorecard latency</span><b class="text-verm">−82% delay</b></div><div class="bar"><i style="--w:18%"></i></div></div>
+          <p class="text-xs text-graphite border border-line rounded p-2">Automated rollups compile 14 team feeds into an executive digest in under 1.2 seconds.</p>
+        </div>
+      </article>
+      <!-- 05 -->
+      <article class="slide s5"><span class="bignum">05</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Case 05</span> · <span class="text-graphite">Edge Computer Vision · Safety</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">Shell Oman — Real-Time AI CCTV Hazard Telemetry Dashboard</h3>
+          <p class="text-graphite leading-relaxed">Edge-monitoring frontend deployed across fuel depots in Oman, rendering live computer-vision bounding boxes, PPE infractions and perimeter breaches over low-latency feeds.</p>
+          <ul class="text-sm space-y-2">
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>16.2ms render loop:</b> WebGL canvas overlay avoiding UI thread starvation.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>60 FPS streaming:</b> Multi-camera bounding boxes with zero DOM leakage.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Instant alerts:</b> Sub-100ms audible and visual breach triggers.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">WebGL</span><span class="pill pill-t">Canvas API</span><span class="pill pill-t">WebSockets</span><span class="pill pill-t">React</span></div>
+        </div>
+        <div class="mock mono">
+          <div class="px-3 py-2 border-b border-line flex justify-between"><span>Shell CCTV HUD // CAM_04</span><span class="text-verm">● AI detection</span></div>
+          <div class="relative h-48 bg-sand overflow-hidden">
+            <div class="absolute top-5 left-6 border-2 border-ok bg-ok/10 text-ok px-1 text-[9px] font-bold">[PERSON_01] PPE: verified</div>
+            <div class="absolute bottom-8 right-6 border-2 border-verm bg-verm/10 text-verm px-1 text-[9px] font-bold animate-pulse">[ALERT] No helmet detected</div>
+            <div class="absolute left-0 right-0 h-px bg-verm/70" style="animation:scan 3s linear infinite"></div>
+            <div class="absolute bottom-2 left-2 bg-ink text-paper text-[9px] px-1.5 py-0.5 rounded">Frame 16.2ms // 60 FPS</div>
+          </div>
+        </div>
+      </article>
+      <!-- 06 -->
+      <article class="slide s6"><span class="bignum">06</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Case 06</span> · <span class="text-graphite">Distributed EdTech Platform</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">Edubotix — Digital Campus &amp; High-Stakes Examination Engine</h3>
+          <p class="text-graphite leading-relaxed">Secure browser test-taking interface handling university exams for 40,000 simultaneous candidates — with zero data loss even during complete network cutoffs.</p>
+          <ul class="text-sm space-y-2">
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Offline autosave:</b> Service Worker storage with IndexedDB writes.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>40,000 concurrent sessions:</b> Edge delivery with deterministic state sync.</span></li>
+            <li class="flex gap-2"><span class="ms text-teal !text-base mt-0.5">check</span><span><b>Checkpointing:</b> Tamper-resistant response signatures submitted asynchronously.</span></li>
+          </ul>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">Service Workers</span><span class="pill pill-t">IndexedDB</span><span class="pill pill-t">Next.js</span><span class="pill pill-t">TypeScript</span></div>
+        </div>
+        <div class="mock p-4 bg-paper space-y-3 mono">
+          <div class="flex justify-between"><span class="font-semibold">Edubotix // secure session</span><span class="text-ok">Sync armed</span></div>
+          <div class="space-y-2 text-[11px]"><div class="flex justify-between"><span>Concurrent candidates</span><b>40,000</b></div><div class="flex justify-between"><span>IndexedDB buffer</span><b class="text-ok">0 drop</b></div><div class="flex justify-between"><span>Digest</span><span class="text-graphite">SHA-256</span></div></div>
+          <p class="normal-case tracking-normal text-[11px] text-graphite border border-line rounded p-2">When the internet disconnects mid-exam, answers are stored locally and auto-submitted on reconnect.</p>
+        </div>
+      </article>
+      <!-- 07 bonus -->
+      <article class="slide s7"><span class="bignum">07</span>
+        <div class="flex flex-col gap-4 relative">
+          <div class="mono"><span class="text-verm font-semibold">Mobile bonus</span> · <span class="text-graphite">Native Telehealth App</span></div>
+          <h3 class="fd text-3xl md:text-4xl font-medium leading-tight">AtMed Healthcare — Native Patient-Clinician Consultation App</h3>
+          <p class="text-graphite leading-relaxed">Native Android engineering using Jetpack Compose, WebRTC video synchronization and end-to-end encrypted medical record caching with SQLite.</p>
+          <div class="flex flex-wrap gap-2"><span class="pill pill-t">Kotlin</span><span class="pill pill-t">Compose</span><span class="pill pill-t">WebRTC</span><span class="pill pill-t">SQLite</span></div>
+        </div>
+        <div class="flex justify-center"><div class="mock w-52 !rounded-[2rem] p-3 bg-paper"><div class="rounded-[1.5rem] bg-sand h-72 flex flex-col items-center justify-center gap-3"><span class="ms !text-5xl text-teal floaty">videocam</span><span class="mono text-graphite">Consultation live</span><span class="pill">WebRTC · E2E</span></div></div></div>
+      </article>
+    </div>
+    <div class="mt-6 flex items-center gap-4"><div class="flex-1 h-0.5 bg-line relative overflow-hidden rounded"><div id="sp" class="absolute inset-y-0 left-0 bg-verm transition-all duration-300" style="width:14%"></div></div><div id="dots" class="flex gap-2"></div></div>
+  </div>
+</section>
+<style>@keyframes scan{from{top:0}to{top:100%}}</style>
+<!-- 4. MARKETING SITES — tabbed showcase -->
+<section id="marketing-sites" class="py-24 bg-sand/70 border-y border-line">
+  <div class="wrap">
+    <div class="kicker"><span class="mono text-verm font-semibold">02B // Marketing Websites</span><span class="mono text-graphite">4 live production sites</span></div>
+    <div class="grid lg:grid-cols-12 gap-8 mb-12">
+      <h2 class="lg:col-span-8 fd font-medium tracking-tight text-4xl md:text-6xl leading-tight rv">Marketing sites built to rank, convert &amp; scale.</h2>
+      <p class="lg:col-span-4 text-graphite self-end rv">Beyond product dashboards, I build fast, SEO-ready marketing websites for SaaS, mobility and consumer platforms. Four of them are live today.</p>
+    </div>
+    <div class="grid lg:grid-cols-12 gap-10" id="sites">
+      <div class="lg:col-span-4 border-t border-line self-start">
+        <button class="site-tab on" data-i="0"><span class="mono">01</span><span class="fd text-2xl">Visionfacts.ai</span><i class="tl"></i></button>
+        <button class="site-tab" data-i="1"><span class="mono">02</span><span class="fd text-2xl">Khayash</span><i class="tl"></i></button>
+        <button class="site-tab" data-i="2"><span class="mono">03</span><span class="fd text-2xl">Silicon Drive</span><i class="tl"></i></button>
+        <button class="site-tab" data-i="3"><span class="mono">04</span><span class="fd text-2xl">Nashaty</span><i class="tl"></i></button>
+      </div>
+      <div class="lg:col-span-8">
+        <!-- panel 0 -->
+        <div class="site-panel on">
+          <div class="rounded-2xl border border-line bg-paper overflow-hidden shadow-xl">
+            <div class="px-4 py-2 border-b border-line flex items-center gap-2 bg-sand/60"><i class="w-2 h-2 rounded-full bg-line"></i><i class="w-2 h-2 rounded-full bg-line"></i><i class="w-2 h-2 rounded-full bg-line"></i><span class="mono text-graphite mx-auto">visionfacts.ai</span></div>
+            <div class="p-8 bg-gradient-to-br from-verm/10 to-transparent"><div class="flex flex-wrap gap-2 mb-4"><span class="pill">Detection</span><span class="pill">Tracking</span><span class="pill">Counting</span><span class="pill">Analysis</span></div><p class="fd text-3xl leading-snug mb-5 max-w-md">Transforming workplace safety with advanced video analytics</p><span class="btn btn-solid !bg-verm">Request Demo</span></div>
+          </div>
+          <div class="mt-6"><div class="mono text-graphite mb-2">Site 01 · AI Video Analytics · B2B SaaS</div><p class="text-graphite max-w-2xl mb-4">Marketing site for an AI video analytics platform serving retail, manufacturing, smart city and more, built to explain a technical product clearly and drive demo requests.</p>
+          <ul class="text-sm space-y-1 mb-4"><li>→ 8 industry solution pages plus a 50+ use-case library</li><li>→ Case studies, blog and video hub with SEO-ready metadata</li><li>→ Demo-request funnel and WhatsApp chat entry point</li></ul>
+          <div class="flex flex-wrap items-center gap-2"><span class="pill pill-t">Next.js</span><span class="pill pill-t">SEO</span><span class="pill pill-t">Responsive</span><a href="https://visionfacts.ai/" target="_blank" rel="noopener noreferrer" class="ml-auto btn btn-ghost !py-2">Visit live site <span class="ms !text-base">north_east</span></a></div></div>
+        </div>
+        <!-- panel 1 -->
+        <div class="site-panel">
+          <div class="rounded-2xl border border-line bg-paper overflow-hidden shadow-xl">
+            <div class="px-4 py-2 border-b border-line flex items-center gap-2 bg-sand/60"><i class="w-2 h-2 rounded-full bg-line"></i><i class="w-2 h-2 rounded-full bg-line"></i><i class="w-2 h-2 rounded-full bg-line"></i><span class="mono text-graphite mx-auto">khayash.com</span></div>
+            <div class="p-8 bg-gradient-to-br from-teal/10 to-transparent"><div class="flex flex-wrap gap-2 mb-4"><span class="pill">QR Check-in</span><span class="pill">Kiosk App</span><span class="pill">Host Invites</span></div><p class="fd text-3xl leading-snug mb-5">Still using visitor notebooks in the office?</p><div class="flex gap-3"><span class="btn btn-solid">Request a demo</span><span class="btn btn-ghost">Sign up for free</span></div></div>
+          </div>
+          <div class="mt-6"><div class="mono text-graphite mb-2">Site 02 · Visitor Management · SaaS</div><p class="text-graphite max-w-2xl mb-4">Product marketing site for a QR-based front office and visitor management platform, with clear pricing, industry pages and sign-up paths into the live app.</p>
+          <ul class="text-sm space-y-1 mb-4"><li>→ Product pages (VMS, Mailroom) and 8 industry solution pages</li><li>→ Pricing page, demo request and free sign-up funnel</li><li>→ Blog, FAQ, sitemap and Open Graph metadata</li></ul>
+          <div class="flex flex-wrap items-center gap-2"><span class="pill pill-t">Next.js</span><span class="pill pill-t">SEO</span><span class="pill pill-t">Conversion Funnel</span><a href="https://khayash.com/" target="_blank" rel="noopener noreferrer" class="ml-auto btn btn-ghost !py-2">Visit live site <span class="ms !text-base">north_east</span></a></div></div>
+        </div>
+        <!-- panel 2 -->
+        <div class="site-panel">
+          <div class="rounded-2xl border border-line bg-paper overflow-hidden shadow-xl">
+            <div class="px-4 py-2 border-b border-line flex items-center gap-2 bg-sand/60"><i class="w-2 h-2 rounded-full bg-line"></i><i class="w-2 h-2 rounded-full bg-line"></i><i class="w-2 h-2 rounded-full bg-line"></i><span class="mono text-graphite mx-auto">silicondrive.com</span></div>
+            <div class="p-8 bg-gradient-to-br from-ink/10 to-transparent"><div class="inline-flex rounded-full border border-line p-0.5 mb-4 mono"><span class="px-3 py-1 rounded-full bg-ink text-paper">Ride</span><span class="px-3 py-1">Drive</span><span class="px-3 py-1">Business</span></div><p class="fd text-3xl leading-snug mb-5">Get where you need to go safely &amp; affordably</p><span class="btn btn-solid !bg-verm">Download App</span></div>
+          </div>
+          <div class="mt-6"><div class="mono text-graphite mb-2">Site 03 · Mobility · Cab Booking</div><p class="text-graphite max-w-2xl mb-4">Public marketing site for the Silicon Drive cab platform, speaking to three audiences at once: riders, driver and fleet partners, and corporate customers.</p>
+          <ul class="text-sm space-y-1 mb-4"><li>→ Separate Riders, Drivers, Fleet Owner and Business (B2B) pages</li><li>→ Animated “How it works” steps, ride types, safety and prebook sections</li><li>→ App download CTAs, blog, FAQs and legal pages</li></ul>
+          <div class="flex flex-wrap items-center gap-2"><span class="pill pill-t">Next.js</span><span class="pill pill-t">Multi-audience IA</span><span class="pill pill-t">Responsive</span><a href="https://silicondrive.com/" target="_blank" rel="noopener noreferrer" class="ml-auto btn btn-ghost !py-2">Visit live site <span class="ms !text-base">north_east</span></a></div></div>
+        </div>
+        <!-- panel 3 -->
+        <div class="site-panel">
+          <div class="rounded-2xl border border-line bg-paper overflow-hidden shadow-xl">
+            <div class="px-4 py-2 border-b border-line flex items-center gap-2 bg-sand/60"><i class="w-2 h-2 rounded-full bg-line"></i><i class="w-2 h-2 rounded-full bg-line"></i><i class="w-2 h-2 rounded-full bg-line"></i><span class="mono text-graphite mx-auto">nashaty.com</span></div>
+            <div class="p-8 bg-gradient-to-br from-verm/10 to-teal/10"><div class="flex flex-wrap gap-2 mb-4"><span class="pill">For Parents</span><span class="pill">For Providers</span><span class="pill">EN / AR</span></div><p class="fd text-3xl leading-snug mb-5">Grow Their World</p><span class="btn btn-solid">Download app</span></div>
+          </div>
+          <div class="mt-6"><div class="mono text-graphite mb-2">Site 04 · Kids Activities · Qatar</div><p class="text-graphite max-w-2xl mb-4">Two-sided marketing site for a Qatar after-school activity marketplace, built to win parents on one side and onboard activity providers on the other.</p>
+          <ul class="text-sm space-y-1 mb-4"><li>→ Dedicated For Parents and For Service Providers journeys</li><li>→ Provider onboarding form with document uploads and plan selection</li><li>→ Language switcher, parent blog, FAQs and App Store / Google Play links</li></ul>
+          <div class="flex flex-wrap items-center gap-2"><span class="pill pill-t">Next.js</span><span class="pill pill-t">Bilingual</span><span class="pill pill-t">Forms &amp; Uploads</span><a href="https://nashaty.com/" target="_blank" rel="noopener noreferrer" class="ml-auto btn btn-ghost !py-2">Visit live site <span class="ms !text-base">north_east</span></a></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 5. HOW I WORK — scroll-lit manifesto + stacking cards -->
+<section id="craft-and-philosophy" class="py-24">
+  <div class="wrap">
+    <div class="kicker"><span class="mono text-verm font-semibold">03 // How I Work</span><span class="mono text-graphite">Foundational ethos</span></div>
+    <h2 class="fd font-medium tracking-tight text-4xl md:text-6xl mb-10 rv">How I think about building for the web.</h2>
+    <p id="manifesto" class="fd italic text-3xl md:text-5xl leading-[1.25] max-w-5xl mb-6">“I care less about how a page looks when everything works, and more about how it behaves when things go wrong: a slow network, a late-loading font, or someone navigating solely with a keyboard.”</p>
+    <div class="mono text-graphite mb-24">Craft Manifesto · Praveen Kumar S.</div>
+    <div class="space-y-6 pb-10">
+      <div class="stack" style="--i:0"><div class="rounded-3xl p-8 md:p-12 grid md:grid-cols-12 gap-6 items-center bg-verm text-white shadow-2xl"><span class="fd md:col-span-2 text-8xl font-bold opacity-40">01</span><div class="md:col-span-7"><h3 class="fd text-3xl md:text-4xl mb-3">Polished, but lightweight</h3><p class="opacity-90 leading-relaxed">Minimal CSS weight, zero unnecessary runtime abstractions, native browser layout primitives, and hardware-accelerated 60fps animations that never drop a frame.</p></div><div class="md:col-span-3 mono md:text-right">Metric<br><b class="text-2xl fd normal-case">0ms jank target</b></div></div></div>
+      <div class="stack" style="--i:1"><div class="rounded-3xl p-8 md:p-12 grid md:grid-cols-12 gap-6 items-center bg-teal text-white shadow-2xl"><span class="fd md:col-span-2 text-8xl font-bold opacity-40">02</span><div class="md:col-span-7"><h3 class="fd text-3xl md:text-4xl mb-3">Clear, predictable state</h3><p class="opacity-90 leading-relaxed">Deterministic finite state patterns. Async data flows decoupled from presentation components, making bugs reproducible and client state predictable under jitter.</p></div><div class="md:col-span-3 mono md:text-right">Axiom<br><b class="text-2xl fd normal-case">Immutable store</b></div></div></div>
+      <div class="stack" style="--i:2"><div class="rounded-3xl p-8 md:p-12 grid md:grid-cols-12 gap-6 items-center bg-ink text-paper shadow-2xl"><span class="fd md:col-span-2 text-8xl font-bold opacity-30">03</span><div class="md:col-span-7"><h3 class="fd text-3xl md:text-4xl mb-3">Built for everyone, everywhere</h3><p class="opacity-80 leading-relaxed">WCAG AA accessibility from day zero. Logical focus rings, semantic landmarks, high-contrast resilience, and screen-reader navigable telemetry feeds.</p></div><div class="md:col-span-3 mono md:text-right">Standard<br><b class="text-2xl fd normal-case">WCAG 2.1 AA</b></div></div></div>
+    </div>
+  </div>
+</section>
+<!-- 6. TOOLKIT — dual marquee + terminal tabs -->
+<section id="tech-and-stack" class="py-24 bg-sand/70 border-y border-line overflow-hidden">
+  <div class="wrap">
+    <div class="kicker"><span class="mono text-verm font-semibold">04 // Toolkit &amp; Proficiencies</span><span class="mono text-graphite">Stack revision 4.2</span></div>
+    <h2 class="fd font-medium tracking-tight text-4xl md:text-6xl mb-4 max-w-3xl rv">Instruments honed over hundreds of production commits.</h2>
+    <p class="text-graphite max-w-2xl mb-14 rv">Technical tooling that favors durability, runtime stability and web standards over fleeting industry hype.</p>
+  </div>
+  <div class="marq-wrap space-y-4 mb-16">
+    <div class="marq" style="--t:38s">
+      <div class="flex gap-4 pr-4 shrink-0 fd text-5xl md:text-7xl font-medium"><span>React 19</span><span class="text-verm">✦</span><span>Next.js</span><span class="text-verm">✦</span><span>TypeScript</span><span class="text-verm">✦</span><span>Tailwind</span><span class="text-verm">✦</span><span>TanStack</span><span class="text-verm">✦</span></div>
+      <div class="flex gap-4 pr-4 shrink-0 fd text-5xl md:text-7xl font-medium"><span>React 19</span><span class="text-verm">✦</span><span>Next.js</span><span class="text-verm">✦</span><span>TypeScript</span><span class="text-verm">✦</span><span>Tailwind</span><span class="text-verm">✦</span><span>TanStack</span><span class="text-verm">✦</span></div>
+    </div>
+    <div class="marq rev" style="--t:44s">
+      <div class="flex gap-4 pr-4 shrink-0 fd italic text-5xl md:text-7xl text-transparent" style="-webkit-text-stroke:1.5px rgb(var(--ink))"><span>WebSockets</span><span>✦</span><span>AWS</span><span>✦</span><span>GraphQL</span><span>✦</span><span>Kotlin</span><span>✦</span><span>Vite</span><span>✦</span></div>
+      <div class="flex gap-4 pr-4 shrink-0 fd italic text-5xl md:text-7xl text-transparent" style="-webkit-text-stroke:1.5px rgb(var(--ink))"><span>WebSockets</span><span>✦</span><span>AWS</span><span>✦</span><span>GraphQL</span><span>✦</span><span>Kotlin</span><span>✦</span><span>Vite</span><span>✦</span></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="rounded-2xl border border-line bg-ink text-paper overflow-hidden shadow-2xl rv rv-s">
+      <div class="flex items-center gap-2 px-4 py-3 border-b border-paper/15"><i class="w-3 h-3 rounded-full bg-verm"></i><i class="w-3 h-3 rounded-full bg-yellow-400"></i><i class="w-3 h-3 rounded-full bg-ok"></i><span class="mono opacity-60 mx-auto">~/toolkit — zsh</span></div>
+      <div class="p-6 md:p-10">
+        <div class="flex flex-wrap gap-2 mb-8" id="tt"><button class="tt on !text-paper" data-i="0">A · Core Client</button><button class="tt !text-paper" data-i="1">B · Systems &amp; Infra</button><button class="tt !text-paper" data-i="2">C · Code Rigor</button></div>
+        <ul class="tp on grid md:grid-cols-2 gap-x-10 gap-y-5">
+          <li style="--k:0"><div class="flex justify-between"><b>React 19 / 18</b><span class="mono text-teal">concurrent</span></div><p class="text-sm opacity-60">Suspense, Server Components, action transitions, micro-task coordination.</p></li>
+          <li style="--k:1"><div class="flex justify-between"><b>Next.js (App &amp; Pages)</b><span class="mono text-teal">hybrid SSR</span></div><p class="text-sm opacity-60">Streaming SSR, ISR regeneration, route handlers, middleware cookies.</p></li>
+          <li style="--k:2"><div class="flex justify-between"><b>TypeScript (Strict)</b><span class="mono text-teal">type safety</span></div><p class="text-sm opacity-60">Generics, discriminated unions, zero-any policy, schema verification.</p></li>
+          <li style="--k:3"><div class="flex justify-between"><b>Modern JavaScript</b><span class="mono text-teal">standards</span></div><p class="text-sm opacity-60">Async iterators, event loops, Web Workers, Proxy wrappers, DOM APIs.</p></li>
+        </ul>
+        <ul class="tp grid md:grid-cols-2 gap-x-10 gap-y-5">
+          <li style="--k:0"><div class="flex justify-between"><b>AWS Cloud Practitioner</b><span class="mono text-verm">accredited</span></div><p class="text-sm opacity-60">S3 static hosting, CloudFront distributions, Route 53, IAM policy security.</p></li>
+          <li style="--k:1"><div class="flex justify-between"><b>REST &amp; GraphQL</b><span class="mono text-verm">apis</span></div><p class="text-sm opacity-60">Normalized client schemas, optimistic mutations, batch query resolution.</p></li>
+          <li style="--k:2"><div class="flex justify-between"><b>WebSockets &amp; SSE</b><span class="mono text-verm">real-time</span></div><p class="text-sm opacity-60">Bi-directional dispatch, heartbeats, reconnection backoffs.</p></li>
+          <li style="--k:3"><div class="flex justify-between"><b>CI/CD Automation</b><span class="mono text-verm">deploy</span></div><p class="text-sm opacity-60">GitHub Actions, Vercel edge deployment, bundle regression checks.</p></li>
+        </ul>
+        <ul class="tp grid md:grid-cols-2 gap-x-10 gap-y-5">
+          <li style="--k:0"><div class="flex justify-between"><b>Bundle Budgeting</b><span class="mono text-ok">metrics</span></div><p class="text-sm opacity-60">Zero-dependency audits, tree-shaking, Rollup manual chunking.</p></li>
+          <li style="--k:1"><div class="flex justify-between"><b>Jest &amp; RTL</b><span class="mono text-ok">testing</span></div><p class="text-sm opacity-60">Behavior-driven integration tests, MSW network mocking, 85%+ coverage.</p></li>
+          <li style="--k:2"><div class="flex justify-between"><b>Web Vitals Profiling</b><span class="mono text-ok">vitals</span></div><p class="text-sm opacity-60">INP &lt; 200ms, LCP &lt; 2.5s, CLS &lt; 0.1 verified on throttled 3G devices.</p></li>
+          <li style="--k:3"><div class="flex justify-between"><b>Tailwind &amp; CSS Modules</b><span class="mono text-ok">styling</span></div><p class="text-sm opacity-60">Sub-50KB CSS payloads, custom design systems, token scale.</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 7. JOURNEY — scroll-drawn zigzag timeline -->
+<section id="engineering-journey" class="py-24">
+  <div class="wrap">
+    <div class="kicker"><span class="mono text-verm font-semibold">05 // Work Experience</span><span class="mono text-graphite">2021 — Present</span></div>
+    <h2 class="fd font-medium tracking-tight text-4xl md:text-6xl mb-20 rv">Engineering journey &amp; career trajectory.</h2>
+    <div class="relative" id="tl">
+      <div class="absolute top-0 bottom-0 left-[7px] md:left-1/2 w-px bg-line"></div>
+      <div id="tl-fill" class="absolute top-0 bottom-0 left-[7px] md:left-1/2 w-0.5 -ml-px bg-verm"></div>
+      <div class="space-y-20">
+        <div class="relative pl-10 md:pl-0 md:w-1/2 md:pr-14 md:text-right rv rv-l">
+          <span class="absolute left-0 md:left-auto md:-right-[7px] top-2 w-3.5 h-3.5 bg-verm rotate-45 ring-4 ring-paper"></span>
+          <div class="mono text-verm font-semibold">Oct 2022 — Present · Current</div>
+          <h3 class="fd text-3xl font-semibold mt-1">Software Engineer — Frontend &amp; System Architecture</h3>
+          <div class="text-teal font-medium mb-3">Nextbrain Technologies · Bengaluru</div>
+          <p class="text-graphite mb-3">Lead frontend engineer across 5 flagship client platforms. Responsible for browser runtime performance, component library standardization, and delivery of complex data-visualization dashboards.</p>
+          <ul class="text-sm space-y-1.5 text-ink"><li>Architected the Silicon Drive cab booking web interface, scaling dispatch monitoring to 1,000+ drivers simultaneously.</li><li>Cut production JavaScript bundles by 20% across multi-tenant apps with Rollup route-splitting and dynamic hydration.</li><li>Standardized design tokens into an accessible design system adopted by 12 frontend engineers.</li></ul>
+        </div>
+        <div class="relative pl-10 md:pl-14 md:w-1/2 md:ml-auto rv rv-r">
+          <span class="absolute left-0 md:-left-[7px] top-2 w-3.5 h-3.5 bg-ink rotate-45 ring-4 ring-paper"></span>
+          <div class="mono text-graphite font-semibold">Oct 2021 — Oct 2022 · 1 year</div>
+          <h3 class="fd text-3xl font-semibold mt-1">Android Developer — Native Applications</h3>
+          <div class="text-teal font-medium mb-3">Nextbrain Technologies · Bengaluru</div>
+          <p class="text-graphite mb-3">Engineered native Android apps using Kotlin, Android Jetpack and Coroutines. Built background sync routines and offline database architectures.</p>
+          <ul class="text-sm space-y-1.5"><li>Delivered the AtMed Healthcare Android consultation app with real-time WebRTC audio/video.</li><li>Built SQLite persistence layers ensuring 100% data durability during network dropouts.</li></ul>
+        </div>
+        <div class="relative pl-10 md:pr-14 md:pl-0 md:w-1/2 md:text-right rv rv-l">
+          <span class="absolute left-0 md:left-auto md:-right-[7px] top-2 w-3.5 h-3.5 bg-line rotate-45 ring-4 ring-paper"></span>
+          <div class="mono text-graphite font-semibold">May 2021 — Sep 2021 · 5 months</div>
+          <h3 class="fd text-3xl font-semibold mt-1">Web Development Intern</h3>
+          <div class="text-graphite font-medium mb-3">Infomats Technologies · Coimbatore</div>
+          <p class="text-graphite">Authored responsive HTML5/CSS3 templates, ran cross-browser regression testing across iOS Safari and Chromium, and built lightweight JavaScript interactive modules.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 8. SKILLS — 3D flip cards -->
+<section id="skills-matrix" class="py-24 band-dark">
+  <div class="wrap">
+    <div class="kicker"><span class="mono text-verm font-semibold">06 // Skills &amp; Proficiencies</span><span class="mono text-graphite">Hover or tap to flip</span></div>
+    <h2 class="fd font-medium tracking-tight text-4xl md:text-6xl mb-14 rv">Core technical skills &amp; competencies.</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="flip rv rv-s" style="--d:0s"><div>
+        <div class="f bg-verm text-white"><span class="mono">Category 01</span><h3 class="fd text-3xl leading-tight">Programming Languages</h3><span class="ms">sync</span></div>
+        <div class="b bg-cream border border-line"><div class="flex flex-wrap gap-2"><span class="pill">JavaScript ES6+</span><span class="pill">TypeScript</span><span class="pill">HTML5</span><span class="pill">CSS3</span><span class="pill">Kotlin</span><span class="pill">SQL</span></div><p class="text-sm text-graphite">Deep mastery of JS event loops, micro-tasks, type coercion, and strict compile-time invariants.</p></div>
+      </div></div>
+      <div class="flip rv rv-s" style="--d:.1s"><div>
+        <div class="f bg-teal text-white"><span class="mono">Category 02</span><h3 class="fd text-3xl leading-tight">Frameworks &amp; Libraries</h3><span class="ms">sync</span></div>
+        <div class="b bg-cream border border-line"><div class="flex flex-wrap gap-2"><span class="pill">React.js</span><span class="pill">Next.js</span><span class="pill">Redux Toolkit</span><span class="pill">Zustand</span><span class="pill">Tailwind CSS</span><span class="pill">TanStack Query</span><span class="pill">Material UI</span></div><p class="text-sm text-graphite">Optimized lifecycles, shallow state diffing, and zero re-render cascades.</p></div>
+      </div></div>
+      <div class="flip rv rv-s" style="--d:.2s"><div>
+        <div class="f bg-sand text-ink border border-line"><span class="mono">Category 03</span><h3 class="fd text-3xl leading-tight">Mobile Development</h3><span class="ms">sync</span></div>
+        <div class="b bg-cream border border-line"><div class="flex flex-wrap gap-2"><span class="pill">Android SDK</span><span class="pill">Jetpack Compose</span><span class="pill">XML Layouts</span><span class="pill">SQLite</span><span class="pill">Coroutines</span><span class="pill">Flow API</span></div><p class="text-sm text-graphite">Native hardware lifecycles, memory-constraint awareness, and touch latency tuning.</p></div>
+      </div></div>
+      <div class="flip rv rv-s" style="--d:.3s"><div>
+        <div class="f bg-ink text-paper border border-line"><span class="mono">Category 04</span><h3 class="fd text-3xl leading-tight">Architecture &amp; Tools</h3><span class="ms">sync</span></div>
+        <div class="b bg-cream border border-line"><div class="flex flex-wrap gap-2"><span class="pill">Git / GitHub Actions</span><span class="pill">AWS S3 / CloudFront</span><span class="pill">Docker</span><span class="pill">Webpack / Vite</span><span class="pill">DevTools</span><span class="pill">Lighthouse</span><span class="pill">Figma to Code</span></div><p class="text-sm text-graphite">Disciplined branching, automated test gates, and pixel-exact design handoffs.</p></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+<!-- 9. FAQ — big numbered accordion -->
+<section id="faq" class="py-24">
+  <div class="wrap">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-4 lg:sticky lg:top-28 self-start">
+        <span class="mono text-verm font-semibold">07 // FAQ</span>
+        <h2 class="fd font-medium tracking-tight text-4xl md:text-5xl mt-3 rv">Direct answers to common inquiries.</h2>
+      </div>
+      <div class="lg:col-span-8 border-t border-line" id="faqs">
+        <div class="fi on border-b border-line py-6 cursor-pointer rv"><div class="flex items-center gap-5"><span class="fd text-4xl text-verm w-14">01</span><h3 class="fd text-xl md:text-2xl flex-1">What is your primary architectural approach when starting a greenfield frontend?</h3><span class="ms pl !text-3xl text-verm">add</span></div><div class="fq"><div><p class="text-graphite pl-[76px] pt-4 leading-relaxed">I start at the data boundaries rather than the UI canvas. I define strict domain types, establish normalized cache boundaries (typically via TanStack Query), map out error state flows, and set strict JavaScript bundle budgets before writing presentation markup, so performance and maintainability don’t erode as the UI scales.</p></div></div></div>
+        <div class="fi border-b border-line py-6 cursor-pointer rv"><div class="flex items-center gap-5"><span class="fd text-4xl text-verm w-14">02</span><h3 class="fd text-xl md:text-2xl flex-1">How do you balance aesthetic micro-interactions with tight performance budgets?</h3><span class="ms pl !text-3xl text-verm">add</span></div><div class="fq"><div><p class="text-graphite pl-[76px] pt-4 leading-relaxed">I stick to compositor-only transitions, animating just <code class="mono">transform</code> and <code class="mono">opacity</code> so animations run on the GPU without triggering reflows. Heavy canvas loops (like WebGL bounding boxes) are segregated into dedicated offscreen rendering pipelines.</p></div></div></div>
+        <div class="fi border-b border-line py-6 cursor-pointer rv"><div class="flex items-center gap-5"><span class="fd text-4xl text-verm w-14">03</span><h3 class="fd text-xl md:text-2xl flex-1">Are you open to relocating or working with distributed remote teams?</h3><span class="ms pl !text-3xl text-verm">add</span></div><div class="fq"><div><p class="text-graphite pl-[76px] pt-4 leading-relaxed">Yes. I’m based in Bengaluru (UTC+5:30) and available for on-site roles in the city, hybrid setups, or fully distributed global teams. I’m used to asynchronous communication, detailed PR documentation, and cross-timezone syncs.</p></div></div></div>
+        <div class="fi border-b border-line py-6 cursor-pointer rv"><div class="flex items-center gap-5"><span class="fd text-4xl text-verm w-14">04</span><h3 class="fd text-xl md:text-2xl flex-1">How does your native Android experience inform your web frontend work?</h3><span class="ms pl !text-3xl text-verm">add</span></div><div class="fq"><div><p class="text-graphite pl-[76px] pt-4 leading-relaxed">Native Android builds an acute awareness of device constraints: garbage collection pauses, thermal throttling, touch-event latency, and SQLite durability. On the web that becomes zero tolerance for memory leaks, reckless re-rendering, and unvalidated network calls.</p></div></div></div>
+        <div class="fi border-b border-line py-6 cursor-pointer rv"><div class="flex items-center gap-5"><span class="fd text-4xl text-verm w-14">05</span><h3 class="fd text-xl md:text-2xl flex-1">What is your availability for new contracts or full-time opportunities?</h3><span class="ms pl !text-3xl text-verm">add</span></div><div class="fq"><div><p class="text-graphite pl-[76px] pt-4 leading-relaxed">I’m open to discussions for Senior Frontend Engineer, Web Architect, or Founding Frontend Engineer roles. A standard notice period applies for full-time transitions, with immediate availability for selective advisory or architectural consulting.</p></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 10. CONTACT — dark, giant type + magnetic button -->
+<section id="contact" class="band-dark py-24 overflow-hidden relative">
+  <div class="marq-wrap absolute top-6 left-0 w-full opacity-[0.07] pointer-events-none">
+    <div class="marq" style="--t:60s"><span class="fd text-[140px] font-bold whitespace-nowrap pr-10">LET’S BUILD SOMETHING EXCEPTIONAL — LET’S BUILD SOMETHING EXCEPTIONAL — </span><span class="fd text-[140px] font-bold whitespace-nowrap pr-10">LET’S BUILD SOMETHING EXCEPTIONAL — LET’S BUILD SOMETHING EXCEPTIONAL — </span></div>
+  </div>
+  <div class="wrap relative">
+    <div class="kicker"><span class="mono text-verm font-semibold">08 // Contact &amp; Opportunities</span><span class="mono flex items-center gap-2"><i class="w-2 h-2 rounded-full bg-ok animate-ping"></i>Open to on-site BLR, hybrid, remote</span></div>
+    <h2 class="fd font-medium tracking-tighter leading-[0.95] text-5xl md:text-8xl mb-8 rv">Let’s build<br><em class="text-verm font-normal">something exceptional</em> together.</h2>
+    <p class="text-graphite text-lg max-w-2xl mb-12 rv">Whether you’re refactoring a sluggish enterprise dashboard, starting a flagship product from scratch, or seeking guidance on browser performance, my channel is open.</p>
+    <div class="flex flex-wrap items-center gap-4 mb-14 rv">
+      <a href="mailto:praveenkumarselvan02@gmail.com" class="fd text-2xl md:text-5xl font-semibold underline decoration-verm decoration-2 underline-offset-8 hover:text-verm transition-colors break-all">praveenkumarselvan02@gmail.com</a>
+      <button id="copy" class="btn btn-ghost !border-paper/40"><span class="ms !text-base">content_copy</span>Copy</button>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 items-end border-t border-line pt-10">
+      <div><span class="mono text-graphite block mb-1">WhatsApp</span><a href="https://wa.me/917558169247" target="_blank" rel="noopener noreferrer" class="text-xl font-semibold hover:text-teal transition-colors">+91 75581 69247</a></div>
+      <div><span class="mono text-graphite block mb-1">GitHub</span><a href="https://github.com/praveenkumars" target="_blank" rel="noopener noreferrer" class="text-xl font-semibold hover:text-teal transition-colors">github.com/praveenkumars</a></div>
+      <div class="md:text-right"><a id="mag" href="mailto:praveenkumarselvan02@gmail.com?subject=Engineering%20Engagement%20Inquiry" class="mag btn !bg-verm !text-white !px-8 !py-5 shadow-xl">Initiate Direct Inquiry <span class="ms !text-base">send</span></a></div>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-4 mt-10 mono text-graphite"><span>Response window: &lt; 12 hours</span><span>Timezone sync: US / EU / APAC</span><span class="text-ok">Status: ready to deploy</span></div>
+  </div>
+</section>
+</main>
+<footer class="bg-paper border-t border-line py-12">
+  <div class="wrap flex flex-col md:flex-row justify-between gap-6 md:items-center">
+    <div><div class="fd text-2xl font-semibold">Praveen Kumar S.</div><div class="mono text-graphite">Senior Frontend Engineer &amp; Web Architect © 2026</div><p class="fd italic text-graphite mt-2">“Bringing designs to life, one pixel and one frame at a time.”</p></div>
+    <div class="flex gap-6 mono text-graphite"><a class="hover:text-verm" href="#impact">Impact</a><a class="hover:text-verm" href="#selected-works">Works</a><a class="hover:text-verm" href="#engineering-journey">Journey</a><a class="hover:text-verm" href="#contact">Contact</a></div>
+  </div>
+</footer>
+<div id="toast" class="fixed bottom-6 right-6 z-50 translate-y-20 opacity-0 pointer-events-none transition-all duration-300 bg-ink text-paper px-4 py-2 rounded flex items-center gap-2"><span class="ms text-ok">check_circle</span><span class="mono">Email address copied</span></div>
+<script>
+(function(){
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+/* Theme */
+const root=document.documentElement, knob=$('#knob'), knobi=$('#knobi');
+function setTheme(d){root.classList.toggle('dark',d);knob.style.transform=d?'translateX(28px)':'none';knobi.textContent=d?'dark_mode':'light_mode';try{localStorage.setItem('portfolio_theme',d?'dark':'light')}catch(e){}}
+let saved=null;try{saved=localStorage.getItem('portfolio_theme')}catch(e){}
+setTheme(saved==='dark');
+$('#theme').addEventListener('click',()=>setTheme(!root.classList.contains('dark')));
+/* Reveal */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+$$('.rv').forEach(el=>io.observe(el));
+/* Count-up */
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;cio.unobserve(e.target);const end=+e.target.dataset.count,t0=performance.now(),dur=1600;(function f(t){const p=Math.min((t-t0)/dur,1);e.target.textContent=Math.round(end*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
+$$('[data-count]').forEach(el=>cio.observe(el));
+/* Typewriter */
+const phrases=['I craft high-fidelity interfaces','I engineer resilient web architectures','I tune every millisecond of the browser','I turn data flows into fluid UI'];
+const tEl=$('#type');let pi=0,ci=0,del=false;
+(function tick(){const w=phrases[pi];ci+=del?-1:1;tEl.textContent=w.slice(0,ci)+(ci?'':'\u00A0');let d=del?28:60;if(!del&&ci===w.length){del=true;d=1600}else if(del&&ci===0){del=false;pi=(pi+1)%phrases.length;d=350}setTimeout(tick,d)})();
+/* Slider */
+const track=$('#track'),slides=$$('.slide'),dots=$('#dots');
+slides.forEach((_,i)=>{const b=document.createElement('button');b.className='w-2.5 h-2.5 rounded-full bg-line transition-all';b.setAttribute('aria-label','Slide '+(i+1));b.onclick=()=>go(i);dots.appendChild(b)});
+function cur(){return Math.round(track.scrollLeft/(slides[0].offsetWidth+20))}
+function go(i){i=Math.max(0,Math.min(slides.length-1,i));track.scrollTo({left:i*(slides[0].offsetWidth+20),behavior:'smooth'})}
+function upd(){const i=Math.min(slides.length-1,cur());$('#cnt').textContent=String(i+1).padStart(2,'0');$('#sp').style.width=((i+1)/slides.length*100)+'%';slides.forEach((s,k)=>s.classList.toggle('act',k===i));$$('button',dots).forEach((b,k)=>{b.style.background=k===i?'rgb(var(--verm))':'';b.style.transform=k===i?'scale(1.5)':''})}
+track.addEventListener('scroll',()=>requestAnimationFrame(upd));upd();
+$('#prev').onclick=()=>go(cur()-1);$('#next').onclick=()=>go(cur()+1);
+let down=false,sx=0,sl=0,moved=false;
+track.addEventListener('mousedown',e=>{down=true;moved=false;sx=e.pageX;sl=track.scrollLeft});
+window.addEventListener('mouseup',()=>{if(!down)return;down=false;track.classList.remove('drag');if(moved)go(Math.round(track.scrollLeft/(slides[0].offsetWidth+20)))});
+window.addEventListener('mousemove',e=>{if(!down)return;const dx=e.pageX-sx;if(Math.abs(dx)>5){moved=true;track.classList.add('drag')}if(moved)track.scrollLeft=sl-dx});
+const wsec=$('#selected-works');
+document.addEventListener('keydown',e=>{const r=wsec.getBoundingClientRect();if(r.top<innerHeight*.6&&r.bottom>innerHeight*.4){if(e.key==='ArrowRight')go(cur()+1);if(e.key==='ArrowLeft')go(cur()-1)}});
+/* Site tabs with autoplay */
+const tabs=$$('.site-tab'),panels=$$('.site-panel');let ti=0,timer;
+function showSite(i){ti=i;tabs.forEach((t,k)=>{t.classList.remove('on');void t.offsetWidth;t.classList.toggle('on',k===i)});panels.forEach((p,k)=>p.classList.toggle('on',k===i));clearTimeout(timer);timer=setTimeout(()=>showSite((ti+1)%tabs.length),7000)}
+tabs.forEach((t,i)=>t.addEventListener('click',()=>showSite(i)));
+let siteVis=false;new IntersectionObserver(es=>{siteVis=es[0].isIntersecting;if(siteVis)showSite(ti);else clearTimeout(timer)}).observe($('#sites'));
+/* Manifesto word-by-word light-up */
+const man=$('#manifesto');man.innerHTML=man.textContent.split(' ').map(w=>'<span class="word">'+w+'</span>').join(' ');
+const words=$$('.word',man);
+/* Tool tabs */
+$$('#tt .tt').forEach(b=>b.addEventListener('click',()=>{$$('#tt .tt').forEach(x=>x.classList.remove('on'));b.classList.add('on');$$('.tp').forEach((p,k)=>{p.classList.remove('on');if(k==b.dataset.i){void p.offsetWidth;p.classList.add('on')}})}));
+/* Flip tap */
+$$('.flip').forEach(f=>f.addEventListener('click',()=>f.classList.toggle('on')));
+/* FAQ */
+const fis=$$('.fi');fis.forEach(f=>f.addEventListener('click',()=>{const o=f.classList.contains('on');fis.forEach(x=>{x.classList.remove('on');$('.pl',x).textContent='add'});if(!o){f.classList.add('on');$('.pl',f).textContent='add'}}));
+/* Copy email */
+$('#copy').addEventListener('click',async()=>{const t=$('#toast');try{await navigator.clipboard.writeText('praveenkumarselvan02@gmail.com');t.classList.remove('translate-y-20','opacity-0');setTimeout(()=>t.classList.add('translate-y-20','opacity-0'),2500)}catch(e){location.href='mailto:praveenkumarselvan02@gmail.com'}});
+/* Magnetic button */
+const mag=$('#mag');mag.parentElement.addEventListener('mousemove',e=>{const r=mag.getBoundingClientRect();mag.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});
+mag.parentElement.addEventListener('mouseleave',()=>mag.style.transform='');
+/* Scroll-linked effects */
+const prog=$('#progress'),wm=$('#wm'),tl=$('#tl'),tlf=$('#tl-fill');
+const secs=$$('main section[id]'),navs=$$('#nav a');
+function onScroll(){
+  const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-innerHeight)*100)+'%';
+  wm.style.transform='translateX('+(-h.scrollTop*.25)+'px)';
+  const mr=man.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.85-mr.top)/(mr.height+innerHeight*.3)));
+  const n=Math.floor(p*words.length*1.1);words.forEach((w,i)=>w.classList.toggle('lit',i<n));
+  const tr=tl.getBoundingClientRect(),tp=Math.min(1,Math.max(0,(innerHeight*.6-tr.top)/tr.height));tlf.style.transform='scaleY('+tp+')';
+  let id='';secs.forEach(s=>{const r=s.getBoundingClientRect();if(r.top<innerHeight*.4&&r.bottom>innerHeight*.4)id=s.id});
+  navs.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+id));
+}
+addEventListener('scroll',()=>requestAnimationFrame(onScroll),{passive:true});onScroll();
+})();
+</script>
+</body>
+</html>
