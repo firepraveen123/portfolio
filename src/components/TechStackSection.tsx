@@ -311,10 +311,6 @@ export default function TechStackSection() {
               Track 01 // Client Systems &amp; Component Runtimes
             </span>
           </div>
-          <div className="hidden sm:flex items-center gap-2 text-[10px]">
-            <span className="px-2 py-0.5 rounded bg-ink/5 border border-line text-ink font-medium">CONCURRENCY · 60 FPS</span>
-            <span>07 ENGINE NODES</span>
-          </div>
         </div>
 
         {/* Track 1: Client Runtimes (Leftwards) */}
@@ -424,10 +420,6 @@ export default function TechStackSection() {
             <span className="font-semibold text-ink uppercase tracking-wider text-[11px] sm:text-xs">
               Track 02 // Cloud Infrastructure, Protocols &amp; Native Mobile
             </span>
-          </div>
-          <div className="hidden sm:flex items-center gap-2 text-[10px]">
-            <span className="px-2 py-0.5 rounded bg-ink/5 border border-line text-ink font-medium">AES-GCM · DISTRIBUTED</span>
-            <span>HIGH RESILIENCE</span>
           </div>
         </div>
 
