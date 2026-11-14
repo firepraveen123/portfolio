@@ -66,16 +66,36 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative overflow-hidden pt-16">
+      {/* Background Portrait of Praveen */}
+      <div
+        className="pointer-events-none absolute right-0 top-0 bottom-0 w-full lg:w-[65%] xl:w-[58%] select-none overflow-hidden z-0"
+        aria-hidden="true"
+      >
+        {/* Portrait Image Layer */}
+        <div
+          className="absolute inset-0 bg-no-repeat bg-right-bottom md:bg-right bg-cover md:bg-contain transition-opacity duration-700 opacity-20 sm:opacity-25 lg:opacity-35 dark:opacity-40 filter contrast-105 saturate-[0.85] dark:saturate-100"
+          style={{
+            backgroundImage: "url('/praveen.jpg')",
+          }}
+        />
+
+        {/* Multi-Directional Feathering Gradients to seamlessly blend with theme */}
+        <div className="absolute inset-y-0 left-0 w-full sm:w-3/5 lg:w-1/2 bg-gradient-to-r from-[rgb(var(--paper))] via-[rgb(var(--paper))]/90 to-transparent z-[1]" />
+        <div className="absolute bottom-0 inset-x-0 h-28 sm:h-36 bg-gradient-to-t from-[rgb(var(--paper))] via-[rgb(var(--paper))]/80 to-transparent z-[1]" />
+        <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-[rgb(var(--paper))] to-transparent z-[1]" />
+        <div className="absolute inset-y-0 right-0 w-8 sm:w-16 bg-gradient-to-l from-[rgb(var(--paper))] to-transparent z-[1]" />
+      </div>
+
       <div
         id="wm"
         aria-hidden="true"
-        className="absolute -top-6 -left-6 select-none pointer-events-none opacity-[0.04] fd font-bold text-[200px] md:text-[300px] leading-none tracking-tighter whitespace-nowrap will-change-transform"
+        className="absolute -top-6 -left-6 select-none pointer-events-none opacity-[0.03] fd font-bold text-[200px] md:text-[300px] leading-none tracking-tighter whitespace-nowrap will-change-transform z-0"
         style={{ transform: `translateX(${scrollOffset}px)` }}
       >
         PRAVEEN
       </div>
 
-      <div className="wrap relative pt-12 pb-20">
+      <div className="wrap relative z-10 pt-12 pb-20">
         <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-12 border-b border-line rv in">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-verm animate-ping" />
@@ -130,7 +150,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <aside className="lg:col-span-4 lg:border-l border-line lg:pl-10 flex flex-col rv in">
+          <aside className="lg:col-span-4 lg:border-l border-line lg:pl-10 flex flex-col bg-paper/60 dark:bg-ink/60 lg:bg-paper/30 lg:dark:bg-ink/30 backdrop-blur-md rounded-3xl p-6 lg:p-0 lg:rounded-none lg:border-y-0 lg:border-r-0 border border-line lg:border-l rv in">
             <div className="py-4 border-b border-line">
               <span className="mono text-graphite block mb-1">Location</span>
               <div className="flex justify-between">
