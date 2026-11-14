@@ -298,13 +298,13 @@ export default function TechStackSection() {
       </div>
 
       {/* Unique Tactile Architecture Rails */}
-      <div className="relative my-10 mb-20 overflow-hidden">
+      <div className="relative my-14 sm:my-20 mb-24 sm:mb-32 overflow-hidden">
         {/* Subtle Vignettes for smooth edge fade */}
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-44 z-10 bg-gradient-to-r from-[rgb(var(--sand))] via-[rgb(var(--sand))]/80 to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-44 z-10 bg-gradient-to-l from-[rgb(var(--sand))] via-[rgb(var(--sand))]/80 to-transparent" />
 
         {/* Rail 01 Header Telemetry */}
-        <div className="wrap mb-3.5 flex items-center justify-between text-xs mono text-graphite/70">
+        <div className="wrap mb-6 sm:mb-8 flex items-center justify-between text-xs mono text-graphite/70">
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-verm animate-pulse" />
             <span className="font-semibold text-ink uppercase tracking-wider text-[11px] sm:text-xs">
@@ -318,9 +318,9 @@ export default function TechStackSection() {
         </div>
 
         {/* Track 1: Client Runtimes (Leftwards) */}
-        <div className="marq-wrap mb-7">
+        <div className="marq-wrap py-4 mb-14 sm:mb-20">
           <div className="marq" style={{ '--t': '38s' } as React.CSSProperties}>
-            <div className="flex gap-4 pr-4 shrink-0">
+            <div className="flex gap-6 sm:gap-7 pr-6 sm:pr-7 shrink-0">
               {TRACK_CLIENT.map((tech, idx) => (
                 <div
                   key={`client-a-${idx}`}
@@ -368,7 +368,7 @@ export default function TechStackSection() {
             </div>
 
             {/* Seamless duplicate loop for track 1 */}
-            <div className="flex gap-4 pr-4 shrink-0" aria-hidden="true">
+            <div className="flex gap-6 sm:gap-7 pr-6 sm:pr-7 shrink-0" aria-hidden="true">
               {TRACK_CLIENT.map((tech, idx) => (
                 <div
                   key={`client-b-${idx}`}
@@ -418,7 +418,7 @@ export default function TechStackSection() {
         </div>
 
         {/* Rail 02 Header Telemetry */}
-        <div className="wrap mb-3.5 flex items-center justify-between text-xs mono text-graphite/70">
+        <div className="wrap mb-6 sm:mb-8 flex items-center justify-between text-xs mono text-graphite/70">
           <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="font-semibold text-ink uppercase tracking-wider text-[11px] sm:text-xs">
@@ -432,9 +432,9 @@ export default function TechStackSection() {
         </div>
 
         {/* Track 2: Infra & Systems (Rightwards / Reverse direction, Dark Obsidian Cards) */}
-        <div className="marq-wrap">
+        <div className="marq-wrap py-4">
           <div className="marq rev" style={{ '--t': '42s' } as React.CSSProperties}>
-            <div className="flex gap-4 pr-4 shrink-0">
+            <div className="flex gap-6 sm:gap-7 pr-6 sm:pr-7 shrink-0">
               {TRACK_INFRA.map((tech, idx) => (
                 <div
                   key={`infra-a-${idx}`}
@@ -482,7 +482,7 @@ export default function TechStackSection() {
             </div>
 
             {/* Seamless duplicate loop for track 2 */}
-            <div className="flex gap-4 pr-4 shrink-0" aria-hidden="true">
+            <div className="flex gap-6 sm:gap-7 pr-6 sm:pr-7 shrink-0" aria-hidden="true">
               {TRACK_INFRA.map((tech, idx) => (
                 <div
                   key={`infra-b-${idx}`}
