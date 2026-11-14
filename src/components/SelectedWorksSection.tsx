@@ -393,9 +393,9 @@ export default function SelectedWorksSection() {
       onTouchEnd={handleTouchEnd}
       className="min-h-screen py-10 md:py-16 flex flex-col justify-between overflow-hidden"
     >
-      <div className="w-full flex flex-col justify-between h-full px-4 md:px-8 lg:px-12">
+      <div className="w-full flex flex-col justify-between h-full wrap">
         {/* Top Header Row */}
-        <div className="w-full max-w-[1600px] mx-auto shrink-0 mb-3">
+        <div className="w-full shrink-0 mb-3">
           <div className="kicker !mb-3">
             <span className="mono text-verm font-semibold">02 // Selected Cases</span>
             <span className="mono text-graphite">1 scroll = 1 project dispatch</span>
@@ -433,11 +433,11 @@ export default function SelectedWorksSection() {
         </div>
 
         {/* Carousel Viewport: 1 step per project with smooth CSS transform */}
-        <div className="w-full max-w-[1720px] mx-auto overflow-hidden my-auto py-3">
+        <div className="w-full overflow-hidden my-auto py-3">
           <div
             className="flex gap-8 select-none items-stretch will-change-transform"
             style={{
-              transform: `translateX(calc(-${currentIndex} * (min(1560px, 92vw) + 2rem)))`,
+              transform: `translateX(calc(-${currentIndex} * (100% + 2rem)))`,
               transition: 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)',
             }}
           >
@@ -446,11 +446,10 @@ export default function SelectedWorksSection() {
               return (
                 <article
                   key={slide.num}
-                  className={`slide shrink-0 !p-5 sm:!p-8 md:!p-12 lg:!p-14 ${slide.themeClass} ${
+                  className={`slide shrink-0 w-full !p-5 sm:!p-8 md:!p-12 lg:!p-14 ${slide.themeClass} ${
                     isAct ? 'act' : ''
                   }`}
                   style={{
-                    width: 'min(1560px, 92vw)',
                     minHeight: '480px',
                   }}
                 >
@@ -530,7 +529,7 @@ export default function SelectedWorksSection() {
         </div>
 
         {/* Bottom Bar: Progress line and dot indicators */}
-        <div className="w-full max-w-[1720px] mx-auto shrink-0 mt-3 flex items-center gap-4">
+        <div className="w-full shrink-0 mt-3 flex items-center gap-4">
           <div className="flex-1 h-1.5 bg-line relative overflow-hidden rounded-full">
             <div
               id="sp"
