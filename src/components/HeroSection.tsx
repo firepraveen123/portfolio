@@ -180,12 +180,10 @@ export default function HeroSection() {
                 <b className="text-xs sm:text-sm text-ink block mt-0.5">Bengaluru, KA</b>
                 <span className="mono text-[10px] text-teal">UTC+5:30</span>
               </div>
-              <div className="p-3 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+              <div className="p-3 rounded-2xl bg-sand/60 dark:bg-paper/40 border border-line">
                 <span className="mono text-[10px] uppercase text-graphite block">Current Post</span>
                 <b className="text-xs sm:text-sm text-ink block mt-0.5 truncate">Front-End Developer</b>
-                <span className="mono text-[10px] text-ok font-semibold flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> Active
-                </span>
+                <span className="mono text-[10px] text-graphite block truncate">Nextbrain Technologies Pvt Ltd</span>
               </div>
               <div className="col-span-2 sm:col-span-1 p-3 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
                 <span className="mono text-[10px] uppercase text-graphite block">Credential</span>
@@ -290,7 +288,7 @@ export default function HeroSection() {
                       <div className="flex items-center justify-between">
                         <div>
                           <span className="mono text-[10px] uppercase text-graphite block">
-                            Current Post // Nextbrain Tech
+                            Current Post // Nextbrain Technologies Pvt Ltd
                           </span>
                           <b className="fd text-sm text-ink block">
                             Front-End Developer

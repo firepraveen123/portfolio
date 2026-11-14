@@ -38,7 +38,7 @@ const TRACK_CLIENT = [
     name: 'Next.js 15',
     spec: 'App Router',
     role: 'Streaming SSR & Edge Caching',
-    project: 'Nextbrain Tech',
+    project: 'Nextbrain Technologies Pvt Ltd',
     accent: '#e4472b',
     icon: (
       <svg className="w-5 h-5 fill-current" viewBox="0 0 180 180">
