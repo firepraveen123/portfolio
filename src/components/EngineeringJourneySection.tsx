@@ -9,7 +9,6 @@ import {
   TrendingUp,
   Cpu,
   Smartphone,
-  Globe,
   ArrowUpRight,
   Award,
   ShieldCheck,
@@ -107,46 +106,6 @@ const EXPERIENCES = [
     icon: <Smartphone className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />,
     badgeColor: 'border-emerald-500/25 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400',
     dotColor: 'bg-emerald-600',
-  },
-  {
-    id: 'exp-03',
-    period: 'May 2021 — Sep 2021',
-    duration: '5 Months Internship',
-    isCurrent: false,
-    title: 'Web Development Intern — UI & Cross-Browser Engine',
-    company: 'Infomats Technologies',
-    location: 'Coimbatore, Tamil Nadu',
-    roleTag: 'WEB STANDARDS & BROWSER INTERNALS',
-    desc: 'Authored semantic responsive web interfaces, executed systematic cross-browser compatibility verification across Chromium, Gecko, and WebKit, and developed lightweight vanilla JavaScript interactive modules.',
-    keyMetrics: [
-      { num: '3+', label: 'Rendering Engines Tested', color: 'text-ink' },
-      { num: '100%', label: 'Responsive Viewport Pass', color: 'text-verm' },
-      { num: '0', label: 'External Runtime Dependencies', color: 'text-teal' },
-    ],
-    deliverables: [
-      {
-        title: 'Cross-Browser Verification',
-        desc: 'Ran rigorous regression tests across mobile Safari, Chrome, and Firefox to identify and resolve vendor-specific CSS flexbox/grid layout anomalies.',
-      },
-      {
-        title: 'Vanilla JS Interactive Widgets',
-        desc: 'Constructed touch-friendly carousels, modals, and client-side form validation scripts with zero reliance on heavy third-party libraries.',
-      },
-      {
-        title: 'Semantic HTML5 Standards',
-        desc: 'Built semantic, search-engine friendly markup structures with strict landmark definitions and sub-50KB CSS footprints.',
-      },
-    ],
-    skills: [
-      'JavaScript ES6+',
-      'HTML5 Semantics',
-      'CSS3 Flexbox/Grid',
-      'Browser DevTools',
-      'Cross-Browser QA',
-    ],
-    icon: <Globe className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />,
-    badgeColor: 'border-indigo-500/25 bg-indigo-500/10 text-indigo-600 dark:text-indigo-400',
-    dotColor: 'bg-indigo-600',
   },
 ];
 
