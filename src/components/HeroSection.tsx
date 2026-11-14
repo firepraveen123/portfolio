@@ -113,9 +113,9 @@ export default function HeroSection() {
         </div>
 
         {/* Main 2-Column Hero Grid: Left Content + Right Unique Interactive Hardware Station */}
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Headline, Bio, Buttons, Quote */}
-          <div className="lg:col-span-7 flex flex-col gap-6">
+          <div className="lg:col-span-7 xl:col-span-6 flex flex-col gap-6">
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs mono font-semibold bg-verm/10 text-verm border border-verm/20">
                 <Code2 className="w-3.5 h-3.5" />
@@ -198,8 +198,8 @@ export default function HeroSection() {
           </div>
 
           {/* Right Column: Unique Interactive Developer ID Console & Portrait */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end rv in">
-            <div className="relative w-full max-w-[370px] sm:max-w-[410px] group">
+          <div className="lg:col-span-5 xl:col-span-6 flex justify-center lg:justify-end rv in">
+            <div className="relative w-full max-w-[460px] sm:max-w-[500px] lg:max-w-[520px] xl:max-w-[550px] group">
               {/* Ambient Glow Halo */}
               <div className="absolute -inset-2 rounded-[2.5rem] bg-gradient-to-tr from-verm/20 via-emerald-500/15 to-transparent blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
 
@@ -223,7 +223,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Photo Viewport: Focused on Praveen's Face with Zero Obstruction */}
-                <div className="relative w-full aspect-[4/4.2] overflow-hidden bg-black">
+                <div className="relative w-full aspect-[4/3.8] overflow-hidden bg-black">
                   <img
                     src="/images/praveen-hero.jpg"
                     alt="Praveen Kumar S. — Front-End Developer"
