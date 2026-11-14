@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { ArrowRight, Mail, BadgeCheck } from 'lucide-react';
+import { ArrowRight, Mail, BadgeCheck, MapPin, Briefcase } from 'lucide-react';
 
 const PHRASES = [
   'I craft high-fidelity interfaces',
@@ -66,26 +66,7 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative overflow-hidden pt-16">
-      {/* Background Portrait of Praveen */}
-      <div
-        className="pointer-events-none absolute right-0 top-0 bottom-0 w-full lg:w-[65%] xl:w-[58%] select-none overflow-hidden z-0"
-        aria-hidden="true"
-      >
-        {/* Portrait Image Layer */}
-        <div
-          className="absolute inset-0 bg-no-repeat bg-right-bottom md:bg-right bg-cover md:bg-contain transition-opacity duration-700 opacity-20 sm:opacity-25 lg:opacity-35 dark:opacity-40 filter contrast-105 saturate-[0.85] dark:saturate-100"
-          style={{
-            backgroundImage: "url('/praveen.jpg')",
-          }}
-        />
-
-        {/* Multi-Directional Feathering Gradients to seamlessly blend with theme */}
-        <div className="absolute inset-y-0 left-0 w-full sm:w-3/5 lg:w-1/2 bg-gradient-to-r from-[rgb(var(--paper))] via-[rgb(var(--paper))]/90 to-transparent z-[1]" />
-        <div className="absolute bottom-0 inset-x-0 h-28 sm:h-36 bg-gradient-to-t from-[rgb(var(--paper))] via-[rgb(var(--paper))]/80 to-transparent z-[1]" />
-        <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-[rgb(var(--paper))] to-transparent z-[1]" />
-        <div className="absolute inset-y-0 right-0 w-8 sm:w-16 bg-gradient-to-l from-[rgb(var(--paper))] to-transparent z-[1]" />
-      </div>
-
+      {/* Background typographic watermark */}
       <div
         id="wm"
         aria-hidden="true"
@@ -95,24 +76,27 @@ export default function HeroSection() {
         PRAVEEN
       </div>
 
-      <div className="wrap relative z-10 pt-12 pb-20">
-        <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-12 border-b border-line rv in">
+      <div className="wrap relative z-10 pt-10 pb-20">
+        {/* Top Header Dispatch Line */}
+        <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-10 border-b border-line rv in">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-verm animate-ping" />
-            <span className="mono font-semibold">
+            <span className="mono font-semibold text-xs sm:text-sm">
               Craft Dispatch — Handcrafted Web Software &amp; Interfaces
             </span>
           </div>
-          <span className="mono text-graphite">
-            Bengaluru, IN
+          <span className="mono text-xs sm:text-sm text-graphite">
+            Bengaluru, IN · 12.9716° N, 77.5946° E
           </span>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-8 flex flex-col gap-7">
-            <h1 className="fd font-medium leading-[1.1] tracking-[-0.03em] text-[clamp(1.15rem,4.5vw,3.8rem)] rv in">
+        {/* Main 2-Column Hero Grid: Left Content + Right Unobstructed Portrait */}
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          {/* Left Column: Headline, Bio, Buttons, Telemetry */}
+          <div className="lg:col-span-7 flex flex-col gap-6">
+            <h1 className="fd font-medium leading-[1.1] tracking-[-0.03em] text-[clamp(2.1rem,4.8vw,4rem)] rv in text-ink">
               <span className="block whitespace-nowrap">Hey, I’m Praveen Kumar S.</span>
-              <span className="block min-h-[1.2em]">
+              <span className="block min-h-[1.25em]">
                 <em className="italic font-normal text-verm" id="type">
                   {typedText}
                 </em>
@@ -120,13 +104,14 @@ export default function HeroSection() {
               </span>
             </h1>
 
-            <p className="text-lg text-graphite max-w-2xl leading-relaxed rv in">
+            <p className="text-base sm:text-lg text-graphite max-w-2xl leading-relaxed rv in">
               Senior Frontend Engineer with 4+ years of obsessive focus on browser
               performance, design engineering, and modern React/Next.js systems. Based in
               Bengaluru, turning complex distributed data flows into fluid,
               human-feeling web applications.
             </p>
 
+            {/* Floating Tech Chips */}
             <div className="flex flex-wrap gap-2 rv in">
               <span className="pill floaty">React 19</span>
               <span className="pill floaty" style={{ animationDelay: '0.4s' }}>
@@ -140,7 +125,8 @@ export default function HeroSection() {
               </span>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 rv in">
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center gap-4 rv in pt-1">
               <a href="#selected-works" className="btn btn-solid">
                 Explore Projects <ArrowRight className="w-4 h-4 ml-1" />
               </a>
@@ -148,43 +134,87 @@ export default function HeroSection() {
                 Say Hello <Mail className="w-4 h-4 ml-1" />
               </a>
             </div>
-          </div>
 
-          <aside className="lg:col-span-4 lg:border-l border-line lg:pl-10 flex flex-col bg-paper/60 dark:bg-ink/60 lg:bg-paper/30 lg:dark:bg-ink/30 backdrop-blur-md rounded-3xl p-6 lg:p-0 lg:rounded-none lg:border-y-0 lg:border-r-0 border border-line lg:border-l rv in">
-            <div className="py-4 border-b border-line">
-              <span className="mono text-graphite block mb-1">Location</span>
-              <div className="flex justify-between">
-                <b className="font-medium">Bengaluru, Karnataka</b>
-                <span className="mono text-teal">UTC+5:30</span>
-              </div>
-            </div>
-
-            <div className="py-4 border-b border-line">
-              <span className="mono text-graphite block mb-1">Current post</span>
-              <div className="flex justify-between">
-                <b className="font-medium">Nextbrain Technologies</b>
-                <span className="mono text-ok font-semibold">Active</span>
-              </div>
-            </div>
-
-            <div className="py-4 border-b border-line">
-              <span className="mono text-graphite block mb-1">Credential</span>
-              <div className="flex items-center gap-2">
-                <BadgeCheck className="w-4 h-4 text-verm" />
-                <b className="font-medium">AWS Certified Cloud Practitioner</b>
-              </div>
-              <span className="mono text-graphite">Validated Sep 2024</span>
-            </div>
-
-            <blockquote className="fd italic text-lg leading-snug pt-6 text-ink">
+            {/* Editorial Quote */}
+            <blockquote className="fd italic text-sm sm:text-base leading-snug text-graphite border-l-2 border-verm/70 pl-4 max-w-xl mt-2 rv in">
               “Great interfaces aren’t just designed; they’re engineered to make
               every interaction feel effortless, predictable, and physically
               instantaneous.”
             </blockquote>
-          </aside>
+
+            {/* Compact Career Telemetry Bar (No Cards Blocking the Photo) */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-3 border-t border-line/70 rv in">
+              <div className="p-3 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                <span className="mono text-[10px] uppercase text-graphite block">Location</span>
+                <b className="text-xs sm:text-sm text-ink block mt-0.5">Bengaluru, KA</b>
+                <span className="mono text-[10px] text-teal">UTC+5:30</span>
+              </div>
+              <div className="p-3 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                <span className="mono text-[10px] uppercase text-graphite block">Current Post</span>
+                <b className="text-xs sm:text-sm text-ink block mt-0.5 truncate">Nextbrain Tech</b>
+                <span className="mono text-[10px] text-ok font-semibold flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> Active
+                </span>
+              </div>
+              <div className="col-span-2 sm:col-span-1 p-3 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                <span className="mono text-[10px] uppercase text-graphite block">Credential</span>
+                <b className="text-xs sm:text-sm text-ink flex items-center gap-1 mt-0.5">
+                  <BadgeCheck className="w-3.5 h-3.5 text-verm shrink-0" /> AWS Certified
+                </b>
+                <span className="mono text-[10px] text-graphite">Cloud Practitioner</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Dedicated Unobstructed Portrait Showcase */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end rv in">
+            <div className="relative w-full max-w-[360px] sm:max-w-[400px] lg:max-w-[440px] group">
+              {/* Subtle ambient halo glow */}
+              <div className="absolute -inset-2 rounded-[2.5rem] bg-gradient-to-tr from-verm/25 via-emerald-500/15 to-transparent blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
+
+              {/* The Clean Portrait Card Frame */}
+              <div className="relative rounded-3xl sm:rounded-[2.5rem] border border-line/80 dark:border-paper/15 overflow-hidden shadow-2xl bg-ink aspect-[4/5] w-full">
+                {/* Praveen's Photo — Clear, Sharp, 100% Unobstructed Face */}
+                <img
+                  src="/images/praveen-hero.jpg"
+                  alt="Praveen Kumar S. — Senior Frontend Engineer"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                />
+
+                {/* Gentle bottom-to-top shadow vignette inside frame */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+
+                {/* Floating Top Badge */}
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] mono font-semibold bg-black/60 backdrop-blur-md text-white/90 border border-white/15 shadow-sm">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    Bengaluru, India · Open to Work
+                  </span>
+                </div>
+
+                {/* Floating Bottom Info Pill (Positioned at bottom edge, face is completely free) */}
+                <div className="absolute bottom-4 left-4 right-4 z-10 p-3 sm:p-3.5 rounded-2xl bg-paper/95 dark:bg-ink/90 backdrop-blur-md border border-line/80 shadow-xl flex items-center justify-between">
+                  <div>
+                    <span className="mono text-[10px] uppercase text-graphite block">
+                      Senior Frontend Engineer
+                    </span>
+                    <b className="fd text-sm text-ink block tracking-tight">
+                      Praveen Kumar S.
+                    </b>
+                  </div>
+                  <div className="text-right">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] mono font-bold bg-verm/10 text-verm border border-verm/20">
+                      <BadgeCheck className="w-3.5 h-3.5 text-verm" /> AWS CERTIFIED
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
+      {/* Marquee Ticker */}
       <div className="border-y border-line py-4 bg-sand/60 marq-wrap overflow-hidden">
         <div className="marq mono text-graphite" style={{ '--t': '40s' } as React.CSSProperties}>
           <div className="flex gap-10 pr-10 shrink-0">
@@ -208,4 +238,3 @@ export default function HeroSection() {
     </section>
   );
 }
-
