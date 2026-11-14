@@ -1,7 +1,21 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { ArrowRight, Mail, BadgeCheck, MapPin, Briefcase } from 'lucide-react';
+import {
+  ArrowRight,
+  Mail,
+  BadgeCheck,
+  MapPin,
+  Briefcase,
+  Zap,
+  Terminal,
+  Activity,
+  Wifi,
+  ShieldCheck,
+  Sparkles,
+  Radio,
+  Code2,
+} from 'lucide-react';
 
 const PHRASES = [
   'I craft high-fidelity interfaces',
@@ -11,9 +25,18 @@ const PHRASES = [
 ];
 
 const MARQUEE_TECH = [
-  'React', 'Next.js', 'TypeScript', 'Tailwind',
-  'WebSockets', 'WebGL', 'TanStack Query', 'Kotlin', 'AWS',
+  'React 19',
+  'Next.js 15',
+  'TypeScript',
+  'Tailwind CSS',
+  'WebSockets',
+  'AWS Cloud',
+  'TanStack Query',
+  'Kotlin',
+  'Docker',
 ];
+
+type CardHudTab = 'status' | 'perf' | 'aws';
 
 export default function HeroSection() {
   const [typedText, setTypedText] = useState('');
@@ -21,6 +44,7 @@ export default function HeroSection() {
   const [charIdx, setCharIdx] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [scrollOffset, setScrollOffset] = useState(0);
+  const [hudTab, setHudTab] = useState<CardHudTab>('status');
 
   // Typewriter effect
   useEffect(() => {
@@ -90,11 +114,18 @@ export default function HeroSection() {
           </span>
         </div>
 
-        {/* Main 2-Column Hero Grid: Left Content + Right Unobstructed Portrait */}
+        {/* Main 2-Column Hero Grid: Left Content + Right Unique Interactive Hardware Station */}
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column: Headline, Bio, Buttons, Telemetry */}
+          {/* Left Column: Headline, Bio, Buttons, Quote */}
           <div className="lg:col-span-7 flex flex-col gap-6">
-            <h1 className="fd font-medium leading-[1.1] tracking-[-0.03em] text-[clamp(2.1rem,4.8vw,4rem)] rv in text-ink">
+            <div className="flex items-center gap-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs mono font-semibold bg-verm/10 text-verm border border-verm/20">
+                <Code2 className="w-3.5 h-3.5" />
+                SYSTEM ARCHITECT &amp; SENIOR FRONTEND ENGINEER
+              </span>
+            </div>
+
+            <h1 className="fd font-medium leading-[1.1] tracking-[-0.03em] text-[clamp(2.2rem,4.8vw,4.1rem)] rv in text-ink">
               <span className="block whitespace-nowrap">Hey, I’m Praveen Kumar S.</span>
               <span className="block min-h-[1.25em]">
                 <em className="italic font-normal text-verm" id="type">
@@ -141,71 +172,170 @@ export default function HeroSection() {
               every interaction feel effortless, predictable, and physically
               instantaneous.”
             </blockquote>
-
-            {/* Compact Career Telemetry Bar (No Cards Blocking the Photo) */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-3 border-t border-line/70 rv in">
-              <div className="p-3 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
-                <span className="mono text-[10px] uppercase text-graphite block">Location</span>
-                <b className="text-xs sm:text-sm text-ink block mt-0.5">Bengaluru, KA</b>
-                <span className="mono text-[10px] text-teal">UTC+5:30</span>
-              </div>
-              <div className="p-3 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
-                <span className="mono text-[10px] uppercase text-graphite block">Current Post</span>
-                <b className="text-xs sm:text-sm text-ink block mt-0.5 truncate">Nextbrain Tech</b>
-                <span className="mono text-[10px] text-ok font-semibold flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> Active
-                </span>
-              </div>
-              <div className="col-span-2 sm:col-span-1 p-3 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
-                <span className="mono text-[10px] uppercase text-graphite block">Credential</span>
-                <b className="text-xs sm:text-sm text-ink flex items-center gap-1 mt-0.5">
-                  <BadgeCheck className="w-3.5 h-3.5 text-verm shrink-0" /> AWS Certified
-                </b>
-                <span className="mono text-[10px] text-graphite">Cloud Practitioner</span>
-              </div>
-            </div>
           </div>
 
-          {/* Right Column: Dedicated Unobstructed Portrait Showcase */}
+          {/* Right Column: Unique Interactive Developer ID Console & Portrait */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end rv in">
-            <div className="relative w-full max-w-[360px] sm:max-w-[400px] lg:max-w-[440px] group">
-              {/* Subtle ambient halo glow */}
-              <div className="absolute -inset-2 rounded-[2.5rem] bg-gradient-to-tr from-verm/25 via-emerald-500/15 to-transparent blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
+            <div className="relative w-full max-w-[370px] sm:max-w-[410px] group">
+              {/* Floating Satellite Badge 01 (Top-Right): Fleet Concurrency */}
+              <div className="absolute -top-5 -right-3 sm:-right-6 z-20 p-2.5 sm:p-3 rounded-2xl bg-paper/95 dark:bg-ink/95 border border-line shadow-xl backdrop-blur-md flex items-center gap-2.5 pointer-events-none transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="w-8 h-8 rounded-xl bg-verm/10 flex items-center justify-center text-verm">
+                  <Radio className="w-4 h-4 animate-pulse" />
+                </div>
+                <div>
+                  <span className="mono text-[9px] uppercase font-bold text-graphite block">
+                    Telemetry Fleet
+                  </span>
+                  <b className="fd text-xs text-ink">1,000+ Drivers</b>
+                </div>
+              </div>
 
-              {/* The Clean Portrait Card Frame */}
-              <div className="relative rounded-3xl sm:rounded-[2.5rem] border border-line/80 dark:border-paper/15 overflow-hidden shadow-2xl bg-ink aspect-[4/5] w-full">
-                {/* Praveen's Photo — Clear, Sharp, 100% Unobstructed Face */}
-                <img
-                  src="/images/praveen-hero.jpg"
-                  alt="Praveen Kumar S. — Senior Frontend Engineer"
-                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                />
+              {/* Floating Satellite Badge 02 (Bottom-Left): Bundle Budget */}
+              <div className="absolute -bottom-4 -left-3 sm:-left-6 z-20 p-2.5 sm:p-3 rounded-2xl bg-paper/95 dark:bg-ink/95 border border-line shadow-xl backdrop-blur-md flex items-center gap-2.5 pointer-events-none transition-transform duration-300 group-hover:translate-y-1">
+                <div className="w-8 h-8 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600">
+                  <Zap className="w-4 h-4" />
+                </div>
+                <div>
+                  <span className="mono text-[9px] uppercase font-bold text-graphite block">
+                    Bundle Optimization
+                  </span>
+                  <b className="fd text-xs text-emerald-600 dark:text-emerald-400">-20% JS Payload</b>
+                </div>
+              </div>
 
-                {/* Gentle bottom-to-top shadow vignette inside frame */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+              {/* Ambient Glow Halo */}
+              <div className="absolute -inset-2 rounded-[2.5rem] bg-gradient-to-tr from-verm/20 via-emerald-500/15 to-transparent blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
 
-                {/* Floating Top Badge */}
-                <div className="absolute top-4 left-4 z-10">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] mono font-semibold bg-black/60 backdrop-blur-md text-white/90 border border-white/15 shadow-sm">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    Bengaluru, India · Open to Work
+              {/* Unique Developer Hardware Console Frame */}
+              <div className="relative rounded-[2.2rem] sm:rounded-[2.5rem] border border-line bg-paper/90 dark:bg-ink/90 backdrop-blur-xl shadow-2xl overflow-hidden transition-all duration-300 hover:border-ink/30 dark:hover:border-paper/30">
+                {/* Console Top Window Header */}
+                <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-line/80 bg-sand/40 dark:bg-paper/5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-full bg-verm/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80" />
+                  </div>
+                  <div className="mono text-[10px] text-graphite font-semibold flex items-center gap-1.5">
+                    <Terminal className="w-3 h-3 text-verm" />
+                    <span>pks@workstation ~</span>
+                  </div>
+                  <span className="mono text-[10px] text-emerald-600 font-bold flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    60 FPS
                   </span>
                 </div>
 
-                {/* Floating Bottom Info Pill (Positioned at bottom edge, face is completely free) */}
-                <div className="absolute bottom-4 left-4 right-4 z-10 p-3 sm:p-3.5 rounded-2xl bg-paper/95 dark:bg-ink/90 backdrop-blur-md border border-line/80 shadow-xl flex items-center justify-between">
-                  <div>
-                    <span className="mono text-[10px] uppercase text-graphite block">
-                      Senior Frontend Engineer
+                {/* Photo Viewport: Focused on Praveen's Face with Zero Obstruction */}
+                <div className="relative w-full aspect-[4/4.2] overflow-hidden bg-ink">
+                  <img
+                    src="/images/praveen-hero.jpg"
+                    alt="Praveen Kumar S. — Senior Frontend Engineer"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+
+                  {/* Corner Target Registration Markers */}
+                  <div className="absolute top-3 left-3 w-3 h-3 border-t-2 border-l-2 border-white/40 pointer-events-none" />
+                  <div className="absolute top-3 right-3 w-3 h-3 border-t-2 border-r-2 border-white/40 pointer-events-none" />
+                  <div className="absolute bottom-3 left-3 w-3 h-3 border-b-2 border-l-2 border-white/40 pointer-events-none" />
+                  <div className="absolute bottom-3 right-3 w-3 h-3 border-b-2 border-r-2 border-white/40 pointer-events-none" />
+
+                  {/* Subtle Gradient vignette on photo */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent pointer-events-none" />
+
+                  {/* Top Status Pill: 100% Above Head */}
+                  <div className="absolute top-3 inset-x-0 flex justify-center z-10 pointer-events-none">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] mono font-semibold bg-black/60 backdrop-blur-md text-white/95 border border-white/20 shadow-md">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                      Bengaluru, Karnataka · Open To Work
                     </span>
-                    <b className="fd text-sm text-ink block tracking-tight">
-                      Praveen Kumar S.
-                    </b>
                   </div>
-                  <div className="text-right">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] mono font-bold bg-verm/10 text-verm border border-verm/20">
-                      <BadgeCheck className="w-3.5 h-3.5 text-verm" /> AWS CERTIFIED
-                    </span>
+                </div>
+
+                {/* Interactive Console Telemetry Deck (Cleanly Positioned Beneath the Photo) */}
+                <div className="p-4 sm:p-5 border-t border-line/80 space-y-3 bg-paper/60 dark:bg-black/20">
+                  {/* 3 Interactive Mode Tabs */}
+                  <div className="grid grid-cols-3 gap-1.5 bg-sand/60 dark:bg-paper/5 p-1 rounded-xl border border-line/70">
+                    <button
+                      onClick={() => setHudTab('status')}
+                      className={`py-1.5 px-2 rounded-lg text-center transition-all cursor-pointer mono text-[10px] font-bold ${
+                        hudTab === 'status'
+                          ? 'bg-paper dark:bg-ink text-ink dark:text-paper shadow-sm'
+                          : 'text-graphite hover:text-ink'
+                      }`}
+                    >
+                      ROLE
+                    </button>
+                    <button
+                      onClick={() => setHudTab('perf')}
+                      className={`py-1.5 px-2 rounded-lg text-center transition-all cursor-pointer mono text-[10px] font-bold ${
+                        hudTab === 'perf'
+                          ? 'bg-paper dark:bg-ink text-ink dark:text-paper shadow-sm'
+                          : 'text-graphite hover:text-ink'
+                      }`}
+                    >
+                      ENGINE
+                    </button>
+                    <button
+                      onClick={() => setHudTab('aws')}
+                      className={`py-1.5 px-2 rounded-lg text-center transition-all cursor-pointer mono text-[10px] font-bold ${
+                        hudTab === 'aws'
+                          ? 'bg-paper dark:bg-ink text-ink dark:text-paper shadow-sm'
+                          : 'text-graphite hover:text-ink'
+                      }`}
+                    >
+                      AWS
+                    </button>
+                  </div>
+
+                  {/* Tab Dynamic Content */}
+                  <div className="min-h-[58px] flex flex-col justify-center">
+                    {hudTab === 'status' && (
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="mono text-[10px] uppercase text-graphite block">
+                            Senior Frontend Engineer
+                          </span>
+                          <b className="fd text-sm text-ink block">
+                            Nextbrain Technologies
+                          </b>
+                        </div>
+                        <span className="px-2.5 py-1 rounded-full text-[10px] mono font-bold bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
+                          ACTIVE
+                        </span>
+                      </div>
+                    )}
+
+                    {hudTab === 'perf' && (
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="mono text-[10px] uppercase text-graphite block">
+                            Render Budget // 2.1ms
+                          </span>
+                          <b className="fd text-sm text-ink block">
+                            60.0 FPS Locked
+                          </b>
+                        </div>
+                        <span className="px-2.5 py-1 rounded-full text-[10px] mono font-bold bg-verm/10 text-verm border border-verm/20">
+                          0ms JANK
+                        </span>
+                      </div>
+                    )}
+
+                    {hudTab === 'aws' && (
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="mono text-[10px] uppercase text-graphite block">
+                            Accredited Sep 2024
+                          </span>
+                          <b className="fd text-sm text-ink block flex items-center gap-1">
+                            <BadgeCheck className="w-3.5 h-3.5 text-verm" /> Cloud Practitioner
+                          </b>
+                        </div>
+                        <span className="px-2.5 py-1 rounded-full text-[10px] mono font-bold bg-amber-500/10 text-amber-600 border border-amber-500/20">
+                          VERIFIED
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
