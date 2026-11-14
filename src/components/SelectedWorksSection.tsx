@@ -283,7 +283,9 @@ const SLIDES = [
 
 export default function SelectedWorksSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [slideWidth, setSlideWidth] = useState(0);
   const isCoolingDown = useRef(false);
   const touchStartY = useRef(0);
   const touchStartX = useRef(0);
@@ -294,48 +296,80 @@ export default function SelectedWorksSection() {
     setCurrentIndex(bounded);
   }, []);
 
-  // Discrete 1-scroll = 1-slide controller
+  // Measure exact pixel width of the carousel viewport
+  useEffect(() => {
+    const updateWidth = () => {
+      if (viewportRef.current) {
+        setSlideWidth(viewportRef.current.clientWidth);
+      }
+    };
+    updateWidth();
+    const timer = setTimeout(updateWidth, 120);
+    window.addEventListener('resize', updateWidth);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', updateWidth);
+    };
+  }, []);
+
+  // Discrete 1-scroll = 1-slide controller (vibration-free, zero scroll fighting)
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
 
+    let wheelAccumulator = 0;
+    let resetTimer: NodeJS.Timeout | null = null;
+
     const handleWheel = (e: WheelEvent) => {
+      if (e.ctrlKey) return;
+
       const rect = section.getBoundingClientRect();
-      // Only capture when this section is dominant in the viewport
-      const isInViewport = rect.top <= 120 && rect.bottom >= window.innerHeight * 0.65;
-      if (!isInViewport) return;
+      // Only capture when this section dominates the viewport
+      const isCentered = rect.top <= 60 && rect.bottom >= window.innerHeight * 0.6;
+      if (!isCentered) return;
 
       // Scroll Down (wheel down)
-      if (e.deltaY > 20) {
+      if (e.deltaY > 0) {
         if (currentIndex < SLIDES.length - 1) {
           e.preventDefault();
-          // Ensure section is nicely centered
-          if (Math.abs(rect.top) > 10) {
-            window.scrollTo({ top: window.scrollY + rect.top - 20, behavior: 'smooth' });
-          }
           if (!isCoolingDown.current) {
-            isCoolingDown.current = true;
-            setCurrentIndex((prev) => Math.min(SLIDES.length - 1, prev + 1));
-            setTimeout(() => {
-              isCoolingDown.current = false;
-            }, 550);
+            wheelAccumulator += e.deltaY;
+            if (resetTimer) clearTimeout(resetTimer);
+            resetTimer = setTimeout(() => {
+              wheelAccumulator = 0;
+            }, 180);
+
+            if (wheelAccumulator > 30) {
+              isCoolingDown.current = true;
+              wheelAccumulator = 0;
+              setCurrentIndex((prev) => Math.min(SLIDES.length - 1, prev + 1));
+              setTimeout(() => {
+                isCoolingDown.current = false;
+              }, 500);
+            }
           }
         }
         // When on slide 7 (index === 6), allow normal vertical scroll down to the next section!
       }
       // Scroll Up (wheel up)
-      else if (e.deltaY < -20) {
+      else if (e.deltaY < 0) {
         if (currentIndex > 0) {
           e.preventDefault();
-          if (Math.abs(rect.top) > 10) {
-            window.scrollTo({ top: window.scrollY + rect.top - 20, behavior: 'smooth' });
-          }
           if (!isCoolingDown.current) {
-            isCoolingDown.current = true;
-            setCurrentIndex((prev) => Math.max(0, prev - 1));
-            setTimeout(() => {
-              isCoolingDown.current = false;
-            }, 550);
+            wheelAccumulator += e.deltaY;
+            if (resetTimer) clearTimeout(resetTimer);
+            resetTimer = setTimeout(() => {
+              wheelAccumulator = 0;
+            }, 180);
+
+            if (wheelAccumulator < -30) {
+              isCoolingDown.current = true;
+              wheelAccumulator = 0;
+              setCurrentIndex((prev) => Math.max(0, prev - 1));
+              setTimeout(() => {
+                isCoolingDown.current = false;
+              }, 500);
+            }
           }
         }
         // When on slide 1 (index === 0), allow normal vertical scroll up to previous section!
@@ -343,7 +377,10 @@ export default function SelectedWorksSection() {
     };
 
     window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => window.removeEventListener('wheel', handleWheel);
+    return () => {
+      window.removeEventListener('wheel', handleWheel);
+      if (resetTimer) clearTimeout(resetTimer);
+    };
   }, [currentIndex]);
 
   // Touch Swipe for mobile/tablets
@@ -393,9 +430,9 @@ export default function SelectedWorksSection() {
       onTouchEnd={handleTouchEnd}
       className="min-h-screen py-10 md:py-16 flex flex-col justify-between overflow-hidden"
     >
-      <div className="w-full flex flex-col justify-between h-full px-4 md:px-8 lg:px-12">
+      <div className="w-full flex flex-col justify-between h-full wrap">
         {/* Top Header Row */}
-        <div className="w-full max-w-[1600px] mx-auto shrink-0 mb-3">
+        <div className="w-full shrink-0 mb-3">
           <div className="kicker !mb-3">
             <span className="mono text-verm font-semibold">02 // Selected Cases</span>
             <span className="mono text-graphite">1 scroll = 1 project dispatch</span>
@@ -433,12 +470,12 @@ export default function SelectedWorksSection() {
         </div>
 
         {/* Carousel Viewport: 1 step per project with smooth CSS transform */}
-        <div className="w-full max-w-[1720px] mx-auto overflow-hidden my-auto py-3">
+        <div ref={viewportRef} className="w-full overflow-hidden my-auto py-3">
           <div
             className="flex gap-8 select-none items-stretch will-change-transform"
             style={{
-              transform: `translateX(calc(-${currentIndex} * (min(1560px, 92vw) + 2rem)))`,
-              transition: 'transform 0.65s cubic-bezier(0.22, 1, 0.36, 1)',
+              transform: slideWidth > 0 ? `translate3d(-${currentIndex * (slideWidth + 32)}px, 0, 0)` : undefined,
+              transition: 'transform 0.65s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
           >
             {SLIDES.map((slide, index) => {
@@ -450,7 +487,7 @@ export default function SelectedWorksSection() {
                     isAct ? 'act' : ''
                   }`}
                   style={{
-                    width: 'min(1560px, 92vw)',
+                    width: slideWidth > 0 ? `${slideWidth}px` : '100%',
                     minHeight: '480px',
                   }}
                 >
@@ -530,7 +567,7 @@ export default function SelectedWorksSection() {
         </div>
 
         {/* Bottom Bar: Progress line and dot indicators */}
-        <div className="w-full max-w-[1720px] mx-auto shrink-0 mt-3 flex items-center gap-4">
+        <div className="w-full shrink-0 mt-3 flex items-center gap-4">
           <div className="flex-1 h-1.5 bg-line relative overflow-hidden rounded-full">
             <div
               id="sp"
