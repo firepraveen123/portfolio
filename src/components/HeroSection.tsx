@@ -121,7 +121,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-2">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs mono font-semibold bg-verm/10 text-verm border border-verm/20">
                 <Code2 className="w-3.5 h-3.5" />
-                SYSTEM ARCHITECT &amp; SENIOR FRONTEND ENGINEER
+                FRONT-END DEVELOPER &amp; WEB ARCHITECT
               </span>
             </div>
 
@@ -136,7 +136,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-base sm:text-lg text-graphite max-w-2xl leading-relaxed rv in">
-              Senior Frontend Engineer with 4+ years of obsessive focus on browser
+              Front-End Developer with 4+ years of obsessive focus on browser
               performance, design engineering, and modern React/Next.js systems. Based in
               Bengaluru, turning complex distributed data flows into fluid,
               human-feeling web applications.
@@ -172,6 +172,29 @@ export default function HeroSection() {
               every interaction feel effortless, predictable, and physically
               instantaneous.”
             </blockquote>
+
+            {/* Career Telemetry Strip: Current Post - Front-End Developer */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-3 border-t border-line/70 rv in">
+              <div className="p-3 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                <span className="mono text-[10px] uppercase text-graphite block">Location</span>
+                <b className="text-xs sm:text-sm text-ink block mt-0.5">Bengaluru, KA</b>
+                <span className="mono text-[10px] text-teal">UTC+5:30</span>
+              </div>
+              <div className="p-3 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                <span className="mono text-[10px] uppercase text-graphite block">Current Post</span>
+                <b className="text-xs sm:text-sm text-ink block mt-0.5 truncate">Front-End Developer</b>
+                <span className="mono text-[10px] text-ok font-semibold flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> Active
+                </span>
+              </div>
+              <div className="col-span-2 sm:col-span-1 p-3 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                <span className="mono text-[10px] uppercase text-graphite block">Credential</span>
+                <b className="text-xs sm:text-sm text-ink flex items-center gap-1 mt-0.5">
+                  <BadgeCheck className="w-3.5 h-3.5 text-verm shrink-0" /> AWS Certified
+                </b>
+                <span className="mono text-[10px] text-graphite">Cloud Practitioner</span>
+              </div>
+            </div>
           </div>
 
           {/* Right Column: Unique Interactive Developer ID Console & Portrait */}
@@ -229,7 +252,7 @@ export default function HeroSection() {
                 <div className="relative w-full aspect-[4/4.2] overflow-hidden bg-ink">
                   <img
                     src="/images/praveen-hero.jpg"
-                    alt="Praveen Kumar S. — Senior Frontend Engineer"
+                    alt="Praveen Kumar S. — Front-End Developer"
                     className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   />
 
@@ -293,10 +316,10 @@ export default function HeroSection() {
                       <div className="flex items-center justify-between">
                         <div>
                           <span className="mono text-[10px] uppercase text-graphite block">
-                            Senior Frontend Engineer
+                            Current Post // Nextbrain Tech
                           </span>
                           <b className="fd text-sm text-ink block">
-                            Nextbrain Technologies
+                            Front-End Developer
                           </b>
                         </div>
                         <span className="px-2.5 py-1 rounded-full text-[10px] mono font-bold bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
