@@ -16,10 +16,10 @@ import {
 } from 'lucide-react';
 
 const PHRASES = [
-  'I craft high-fidelity interfaces',
-  'I engineer resilient web architectures',
-  'I tune every millisecond of the browser',
-  'I turn data flows into fluid UI',
+  'I craft high-fidelity UI',
+  'I engineer resilient web apps',
+  'I tune browser performance',
+  'I turn data into fluid UI',
 ];
 
 const MARQUEE_TECH = [
@@ -123,10 +123,12 @@ export default function HeroSection() {
               </span>
             </div>
 
-            <h1 className="fd font-medium leading-[1.1] tracking-[-0.03em] text-[clamp(2.2rem,4.8vw,4.1rem)] rv in text-ink">
-              <span className="block whitespace-nowrap">Hey, I’m Praveen Kumar S.</span>
-              <span className="block min-h-[1.25em]">
-                <em className="italic font-normal text-verm" id="type">
+            <h1 className="fd font-medium leading-[1.15] tracking-[-0.03em] rv in text-ink">
+              <span className="block text-[clamp(1.9rem,4vw,3.5rem)] whitespace-nowrap">
+                Hey, I’m Praveen Kumar S.
+              </span>
+              <span className="block h-[1.35em] text-[clamp(1.6rem,3.4vw,3rem)] whitespace-nowrap overflow-hidden">
+                <em className="italic font-normal text-verm whitespace-nowrap" id="type">
                   {typedText}
                 </em>
                 <span className="caret" />
