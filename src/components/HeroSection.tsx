@@ -7,13 +7,11 @@ import {
   BadgeCheck,
   MapPin,
   Briefcase,
-  Zap,
   Terminal,
   Activity,
   Wifi,
   ShieldCheck,
   Sparkles,
-  Radio,
   Code2,
 } from 'lucide-react';
 
@@ -200,32 +198,6 @@ export default function HeroSection() {
           {/* Right Column: Unique Interactive Developer ID Console & Portrait */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end rv in">
             <div className="relative w-full max-w-[370px] sm:max-w-[410px] group">
-              {/* Floating Satellite Badge 01 (Top-Right): Fleet Concurrency */}
-              <div className="absolute -top-5 -right-3 sm:-right-6 z-20 p-2.5 sm:p-3 rounded-2xl bg-paper/95 dark:bg-ink/95 border border-line shadow-xl backdrop-blur-md flex items-center gap-2.5 pointer-events-none transition-transform duration-300 group-hover:-translate-y-1">
-                <div className="w-8 h-8 rounded-xl bg-verm/10 flex items-center justify-center text-verm">
-                  <Radio className="w-4 h-4 animate-pulse" />
-                </div>
-                <div>
-                  <span className="mono text-[9px] uppercase font-bold text-graphite block">
-                    Telemetry Fleet
-                  </span>
-                  <b className="fd text-xs text-ink">1,000+ Drivers</b>
-                </div>
-              </div>
-
-              {/* Floating Satellite Badge 02 (Bottom-Left): Bundle Budget */}
-              <div className="absolute -bottom-4 -left-3 sm:-left-6 z-20 p-2.5 sm:p-3 rounded-2xl bg-paper/95 dark:bg-ink/95 border border-line shadow-xl backdrop-blur-md flex items-center gap-2.5 pointer-events-none transition-transform duration-300 group-hover:translate-y-1">
-                <div className="w-8 h-8 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-600">
-                  <Zap className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="mono text-[9px] uppercase font-bold text-graphite block">
-                    Bundle Optimization
-                  </span>
-                  <b className="fd text-xs text-emerald-600 dark:text-emerald-400">-20% JS Payload</b>
-                </div>
-              </div>
-
               {/* Ambient Glow Halo */}
               <div className="absolute -inset-2 rounded-[2.5rem] bg-gradient-to-tr from-verm/20 via-emerald-500/15 to-transparent blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
 
