@@ -115,7 +115,7 @@ export default function EngineeringJourneySection() {
             </p>
           </div>
 
-          <div className="flex items-center gap-2 mono text-xs text-graphite bg-paper/80 dark:bg-ink/60 border border-line px-4 py-2 rounded-full self-start lg:self-auto backdrop-blur-sm">
+          <div className="flex items-center gap-2 mono text-xs text-graphite bg-paper/80 dark:bg-cream/60 border border-line px-4 py-2 rounded-full self-start lg:self-auto backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>ACTIVE IN BENGALURU, INDIA</span>
           </div>
@@ -126,7 +126,7 @@ export default function EngineeringJourneySection() {
           {SUMMARY_STATS.map((stat, i) => (
             <div
               key={i}
-              className="p-4 sm:p-5 rounded-2xl bg-paper/80 dark:bg-ink/70 border border-line backdrop-blur-sm shadow-[0_4px_20px_-8px_rgba(0,0,0,0.04)]"
+              className="p-4 sm:p-5 rounded-2xl bg-paper/80 dark:bg-cream/60 border border-line backdrop-blur-sm shadow-[0_4px_20px_-8px_rgba(0,0,0,0.04)]"
             >
               <span className="block mono text-[10px] uppercase font-semibold text-graphite tracking-wider">
                 {stat.label}
@@ -157,11 +157,11 @@ export default function EngineeringJourneySection() {
                 >
                   {/* Timeline Rail Node Marker */}
                   <div
-                    className={`absolute left-1 sm:left-3.5 top-8 w-5 h-5 rounded-full border-2 bg-paper dark:bg-ink flex items-center justify-center transition-all duration-300 ${
+                    className={`absolute left-1 sm:left-3.5 top-8 w-5 h-5 rounded-full border-2 bg-paper dark:bg-cream flex items-center justify-center transition-all duration-300 ${
                       exp.isCurrent
                         ? 'border-verm shadow-[0_0_12px_rgba(228,71,43,0.4)] scale-110'
                         : isSelected
-                        ? 'border-ink dark:border-paper scale-110'
+                        ? 'border-ink scale-110'
                         : 'border-line group-hover:border-graphite'
                     }`}
                   >
@@ -176,10 +176,10 @@ export default function EngineeringJourneySection() {
                   <div
                     className={`rounded-3xl border transition-all duration-300 p-6 sm:p-8 md:p-10 ${
                       exp.isCurrent
-                        ? 'border-verm/40 bg-paper/95 dark:bg-ink/80 shadow-[0_12px_40px_-12px_rgba(228,71,43,0.12)]'
+                        ? 'border-verm/40 bg-paper/95 dark:bg-cream/80 shadow-[0_12px_40px_-12px_rgba(228,71,43,0.12)]'
                         : isSelected
-                        ? 'border-ink/30 dark:border-paper/30 bg-paper/90 dark:bg-ink/70 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.1)]'
-                        : 'border-line bg-paper/70 dark:bg-ink/50 shadow-sm hover:border-ink/20'
+                        ? 'border-ink/20 dark:border-line bg-paper/90 dark:bg-cream/50 shadow-[0_12px_36px_-12px_rgba(0,0,0,0.1)]'
+                        : 'border-line bg-paper/70 dark:bg-cream/30 shadow-sm hover:border-ink/20'
                     } backdrop-blur-xl relative overflow-hidden`}
                   >
                     {/* Top Status Accent Bar for Current Role */}
@@ -240,7 +240,7 @@ export default function EngineeringJourneySection() {
                       {exp.keyMetrics.map((km, kmi) => (
                         <div
                           key={kmi}
-                          className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line"
+                          className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/40 border border-line"
                         >
                           <b className={`fd text-2xl sm:text-3xl block ${km.color}`}>
                             {km.num}
@@ -263,7 +263,7 @@ export default function EngineeringJourneySection() {
                         {exp.bullets.map((bullet, bi) => (
                           <li
                             key={bi}
-                            className="flex items-start gap-3 text-sm sm:text-base text-ink dark:text-paper/90 leading-relaxed p-3 rounded-2xl bg-paper dark:bg-black/20 border border-line/60 hover:border-ink/20 transition-colors"
+                            className="flex items-start gap-3 text-sm sm:text-base text-ink leading-relaxed p-3 rounded-2xl bg-paper/80 dark:bg-paper/40 border border-line/60 hover:border-ink/20 transition-colors"
                           >
                             <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                             <span>{bullet}</span>
@@ -281,7 +281,7 @@ export default function EngineeringJourneySection() {
                         {exp.skills.map((skill) => (
                           <span
                             key={skill}
-                            className="mono text-xs px-2.5 py-1 rounded-lg bg-ink/5 dark:bg-paper/5 border border-line text-ink font-medium"
+                            className="mono text-xs px-2.5 py-1 rounded-lg bg-sand/60 dark:bg-paper/40 border border-line text-ink font-medium"
                           >
                             {skill}
                           </span>

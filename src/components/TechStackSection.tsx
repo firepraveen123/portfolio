@@ -549,10 +549,10 @@ export default function TechStackSection() {
               {TRACK_INFRA.map((tech, idx) => (
                 <div
                   key={`infra-a-${idx}`}
-                  className="group relative min-w-[280px] sm:min-w-[320px] max-w-[340px] p-4 sm:p-5 rounded-2xl bg-ink text-paper border border-paper/15 hover:border-paper/40 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_28px_-6px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] cursor-pointer"
+                  className="group relative min-w-[280px] sm:min-w-[320px] max-w-[340px] p-4 sm:p-5 rounded-2xl bg-[#161512] text-[#f4efe6] border border-white/10 hover:border-white/30 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_28px_-6px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] cursor-pointer"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-paper/10 flex items-center justify-center border border-paper/15 group-hover:border-paper/30 transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center border border-white/15 group-hover:border-white/30 transition-colors">
                       {tech.icon}
                     </div>
                     <span
@@ -569,17 +569,17 @@ export default function TechStackSection() {
 
                   <div className="mb-2">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-semibold text-base sm:text-lg text-paper tracking-tight group-hover:text-verm transition-colors">
+                      <h3 className="font-semibold text-base sm:text-lg text-[#f4efe6] tracking-tight group-hover:text-verm transition-colors">
                         {tech.name}
                       </h3>
                       <span className="w-1.5 h-1.5 rounded-full bg-ok" />
                     </div>
-                    <p className="text-xs text-paper/70 line-clamp-1 mt-0.5">
+                    <p className="text-xs text-[#f4efe6]/70 line-clamp-1 mt-0.5">
                       {tech.role}
                     </p>
                   </div>
 
-                  <div className="pt-2.5 border-t border-paper/10 flex items-center justify-between text-[11px] mono text-paper/60">
+                  <div className="pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] mono text-[#f4efe6]/60">
                     <span className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: tech.accent }} />
                       <span className="truncate max-w-[170px]">{tech.project}</span>
@@ -597,10 +597,10 @@ export default function TechStackSection() {
               {TRACK_INFRA.map((tech, idx) => (
                 <div
                   key={`infra-b-${idx}`}
-                  className="group relative min-w-[280px] sm:min-w-[320px] max-w-[340px] p-4 sm:p-5 rounded-2xl bg-ink text-paper border border-paper/15 hover:border-paper/40 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_28px_-6px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] cursor-pointer"
+                  className="group relative min-w-[280px] sm:min-w-[320px] max-w-[340px] p-4 sm:p-5 rounded-2xl bg-[#161512] text-[#f4efe6] border border-white/10 hover:border-white/30 shadow-[0_4px_20px_-8px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_28px_-6px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] cursor-pointer"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-paper/10 flex items-center justify-center border border-paper/15 group-hover:border-paper/30 transition-colors">
+                    <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center border border-white/15 group-hover:border-white/30 transition-colors">
                       {tech.icon}
                     </div>
                     <span
@@ -617,17 +617,17 @@ export default function TechStackSection() {
 
                   <div className="mb-2">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-semibold text-base sm:text-lg text-paper tracking-tight group-hover:text-verm transition-colors">
+                      <h3 className="font-semibold text-base sm:text-lg text-[#f4efe6] tracking-tight group-hover:text-verm transition-colors">
                         {tech.name}
                       </h3>
                       <span className="w-1.5 h-1.5 rounded-full bg-ok" />
                     </div>
-                    <p className="text-xs text-paper/70 line-clamp-1 mt-0.5">
+                    <p className="text-xs text-[#f4efe6]/70 line-clamp-1 mt-0.5">
                       {tech.role}
                     </p>
                   </div>
 
-                  <div className="pt-2.5 border-t border-paper/10 flex items-center justify-between text-[11px] mono text-paper/60">
+                  <div className="pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] mono text-[#f4efe6]/60">
                     <span className="flex items-center gap-1.5">
                       <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: tech.accent }} />
                       <span className="truncate max-w-[170px]">{tech.project}</span>
@@ -645,22 +645,22 @@ export default function TechStackSection() {
 
       {/* Redesigned Architecture Terminal Box */}
       <div className="wrap">
-        <div className="rounded-2xl border border-line/80 bg-ink text-paper overflow-hidden shadow-2xl rv in">
+        <div className="rounded-2xl border border-white/10 bg-[#12110e] text-[#f4efe6] overflow-hidden shadow-2xl rv in">
           {/* Console Header Bar */}
-          <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 border-b border-paper/10 bg-paper/[0.02]">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 border-b border-white/10 bg-white/[0.02]">
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1.5">
                 <span className="w-3 h-3 rounded-full bg-verm/90 border border-verm/40" />
                 <span className="w-3 h-3 rounded-full bg-amber-400/90 border border-amber-400/40" />
                 <span className="w-3 h-3 rounded-full bg-ok/90 border border-ok/40" />
               </div>
-              <div className="h-4 w-px bg-paper/15 hidden sm:block" />
+              <div className="h-4 w-px bg-white/15 hidden sm:block" />
               <div className="flex items-center gap-2">
                 <Terminal className="w-3.5 h-3.5 text-verm" />
-                <span className="mono text-xs text-paper/85 font-medium tracking-wide">
+                <span className="mono text-xs text-[#f4efe6]/85 font-medium tracking-wide">
                   ~/praveen/toolkit/subsystem-matrix
                 </span>
-                <span className="hidden md:inline-block px-1.5 py-0.5 rounded text-[10px] mono bg-paper/10 text-paper/60 border border-paper/10">
+                <span className="hidden md:inline-block px-1.5 py-0.5 rounded text-[10px] mono bg-white/10 text-[#f4efe6]/60 border border-white/10">
                   v4.2-STABLE
                 </span>
               </div>
@@ -671,7 +671,7 @@ export default function TechStackSection() {
                 <span className="w-1.5 h-1.5 rounded-full bg-ok animate-pulse" />
                 ALL ENGINES LIVE
               </span>
-              <span className="mono text-[11px] text-paper/50">
+              <span className="mono text-[11px] text-[#f4efe6]/50">
                 NODE 01-12
               </span>
             </div>
@@ -679,7 +679,7 @@ export default function TechStackSection() {
 
           <div className="p-4 sm:p-7 md:p-9">
             {/* Subsystem Switcher Bar */}
-            <div className="flex flex-col sm:flex-row items-stretch gap-2.5 p-1.5 rounded-xl bg-paper/[0.04] border border-paper/10 mb-8">
+            <div className="flex flex-col sm:flex-row items-stretch gap-2.5 p-1.5 rounded-xl bg-white/[0.04] border border-white/10 mb-8">
               {TABS.map((tab) => {
                 const isOn = selectedTab === tab.id;
                 return (
@@ -688,14 +688,14 @@ export default function TechStackSection() {
                     onClick={() => setSelectedTab(tab.id)}
                     className={`flex-1 flex items-center justify-between sm:justify-center gap-2.5 px-4 py-3 rounded-lg text-xs mono uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                       isOn
-                        ? 'bg-paper/15 text-paper font-semibold border border-paper/25 shadow-md shadow-black/30'
-                        : 'text-paper/55 hover:text-paper/90 hover:bg-paper/[0.06] border border-transparent'
+                        ? 'bg-white/15 text-[#f4efe6] font-semibold border border-white/25 shadow-md shadow-black/30'
+                        : 'text-[#f4efe6]/55 hover:text-[#f4efe6]/90 hover:bg-white/[0.06] border border-transparent'
                     }`}
                   >
                     <div className="flex items-center gap-2">
                       <span
                         className={`w-1.5 h-1.5 rounded-full ${
-                          isOn ? 'bg-verm animate-pulse' : 'bg-paper/30'
+                          isOn ? 'bg-verm animate-pulse' : 'bg-white/30'
                         }`}
                       />
                       <span className="font-semibold">{tab.label}</span>
@@ -704,7 +704,7 @@ export default function TechStackSection() {
                       className={`text-[10px] px-2 py-0.5 rounded ${
                         isOn
                           ? 'bg-verm/20 text-verm border border-verm/30 font-bold'
-                          : 'bg-paper/5 text-paper/40'
+                          : 'bg-white/5 text-[#f4efe6]/40'
                       }`}
                     >
                       {tab.count}
@@ -726,7 +726,7 @@ export default function TechStackSection() {
                     <div
                       key={item.title}
                       style={{ '--k': index } as React.CSSProperties}
-                      className="group relative p-5 sm:p-6 rounded-xl border border-paper/10 bg-paper/[0.03] hover:bg-paper/[0.06] hover:border-paper/25 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm"
+                      className="group relative p-5 sm:p-6 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/25 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-sm"
                     >
                       {/* Ambient background glow */}
                       <div
@@ -737,7 +737,7 @@ export default function TechStackSection() {
                       <div>
                         {/* Top Node & Tag Header */}
                         <div className="flex items-center justify-between gap-2 mb-4">
-                          <span className="px-2 py-0.5 rounded text-[10px] mono font-bold bg-paper/5 text-paper/60 border border-paper/10">
+                          <span className="px-2 py-0.5 rounded text-[10px] mono font-bold bg-white/5 text-[#f4efe6]/60 border border-white/10">
                             {item.node}
                           </span>
                           <span
@@ -758,21 +758,21 @@ export default function TechStackSection() {
 
                         {/* Title and Icon */}
                         <div className="flex items-start gap-3.5 mb-3">
-                          <div className="w-9 h-9 rounded-lg bg-paper/5 border border-paper/10 flex items-center justify-center shrink-0 group-hover:border-paper/30 transition-colors">
+                          <div className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:border-white/30 transition-colors">
                             {item.icon}
                           </div>
                           <div>
-                            <h3 className="font-semibold text-base sm:text-lg text-paper tracking-tight group-hover:text-verm transition-colors">
+                            <h3 className="font-semibold text-base sm:text-lg text-[#f4efe6] tracking-tight group-hover:text-verm transition-colors">
                               {item.title}
                             </h3>
-                            <p className="text-xs text-paper/60 font-medium">
+                            <p className="text-xs text-[#f4efe6]/60 font-medium">
                               {item.role}
                             </p>
                           </div>
                         </div>
 
                         {/* Description */}
-                        <p className="text-xs sm:text-[13px] text-paper/75 leading-relaxed mb-4">
+                        <p className="text-xs sm:text-[13px] text-[#f4efe6]/75 leading-relaxed mb-4">
                           {item.desc}
                         </p>
 
@@ -781,7 +781,7 @@ export default function TechStackSection() {
                           {item.chips.map((chip) => (
                             <span
                               key={chip}
-                              className="px-2 py-0.5 rounded text-[10px] mono bg-paper/[0.04] text-paper/70 border border-paper/[0.08] group-hover:border-paper/20 group-hover:text-paper/90 transition-colors"
+                              className="px-2 py-0.5 rounded text-[10px] mono bg-white/[0.04] text-[#f4efe6]/70 border border-white/[0.08] group-hover:border-white/20 group-hover:text-[#f4efe6]/90 transition-colors"
                             >
                               {chip}
                             </span>
@@ -790,8 +790,8 @@ export default function TechStackSection() {
                       </div>
 
                       {/* Footer Rail */}
-                      <div className="pt-3 border-t border-paper/10 flex items-center justify-between text-[11px] mono">
-                        <span className="flex items-center gap-1.5 text-paper/60">
+                      <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] mono">
+                        <span className="flex items-center gap-1.5 text-[#f4efe6]/60">
                           <CheckCircle2 className="w-3.5 h-3.5 text-ok" />
                           <span>{item.verified}</span>
                         </span>
@@ -812,15 +812,15 @@ export default function TechStackSection() {
             })}
 
             {/* Bottom Console Command Bar */}
-            <div className="mt-8 pt-5 border-t border-paper/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs mono">
-              <div className="flex items-center gap-2 text-paper/80">
+            <div className="mt-8 pt-5 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs mono">
+              <div className="flex items-center gap-2 text-[#f4efe6]/80">
                 <span className="text-verm font-bold">$</span>
-                <span className="text-paper/90">praveen --audit --architecture --strict</span>
+                <span className="text-[#f4efe6]/90">praveen --audit --architecture --strict</span>
                 <span className="w-2 h-4 bg-verm inline-block animate-pulse" />
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-paper/5 border border-paper/10 text-[11px]">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[11px]">
                 <span className="w-2 h-2 rounded-full bg-ok" />
-                <span className="text-paper/70 font-medium">AUDIT:</span>
+                <span className="text-[#f4efe6]/70 font-medium">AUDIT:</span>
                 <span className="text-ok font-bold">12/12 ENGINES COMPLIANT (0 WARNINGS)</span>
               </div>
             </div>

@@ -204,9 +204,9 @@ export default function HeroSection() {
               <div className="absolute -inset-2 rounded-[2.5rem] bg-gradient-to-tr from-verm/20 via-emerald-500/15 to-transparent blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700 -z-10" />
 
               {/* Unique Developer Hardware Console Frame */}
-              <div className="relative rounded-[2.2rem] sm:rounded-[2.5rem] border border-line bg-paper/90 dark:bg-ink/90 backdrop-blur-xl shadow-2xl overflow-hidden transition-all duration-300 hover:border-ink/30 dark:hover:border-paper/30">
+              <div className="relative rounded-[2.2rem] sm:rounded-[2.5rem] border border-line bg-paper/90 dark:bg-cream/90 backdrop-blur-xl shadow-2xl overflow-hidden transition-all duration-300 hover:border-ink/30">
                 {/* Console Top Window Header */}
-                <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-line/80 bg-sand/40 dark:bg-paper/5">
+                <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-line/80 bg-sand/40 dark:bg-paper/40">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-verm/80" />
                     <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
@@ -223,7 +223,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Photo Viewport: Focused on Praveen's Face with Zero Obstruction */}
-                <div className="relative w-full aspect-[4/4.2] overflow-hidden bg-ink">
+                <div className="relative w-full aspect-[4/4.2] overflow-hidden bg-black">
                   <img
                     src="/images/praveen-hero.jpg"
                     alt="Praveen Kumar S. — Front-End Developer"
@@ -251,12 +251,12 @@ export default function HeroSection() {
                 {/* Interactive Console Telemetry Deck (Cleanly Positioned Beneath the Photo) */}
                 <div className="p-4 sm:p-5 border-t border-line/80 space-y-3 bg-paper/60 dark:bg-black/20">
                   {/* 3 Interactive Mode Tabs */}
-                  <div className="grid grid-cols-3 gap-1.5 bg-sand/60 dark:bg-paper/5 p-1 rounded-xl border border-line/70">
+                  <div className="grid grid-cols-3 gap-1.5 bg-sand/60 dark:bg-paper/40 p-1 rounded-xl border border-line/70">
                     <button
                       onClick={() => setHudTab('status')}
                       className={`py-1.5 px-2 rounded-lg text-center transition-all cursor-pointer mono text-[10px] font-bold ${
                         hudTab === 'status'
-                          ? 'bg-paper dark:bg-ink text-ink dark:text-paper shadow-sm'
+                          ? 'bg-paper dark:bg-cream text-ink shadow-sm border border-line/60'
                           : 'text-graphite hover:text-ink'
                       }`}
                     >
@@ -266,7 +266,7 @@ export default function HeroSection() {
                       onClick={() => setHudTab('perf')}
                       className={`py-1.5 px-2 rounded-lg text-center transition-all cursor-pointer mono text-[10px] font-bold ${
                         hudTab === 'perf'
-                          ? 'bg-paper dark:bg-ink text-ink dark:text-paper shadow-sm'
+                          ? 'bg-paper dark:bg-cream text-ink shadow-sm border border-line/60'
                           : 'text-graphite hover:text-ink'
                       }`}
                     >
@@ -276,7 +276,7 @@ export default function HeroSection() {
                       onClick={() => setHudTab('aws')}
                       className={`py-1.5 px-2 rounded-lg text-center transition-all cursor-pointer mono text-[10px] font-bold ${
                         hudTab === 'aws'
-                          ? 'bg-paper dark:bg-ink text-ink dark:text-paper shadow-sm'
+                          ? 'bg-paper dark:bg-cream text-ink shadow-sm border border-line/60'
                           : 'text-graphite hover:text-ink'
                       }`}
                     >

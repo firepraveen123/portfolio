@@ -46,7 +46,7 @@ const SKILL_CATEGORIES = [
   {
     num: 'Category 04',
     title: 'Architecture & Tools',
-    frontClass: 'bg-ink text-paper border border-line',
+    frontClass: 'bg-[#1a1814] text-white border border-white/15',
     pills: [
       'Git / GitHub Actions',
       'AWS S3 / CloudFront',
