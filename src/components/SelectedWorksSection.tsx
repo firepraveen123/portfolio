@@ -211,7 +211,7 @@ const SLIDES = [
             className="absolute left-0 right-0 h-0.5 bg-verm/70 animate-pulse"
             style={{ top: '48%' }}
           />
-          <div className="absolute bottom-3 left-3 bg-ink text-paper text-[10px] px-2 py-1 rounded">
+          <div className="absolute bottom-3 left-3 bg-black/80 text-white border border-white/10 text-[10px] px-2 py-1 rounded">
             Frame 16.2ms // 60 FPS // Edge AI
           </div>
         </div>

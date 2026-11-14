@@ -149,12 +149,12 @@ export default function CraftPhilosophySection() {
         {/* 3 Redesigned Architectural Craft Cards */}
         <div className="space-y-8">
           {/* ================= CARD 01 ================= */}
-          <div className="group relative rounded-3xl border border-line bg-paper/90 dark:bg-ink/70 backdrop-blur-xl p-6 sm:p-8 md:p-12 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden">
+          <div className="group relative rounded-3xl border border-line bg-paper/90 dark:bg-cream/40 backdrop-blur-xl p-6 sm:p-8 md:p-12 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden">
             {/* Top Vermilion Accent Rail */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-verm via-verm/60 to-transparent" />
 
             {/* Giant Watermark Numeral */}
-            <span className="fd text-7xl sm:text-9xl font-bold opacity-[0.06] text-ink dark:text-paper select-none absolute right-6 top-6 sm:right-10 sm:top-8 pointer-events-none">
+            <span className="fd text-7xl sm:text-9xl font-bold opacity-[0.06] text-ink select-none absolute right-6 top-6 sm:right-10 sm:top-8 pointer-events-none">
               01
             </span>
 
@@ -179,15 +179,15 @@ export default function CraftPhilosophySection() {
 
                 {/* Metric Badges */}
                 <div className="pt-2 grid grid-cols-3 gap-3 sm:gap-4 max-w-lg">
-                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/40 border border-line">
                     <span className="block mono text-[10px] uppercase text-graphite font-semibold">Jank Target</span>
                     <b className="fd text-xl sm:text-2xl text-verm">0.0ms</b>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/40 border border-line">
                     <span className="block mono text-[10px] uppercase text-graphite font-semibold">Frame Rate</span>
                     <b className="fd text-xl sm:text-2xl text-ink">60 FPS</b>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/40 border border-line">
                     <span className="block mono text-[10px] uppercase text-graphite font-semibold">CSS Budget</span>
                     <b className="fd text-xl sm:text-2xl text-ink">&lt; 38KB</b>
                   </div>
@@ -196,16 +196,16 @@ export default function CraftPhilosophySection() {
 
               {/* Right Column: Live Frame-Budget & Spring Engine */}
               <div className="lg:col-span-5">
-                <div className="rounded-2xl bg-ink text-paper p-5 sm:p-6 border border-paper/15 shadow-2xl font-mono text-xs">
+                <div className="rounded-2xl bg-[#12110e] text-[#f4efe6] p-5 sm:p-6 border border-white/10 shadow-2xl font-mono text-xs">
                   {/* Dashboard Header */}
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-paper/10 text-paper/70">
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10 text-[#f4efe6]/70">
                     <div className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="font-semibold text-paper tracking-wider text-[11px]">
+                      <span className="font-semibold text-[#f4efe6] tracking-wider text-[11px]">
                         FRAME OSCILLOSCOPE
                       </span>
                     </div>
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-paper/10 text-paper/80">
+                    <span className="text-[10px] px-2 py-0.5 rounded bg-white/10 text-[#f4efe6]/80">
                       GPU THREAD ACTIVE
                     </span>
                   </div>
@@ -213,44 +213,44 @@ export default function CraftPhilosophySection() {
                   {/* Telemetry Display */}
                   <div className="space-y-3 mb-5">
                     <div className="flex justify-between items-center">
-                      <span className="text-paper/60">Frame Duration:</span>
-                      <span className="text-emerald-400 font-bold text-sm">{frameMs}ms <span className="text-[10px] font-normal text-paper/40">/ 16.6ms</span></span>
+                      <span className="text-[#f4efe6]/60">Frame Duration:</span>
+                      <span className="text-emerald-400 font-bold text-sm">{frameMs}ms <span className="text-[10px] font-normal text-[#f4efe6]/40">/ 16.6ms</span></span>
                     </div>
 
                     {/* Progress Bar of Frame Budget */}
-                    <div className="w-full h-2 rounded-full bg-paper/10 overflow-hidden relative">
+                    <div className="w-full h-2 rounded-full bg-white/10 overflow-hidden relative">
                       <div
                         className="h-full bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full transition-all duration-300"
                         style={{ width: `${(parseFloat(frameMs) / 16.6) * 100}%` }}
                       />
                     </div>
-                    <div className="flex justify-between text-[10px] text-paper/40">
+                    <div className="flex justify-between text-[10px] text-[#f4efe6]/40">
                       <span>0ms</span>
                       <span>Budget: 16.6ms (14.2ms Headroom)</span>
                       <span>16.6ms</span>
                     </div>
 
-                    <div className="flex justify-between items-center pt-2 border-t border-paper/10">
-                      <span className="text-paper/60">Composited Rate:</span>
-                      <span className="text-paper font-semibold">{fps} FPS Locked</span>
+                    <div className="flex justify-between items-center pt-2 border-t border-white/10">
+                      <span className="text-[#f4efe6]/60">Composited Rate:</span>
+                      <span className="text-[#f4efe6] font-semibold">{fps} FPS Locked</span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-paper/60">Layout Thrashing (CLS):</span>
+                      <span className="text-[#f4efe6]/60">Layout Thrashing (CLS):</span>
                       <span className="text-emerald-400 font-semibold">0.000 (Zero Shift)</span>
                     </div>
                   </div>
 
                   {/* Interactive Spring Playground */}
-                  <div className="p-3.5 rounded-xl bg-paper/5 border border-paper/10 space-y-3">
+                  <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-3">
                     <div className="flex justify-between items-center text-[11px]">
-                      <span className="text-paper/80 font-medium">Kinetic Spring Demo:</span>
+                      <span className="text-[#f4efe6]/80 font-medium">Kinetic Spring Demo:</span>
                       <span className="text-[10px] text-verm font-mono">
                         {isSpringing ? 'CALCULATING TRANSFORM' : 'IDLE'}
                       </span>
                     </div>
 
                     {/* Animated Stage */}
-                    <div className="relative h-9 rounded-lg bg-paper/10 flex items-center px-2 overflow-hidden">
+                    <div className="relative h-9 rounded-lg bg-white/10 flex items-center px-2 overflow-hidden">
                       <div
                         className="h-6 w-14 rounded-md bg-verm text-white text-[10px] font-bold flex items-center justify-center transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
                         style={{
@@ -266,7 +266,7 @@ export default function CraftPhilosophySection() {
                     <button
                       onClick={triggerSpring}
                       disabled={isSpringing}
-                      className="w-full py-2 px-3 rounded-lg bg-paper text-ink font-semibold text-xs hover:bg-verm hover:text-white transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                      className="w-full py-2 px-3 rounded-lg bg-white/10 hover:bg-verm text-[#f4efe6] hover:text-white border border-white/10 font-semibold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                     >
                       <Play className="w-3.5 h-3.5 fill-current" />
                       {isSpringing ? 'Compositing Spring...' : 'Test Hardware 60fps Spring'}
@@ -278,12 +278,12 @@ export default function CraftPhilosophySection() {
           </div>
 
           {/* ================= CARD 02 ================= */}
-          <div className="group relative rounded-3xl border border-line bg-paper/90 dark:bg-ink/70 backdrop-blur-xl p-6 sm:p-8 md:p-12 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden">
+          <div className="group relative rounded-3xl border border-line bg-paper/90 dark:bg-cream/40 backdrop-blur-xl p-6 sm:p-8 md:p-12 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden">
             {/* Top Teal Accent Rail */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-600 via-teal-500 to-transparent" />
 
             {/* Giant Watermark Numeral */}
-            <span className="fd text-7xl sm:text-9xl font-bold opacity-[0.06] text-ink dark:text-paper select-none absolute right-6 top-6 sm:right-10 sm:top-8 pointer-events-none">
+            <span className="fd text-7xl sm:text-9xl font-bold opacity-[0.06] text-ink select-none absolute right-6 top-6 sm:right-10 sm:top-8 pointer-events-none">
               02
             </span>
 
@@ -308,15 +308,15 @@ export default function CraftPhilosophySection() {
 
                 {/* Metric Badges */}
                 <div className="pt-2 grid grid-cols-3 gap-3 sm:gap-4 max-w-lg">
-                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/40 border border-line">
                     <span className="block mono text-[10px] uppercase text-graphite font-semibold">Architecture</span>
                     <b className="fd text-xl sm:text-2xl text-emerald-600 dark:text-emerald-400">Pure FSM</b>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/40 border border-line">
                     <span className="block mono text-[10px] uppercase text-graphite font-semibold">Store Model</span>
                     <b className="fd text-xl sm:text-2xl text-ink">Immutable</b>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/40 border border-line">
                     <span className="block mono text-[10px] uppercase text-graphite font-semibold">Desync Rate</span>
                     <b className="fd text-xl sm:text-2xl text-ink">0.00%</b>
                   </div>
@@ -325,16 +325,16 @@ export default function CraftPhilosophySection() {
 
               {/* Right Column: Interactive Finite State Machine Simulator */}
               <div className="lg:col-span-5">
-                <div className="rounded-2xl bg-ink text-paper p-5 sm:p-6 border border-paper/15 shadow-2xl font-mono text-xs">
+                <div className="rounded-2xl bg-[#12110e] text-[#f4efe6] p-5 sm:p-6 border border-white/10 shadow-2xl font-mono text-xs">
                   {/* Dashboard Header */}
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-paper/10 text-paper/70">
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10 text-[#f4efe6]/70">
                     <div className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-                      <span className="font-semibold text-paper tracking-wider text-[11px]">
+                      <span className="font-semibold text-[#f4efe6] tracking-wider text-[11px]">
                         FINITE STATE MACHINE
                       </span>
                     </div>
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-paper/10 text-paper/80">
+                    <span className="text-[10px] px-2 py-0.5 rounded bg-white/10 text-[#f4efe6]/80">
                       STRICT INVARIANTS
                     </span>
                   </div>
@@ -350,7 +350,7 @@ export default function CraftPhilosophySection() {
                           className={`py-2 px-1 rounded-lg text-center transition-all cursor-pointer text-[10px] font-semibold border ${
                             isActive
                               ? 'bg-teal-500/20 border-teal-400 text-teal-300 shadow-sm'
-                              : 'bg-paper/5 border-paper/10 text-paper/60 hover:text-paper hover:bg-paper/10'
+                              : 'bg-white/5 border-white/10 text-[#f4efe6]/60 hover:text-[#f4efe6] hover:bg-white/10'
                           }`}
                         >
                           {step.key}
@@ -360,19 +360,19 @@ export default function CraftPhilosophySection() {
                   </div>
 
                   {/* Active State Details Box */}
-                  <div className="p-3.5 rounded-xl bg-paper/5 border border-paper/10 space-y-2 mb-4">
+                  <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-2 mb-4">
                     <div className="flex justify-between items-center">
                       <span className="text-teal-300 font-bold">{currentFsmStep.label}</span>
                       <span className="text-[10px] text-emerald-400 flex items-center gap-1">
                         <CheckCircle2 className="w-3 h-3" /> VERIFIED PURE
                       </span>
                     </div>
-                    <p className="text-[11px] text-paper/70 leading-relaxed">
+                    <p className="text-[11px] text-[#f4efe6]/70 leading-relaxed">
                       {currentFsmStep.desc}
                     </p>
 
                     {/* Code AST JSON Preview */}
-                    <div className="p-2.5 rounded-lg bg-black/40 border border-paper/10 text-[10px] text-paper/90 overflow-x-auto">
+                    <div className="p-2.5 rounded-lg bg-black/40 border border-white/10 text-[10px] text-[#f4efe6]/90 overflow-x-auto">
                       <pre>{JSON.stringify(currentFsmStep.payload, null, 2)}</pre>
                     </div>
                   </div>
@@ -391,12 +391,12 @@ export default function CraftPhilosophySection() {
           </div>
 
           {/* ================= CARD 03 ================= */}
-          <div className="group relative rounded-3xl border border-line bg-paper/90 dark:bg-ink/70 backdrop-blur-xl p-6 sm:p-8 md:p-12 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden">
+          <div className="group relative rounded-3xl border border-line bg-paper/90 dark:bg-cream/40 backdrop-blur-xl p-6 sm:p-8 md:p-12 shadow-[0_8px_32px_-12px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_48px_-12px_rgba(0,0,0,0.12)] transition-all duration-300 overflow-hidden">
             {/* Top Indigo Accent Rail */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 via-indigo-400 to-transparent" />
 
             {/* Giant Watermark Numeral */}
-            <span className="fd text-7xl sm:text-9xl font-bold opacity-[0.06] text-ink dark:text-paper select-none absolute right-6 top-6 sm:right-10 sm:top-8 pointer-events-none">
+            <span className="fd text-7xl sm:text-9xl font-bold opacity-[0.06] text-ink select-none absolute right-6 top-6 sm:right-10 sm:top-8 pointer-events-none">
               03
             </span>
 
@@ -421,15 +421,15 @@ export default function CraftPhilosophySection() {
 
                 {/* Metric Badges */}
                 <div className="pt-2 grid grid-cols-3 gap-3 sm:gap-4 max-w-lg">
-                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/40 border border-line">
                     <span className="block mono text-[10px] uppercase text-graphite font-semibold">Compliance</span>
                     <b className="fd text-xl sm:text-2xl text-indigo-600 dark:text-indigo-400">WCAG 2.1 AA</b>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/40 border border-line">
                     <span className="block mono text-[10px] uppercase text-graphite font-semibold">Contrast Ratio</span>
                     <b className="fd text-xl sm:text-2xl text-ink">15.2 : 1</b>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/5 border border-line">
+                  <div className="p-3.5 rounded-2xl bg-sand/60 dark:bg-paper/40 border border-line">
                     <span className="block mono text-[10px] uppercase text-graphite font-semibold">Keyboard Nav</span>
                     <b className="fd text-xl sm:text-2xl text-ink">100% Trap-Free</b>
                   </div>
@@ -438,16 +438,16 @@ export default function CraftPhilosophySection() {
 
               {/* Right Column: Interactive Accessibility Inspector */}
               <div className="lg:col-span-5">
-                <div className="rounded-2xl bg-ink text-paper p-5 sm:p-6 border border-paper/15 shadow-2xl font-mono text-xs">
+                <div className="rounded-2xl bg-[#12110e] text-[#f4efe6] p-5 sm:p-6 border border-white/10 shadow-2xl font-mono text-xs">
                   {/* Dashboard Header */}
-                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-paper/10 text-paper/70">
+                  <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10 text-[#f4efe6]/70">
                     <div className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
-                      <span className="font-semibold text-paper tracking-wider text-[11px]">
+                      <span className="font-semibold text-[#f4efe6] tracking-wider text-[11px]">
                         A11Y AUDIT SIMULATOR
                       </span>
                     </div>
-                    <span className="text-[10px] px-2 py-0.5 rounded bg-paper/10 text-paper/80">
+                    <span className="text-[10px] px-2 py-0.5 rounded bg-white/10 text-[#f4efe6]/80">
                       AAA PASSED
                     </span>
                   </div>
@@ -459,7 +459,7 @@ export default function CraftPhilosophySection() {
                       className={`py-2 px-1 rounded-lg text-center transition-all cursor-pointer text-[10px] font-semibold border ${
                         a11yTab === 'contrast'
                           ? 'bg-indigo-500/20 border-indigo-400 text-indigo-300'
-                          : 'bg-paper/5 border-paper/10 text-paper/60 hover:text-paper'
+                          : 'bg-white/5 border-white/10 text-[#f4efe6]/60 hover:text-[#f4efe6]'
                       }`}
                     >
                       Contrast
@@ -469,7 +469,7 @@ export default function CraftPhilosophySection() {
                       className={`py-2 px-1 rounded-lg text-center transition-all cursor-pointer text-[10px] font-semibold border ${
                         a11yTab === 'focus'
                           ? 'bg-indigo-500/20 border-indigo-400 text-indigo-300'
-                          : 'bg-paper/5 border-paper/10 text-paper/60 hover:text-paper'
+                          : 'bg-white/5 border-white/10 text-[#f4efe6]/60 hover:text-[#f4efe6]'
                       }`}
                     >
                       Focus Ring
@@ -479,7 +479,7 @@ export default function CraftPhilosophySection() {
                       className={`py-2 px-1 rounded-lg text-center transition-all cursor-pointer text-[10px] font-semibold border ${
                         a11yTab === 'screenreader'
                           ? 'bg-indigo-500/20 border-indigo-400 text-indigo-300'
-                          : 'bg-paper/5 border-paper/10 text-paper/60 hover:text-paper'
+                          : 'bg-white/5 border-white/10 text-[#f4efe6]/60 hover:text-[#f4efe6]'
                       }`}
                     >
                       Screen Reader
@@ -487,20 +487,20 @@ export default function CraftPhilosophySection() {
                   </div>
 
                   {/* Dynamic Inspection Pane */}
-                  <div className="p-4 rounded-xl bg-paper/5 border border-paper/10 space-y-3 min-h-[140px] flex flex-col justify-center">
+                  <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3 min-h-[140px] flex flex-col justify-center">
                     {a11yTab === 'contrast' && (
                       <div className="space-y-2">
                         <div className="flex items-center justify-between">
-                          <span className="text-paper/60">Color Ratio:</span>
+                          <span className="text-[#f4efe6]/60">Color Ratio:</span>
                           <span className="text-emerald-400 font-bold text-sm">15.2 : 1 (AAA)</span>
                         </div>
-                        <div className="p-3 rounded-lg bg-paper text-ink flex items-center justify-between">
+                        <div className="p-3 rounded-lg bg-white/10 text-[#f4efe6] flex items-center justify-between border border-white/10">
                           <span className="font-serif text-lg font-bold">Aa High Contrast</span>
-                          <span className="text-[10px] font-mono bg-ink text-paper px-2 py-0.5 rounded">
+                          <span className="text-[10px] font-mono bg-black text-[#f4efe6] px-2 py-0.5 rounded border border-white/10">
                             Passes WCAG AAA
                           </span>
                         </div>
-                        <span className="text-[10px] text-paper/50 block">
+                        <span className="text-[10px] text-[#f4efe6]/50 block">
                           Calibrated for glare, low-luminance displays, and deuteranopia.
                         </span>
                       </div>
@@ -509,18 +509,18 @@ export default function CraftPhilosophySection() {
                     {a11yTab === 'focus' && (
                       <div className="space-y-2.5">
                         <div className="flex items-center justify-between">
-                          <span className="text-paper/60">Keyboard Traversal:</span>
+                          <span className="text-[#f4efe6]/60">Keyboard Traversal:</span>
                           <span className="text-indigo-300 font-semibold">Active Tab Trap-Free</span>
                         </div>
                         <div className="py-2 flex justify-center">
                           <button
                             tabIndex={0}
-                            className="px-4 py-2 rounded-xl bg-paper text-ink font-semibold text-xs ring-4 ring-verm ring-offset-2 ring-offset-ink outline-none transition-all shadow-lg"
+                            className="px-4 py-2 rounded-xl bg-white/15 text-[#f4efe6] font-semibold text-xs ring-4 ring-verm ring-offset-2 ring-offset-black outline-none transition-all shadow-lg"
                           >
                             :focus-visible Indicator
                           </button>
                         </div>
-                        <span className="text-[10px] text-paper/50 block text-center">
+                        <span className="text-[10px] text-[#f4efe6]/50 block text-center">
                           3px high-visibility ring conforming to WCAG 2.4.7 focus appearance.
                         </span>
                       </div>
@@ -532,7 +532,7 @@ export default function CraftPhilosophySection() {
                           <Volume2 className="w-3.5 h-3.5" />
                           <span className="font-semibold text-[11px]">ARIA Live Speech Stream:</span>
                         </div>
-                        <div className="p-2.5 rounded-lg bg-black/50 border border-paper/15 text-[11px] text-paper/90 leading-relaxed italic">
+                        <div className="p-2.5 rounded-lg bg-black/50 border border-white/10 text-[11px] text-[#f4efe6]/90 leading-relaxed italic">
                           &ldquo;Navigation landmark, region &apos;Craft Philosophy&apos;, 3 interactive engineering standards listed. Tab to inspect.&rdquo;
                         </div>
                         <span className="text-[10px] text-emerald-400 flex items-center gap-1">
@@ -542,7 +542,7 @@ export default function CraftPhilosophySection() {
                     )}
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-paper/10 flex items-center justify-between text-[10px] text-paper/50">
+                  <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[10px] text-[#f4efe6]/50">
                     <span>AUDIT TOOL: LIGHTHOUSE &amp; AXE</span>
                     <span className="text-emerald-400 font-semibold">SCORE: 100 / 100</span>
                   </div>

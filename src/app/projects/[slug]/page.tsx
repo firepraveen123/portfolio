@@ -463,7 +463,7 @@ function ProjectVisualFrame({ project }: { project: ProjectDetail }) {
     return (
       <div className="bg-paper p-5 md:p-6 border-b border-line">
         {/* Zero-DOM Pipeline Visualizer */}
-        <div className="p-4 rounded-xl bg-ink text-paper border border-line mb-5">
+        <div className="p-4 rounded-xl bg-[#12110e] text-[#f4efe6] border border-white/10 mb-5">
           <div className="flex flex-wrap items-center justify-between text-[11px] mono opacity-80 pb-3 border-b border-paper/15 mb-4">
             <span>16 RTSP Video Hubs (Raw Binary WebSockets)</span>
             <span className="text-ok">→ OffscreenCanvas Layer (Direct GPU Blit)</span>

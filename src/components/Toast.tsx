@@ -12,7 +12,7 @@ export default function Toast({ message }: ToastProps) {
   return (
     <div
       id="toast"
-      className={`fixed bottom-6 right-6 z-50 pointer-events-none transition-all duration-300 bg-ink text-paper px-4 py-2 rounded flex items-center gap-2 ${
+      className={`fixed bottom-6 right-6 z-50 pointer-events-none transition-all duration-300 bg-[#161512] text-[#f4efe6] border border-white/15 shadow-xl px-4 py-2 rounded-lg flex items-center gap-2 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       }`}
     >
